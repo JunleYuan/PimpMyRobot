@@ -6,12 +6,8 @@ class Loading extends Phaser.Scene {
     
 
     preload() {
-        // load images/tile sprites
-
-        this.loadIMG();
+        //this.load.image('backgroundWS', './assets/back.png');
         
-
-
         let loadingBar = this.add.graphics({
             
             fillStyle: {
@@ -22,10 +18,17 @@ class Loading extends Phaser.Scene {
         this.loadWidth = 200;
         this.loadHeight = 50;
 
+        // load images/tile sprites
+
+        this.loadIMG();
+
+        //add lag to see how it looks like
+        /*
         for(let i = 0;i<1000;i++){
             this.load.image('background'+ i, './assets/back.png');
 
         }
+        */
         
         
         this.load.on("progress",(percent)=>{
@@ -38,14 +41,17 @@ class Loading extends Phaser.Scene {
     create() {
         
         
+        //this.scene.start("UIScene");
         this.scene.start("buildMain");
     }
 
     update(delta) {
 
     }
+
     loadIMG(){
-        this.load.image('background', './assets/back.png');
+        this.load.image('backgroundWS', './assets/back.png');
+        this.load.image('inventory', './assets/inv.png');
 
     }
 

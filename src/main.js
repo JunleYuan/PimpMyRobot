@@ -16,7 +16,7 @@ let config = {
         }
         
     },
-    scene: [ Loading,Workshop ,Menu, Play ]
+    scene: [Loading,Workshop ,Menu, Play,UIScene ]
 
     
 }
