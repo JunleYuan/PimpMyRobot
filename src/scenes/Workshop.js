@@ -17,8 +17,6 @@ class Workshop extends Phaser.Scene {
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 100, frameHeight: 60, startFrame: 0, endFrame: 4});
     }
 
-    
-
     create() {
         this.cur_time = 0;
         this.sound.play('sfx_background');
