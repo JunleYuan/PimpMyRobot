@@ -7,8 +7,8 @@ class Workshop extends Phaser.Scene {
     create() {
         console.log("opened scene workshop");
 
-        //open UI
-        this.scene.launch("UIScene");
+        //open UI (might not needed)
+        //this.scene.launch("UIScene");
 
         //mouse
         this.pointer = this.input.activePointer;
@@ -23,9 +23,20 @@ class Workshop extends Phaser.Scene {
 
         this.backg = this.add.image(0, 0, 'backgroundWS').setOrigin(0, 0).setScale(4);
 
-        
         //  Make our game world bound
         this.cameras.main.setBounds(0, 0, this.backg.width*4, this.backg.height*4);
+
+
+        //crafting
+        this.craftTable = this.add.image(1800, 300, 'crafting').setOrigin(0, 0).setScale(2);
+        this.craftTable.setInteractive();
+
+        this.craftTable.on('pointerdown', () => {
+            this.scene.start("test");
+
+        });
+        
+        
         
 
     }
@@ -33,7 +44,7 @@ class Workshop extends Phaser.Scene {
     update(delta) {
         
         
-        //console.log(this.pointer.x);
+        
 
         //move camera
         if (keyLEFT.isDown)
@@ -46,8 +57,12 @@ class Workshop extends Phaser.Scene {
             this.cam.scrollX += 6;
         }
 
-        /*
+        
         //move camera by mouse
+
+        //console.log(this.pointer.x);
+
+        /*
         if (this.pointer.x < 100)
         {   
             

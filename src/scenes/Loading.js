@@ -1,6 +1,6 @@
 class Loading extends Phaser.Scene {
     constructor() {
-        super("workShop");
+        super("loading");
     }
 
     
@@ -23,12 +23,12 @@ class Loading extends Phaser.Scene {
         this.loadIMG();
 
         //add lag to see how it looks like
-        /*
-        for(let i = 0;i<1000;i++){
-            this.load.image('background'+ i, './assets/back.png');
+        
+        // for(let i = 0;i<1000;i++){
+        //     this.load.image('background'+ i, './assets/back.png');
 
-        }
-        */
+        // }
+        
         
         
         this.load.on("progress",(percent)=>{
@@ -41,8 +41,9 @@ class Loading extends Phaser.Scene {
     create() {
         
         
-        //this.scene.start("UIScene");
+        this.scene.start("UIScene");
         this.scene.start("buildMain");
+        //this.scene.start("test");
     }
 
     update(delta) {
@@ -52,6 +53,7 @@ class Loading extends Phaser.Scene {
     loadIMG(){
         this.load.image('backgroundWS', './assets/back.png');
         this.load.image('inventory', './assets/inv.png');
+        this.load.image('crafting', './assets/craft.png');
 
     }
 
