@@ -27,5 +27,5 @@ let game = new Phaser.Game(config);
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT, pointLEFT;
 
-var high_score = 0;
+var numbRequire = 1;
 
