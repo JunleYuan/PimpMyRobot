@@ -19,6 +19,7 @@ class UIScene extends Phaser.Scene {
         this.require.setInteractive();
 
         this.require.on('pointerdown', () => {
+            
             if(this.firstOpen){
                 this.scene.launch("requireList");
                 this.scene.bringToTop();
