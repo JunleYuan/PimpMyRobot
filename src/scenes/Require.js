@@ -20,11 +20,16 @@ class RequireList extends Phaser.Scene {
 
         let textArray = [];
 
-        for(let i = 0;i<3;i++){
-            textArray[i] = this.add.text(-170,-200+i*80,'XXXXXXXXXX').setOrigin(0, .5);
+        
+
+        for(let i = 0;i<numbRequire;i++){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+            arrayOfRule[i] = this.whatTraits();
+            textArray[i] = this.add.text(-170,-200+i*80,this.ranText(arrayOfRule[i])).setOrigin(0, .5);
 
         }
+        console.log("array: "+arrayOfRule);
 
+        //base container that groups text and IMG
         this.base = [this.page, this.testText];
 
         this.base = this.base.concat(textArray);
@@ -44,7 +49,7 @@ class RequireList extends Phaser.Scene {
 
         });
 
-
+        this.scene.sleep("requireList");
     }
 
     update(delta) {
@@ -60,9 +65,52 @@ class RequireList extends Phaser.Scene {
         this.yesNo = Math.floor(Math.random() * 2);
 
         return [this.traitArray[this.ranTraits],this.yesNo]
-
-
         
+    }
+    ranText( rule ){
+        
+        if(rule[1]){
+            switch(Math.floor(Math.random() * 2)){
+
+                case 0:
+
+                    return 'We want our robots to be ' + rule[0]
+
+                    break;
+
+                case 1:
+
+                    return  rule[0] + ' would be nice'
+
+                    break;
+
+
+            }
+
+        }else{
+
+            switch(Math.floor(Math.random() * 2)){
+
+                case 0:
+
+                    return 'I hate ' + rule[0]
+
+                    break;
+
+                case 1:
+
+                    return 'It better not be '+ rule[0]
+
+                    break;
+
+
+            }
+
+
+
+
+        }
+
     }
 
 
