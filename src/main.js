@@ -27,5 +27,9 @@ let game = new Phaser.Game(config);
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT, pointLEFT;
 
-var numbRequire = 1;
+var numbRequire = 2;
+
+var arrayOfTraits = ['cute','cool'];
+
+var arrayOfRule = [];
 

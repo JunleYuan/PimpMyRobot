@@ -7,8 +7,10 @@ class UIScene extends Phaser.Scene {
 
     create() {
 
+        this.scene.launch("requireList");
+
         this.pageOpen = false;
-        this.firstOpen = true;
+        
 
         console.log("UI open");
 
@@ -20,25 +22,20 @@ class UIScene extends Phaser.Scene {
 
         this.require.on('pointerdown', () => {
             
-            if(this.firstOpen){
-                this.scene.launch("requireList");
-                this.scene.bringToTop();
-                this.firstOpen =false;
-                this.pageOpen = true;
+            
+            console.log("ran");
+            if(this.pageOpen){
+                console.log("close");
+                this.scene.sleep("requireList");
+                this.pageOpen = false;
             }else{
-                console.log("ran");
-                if(this.pageOpen){
-                    console.log("close");
-                    this.scene.sleep("requireList");
-                    this.pageOpen = false;
-                }else{
-                    console.log("open");
-                    this.scene.wake("requireList");
-                    this.scene.bringToTop();
-                    this.pageOpen = true;
-                }
+                console.log("open");
+                this.scene.wake("requireList");
+                this.scene.bringToTop();
+                this.pageOpen = true;
+            }
 
-            } 
+            
             
             
             
