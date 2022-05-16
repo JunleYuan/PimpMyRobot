@@ -35,6 +35,10 @@ class Workshop extends Phaser.Scene {
             this.scene.start("test");
 
         });
+
+        this.part = new Rocket(this, 480,342, 'crafting',['cool','cute']);
+
+        this.part2 = new Rocket(this, 600,342, 'crafting',['cool','cute']);
         
         
         
