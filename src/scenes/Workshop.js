@@ -32,21 +32,15 @@ class Workshop extends Phaser.Scene {
         this.craftTable.setInteractive();
 
         this.craftTable.on('pointerdown', () => {
-            this.scene.start("test");
+            this.scene.start("inventory");
 
         });
 
-        this.part = new Rocket(this, 480,342, 'crafting',['cool','cute']);
-
-        this.part2 = new Rocket(this, 600,342, 'crafting',['cool','cute']);
-        
-        
         
 
     }
 
     update(delta) {
-        
         
         
 

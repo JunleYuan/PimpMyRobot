@@ -14,7 +14,7 @@ class UIScene extends Phaser.Scene {
 
         console.log("UI open");
 
-        this.ui = this.add.image(this.game.renderer.width, this.game.renderer.height/2, 'inventory').setOrigin(1, .5).setScale(2);
+        //this.ui = this.add.image(this.game.renderer.width, this.game.renderer.height/2, 'inventory').setOrigin(1, .5).setScale(2);
         // var ourGame = this.scene.get('buildMain');
 
         this.require = this.add.image(this.game.renderer.width, 0, 'require').setOrigin(1, 0).setScale(1);
@@ -36,11 +36,9 @@ class UIScene extends Phaser.Scene {
             }
 
             
-            
-            
-            
 
         });
+
 
     }
 

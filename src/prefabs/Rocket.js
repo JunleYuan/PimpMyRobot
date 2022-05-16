@@ -5,6 +5,8 @@ class Rocket extends Phaser.GameObjects.Sprite {
 
         scene.add.existing(this);   // add to existing, displayList, updateList
         
+        // 0:leg 1:body 2:arms 3:head
+        this.which_part = 0;
 
         this.roboTraits = traits.slice();
 

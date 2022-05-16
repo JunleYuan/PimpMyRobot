@@ -16,7 +16,7 @@ let config = {
         }
         
     },
-    scene: [Loading,Workshop ,Menu, Play,UIScene,Test, RequireList ]
+    scene: [Loading,Workshop ,Menu, Play,UIScene,Test, RequireList,Inventory ]
 
     
 }
@@ -33,3 +33,4 @@ var arrayOfTraits = ['cute','cool'];
 
 var arrayOfRule = [];
 
+var storeParts =[];
