@@ -39,7 +39,7 @@ var numbSet = 2;
 //all traits
 var arrayOfTraits = ['cute','cool'];
 
-//the rule of the day
+//the rule at the time
 var arrayOfRule = [];
 
 //parts in inventory
@@ -47,3 +47,7 @@ var storeParts =[];
 
 //parts beening submited
 var subParts = [];
+
+var money = 0;
+
+var timer = 60;

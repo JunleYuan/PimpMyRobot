@@ -97,8 +97,6 @@ class Workshop extends Phaser.Scene {
 
     update(delta) {
         
-        
-
         //move camera
         if (keyLEFT.isDown)
         {   

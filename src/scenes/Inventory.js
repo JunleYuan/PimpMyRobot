@@ -23,11 +23,42 @@ class Inventory extends Phaser.Scene {
 
         });
 
+        this.sellbutt = this.add.image(1280, 720, 'sellButt').setOrigin(1, 1).setScale(1);
+        this.sellbutt.setInteractive();
+
+        this.sellbutt.visible = false;
+
+        this.sellbutt.on('pointerdown', () => {
+
+            if(subParts.length == 4){
+
+                this.givePoints()
+
+                //reset values
+                this.resetValue();
+
+                //empty inventory
+                storeParts = [];
+                subParts = [];
+
+                //reset vis
+                this.visOff();
+
+                var ticket = this.scene.get('requireList');
+
+                ticket.scene.restart();
+                
+                this.scene.sleep("inventory");
+                this.scene.wake("buildMain");
+                
+            }
+        });
+
         this.allParts();
 
-        this.todayPartOrder = this.shuffle(this.allPartsArray);
+        this.resetValue();
 
-        this.trash = new Trash(this, 500,342, 'crafting');
+        //this.trash = new Trash(this, 500,342, 'crafting');
 
 
         console.log("length"+storeParts.length);
@@ -241,6 +272,7 @@ class Inventory extends Phaser.Scene {
             }
         }
         else{
+            this.sellbutt.visible = true;
             for(var i = 0; i < this.allPartsArray.length;i++){
 
                 if(this.allPartsArray[i].isInInventory == true || this.allPartsArray[i].isInSub == true){
@@ -311,7 +343,65 @@ class Inventory extends Phaser.Scene {
 
     }
 
-    
+    getRandom(min, max) {
+        return Math.random() * (max - min) + min;
+    }
 
+    resetValue(){
+        for(var i = 0; i < this.allPartsArray.length;i++){
+
+            this.allPartsArray[i].x = this.getRandom(1280/2-300,1280/2+300);
+            this.allPartsArray[i].y = this.getRandom(720/2-100,720/2+100);
+
+            this.allPartsArray[i].isInInventory = false;
+            this.allPartsArray[i].isInSub = false;
+            this.allPartsArray[i].setScale(.2);
+        }
+
+        //shuffle boxes
+        this.todayPartOrder = this.shuffle(this.allPartsArray);
+
+    }
+
+    givePoints(){
+
+        var totalTraits = [];
+        for(var i = 0; i<subParts.length;i++){
+
+            totalTraits = totalTraits.concat(subParts[i].roboTraits);
+        }
+
+        //console.log("total trait:" + totalTraits);
+        for(var i = 0; i<arrayOfRule.length;i++){
+
+            money = money + this.checkRule(totalTraits,arrayOfRule[i]);
+        }
+
+    }
+
+    checkRule(array,rule){
+        switch(rule[1]){
+            case 0:
+
+                if(array.filter(x => x==rule[0]).length == 0){
+                    return 30;
+                }
+
+                return 0;
+
+
+            case 1:
+
+                if(array.filter(x => x==rule[0]).length > 0){
+                    return 30;
+                }
+
+                return 0;
+                
+
+
+        }
+
+    }
 
 }

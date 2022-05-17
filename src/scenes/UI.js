@@ -10,6 +10,12 @@ class UIScene extends Phaser.Scene {
         this.scene.launch("requireList");
 
         this.pageOpen = false;
+
+        this.see_time = this.add.text(100, 0, "Time left: ", { font: '48px Arial', fill: '#0000FF' });
+
+        this.see_money = this.add.text(400, 0, "Money: 0", { font: '48px Arial', fill: '#0000FF' });
+
+        this.timer();
         
 
         console.log("UI open");
@@ -43,8 +49,24 @@ class UIScene extends Phaser.Scene {
     }
 
     update(delta) {
+        this.see_time.text = "Time left: "+ timer; 
+
+        this.see_money.text = "Money: "+ money; 
+
         
 
+    }
+    timer() {
+        this.clock = this.time.delayedCall(1000, () => {
+
+            timer = timer - 1;
+            
+            if (timer > 0) {
+                
+                this.timer();
+            }
+
+        }, null, this);
     }
 
 
