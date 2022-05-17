@@ -7,6 +7,18 @@ class Workshop extends Phaser.Scene {
     create() {
         console.log("opened scene workshop");
 
+        this.soundconfig = {
+            mute: false,
+            volume: .1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        }
+
+        this.sound.play('backgroundMusic', this.soundconfig);
+
         //open UI (might not needed)
         //this.scene.launch("UIScene");
 

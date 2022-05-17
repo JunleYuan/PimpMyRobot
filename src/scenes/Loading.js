@@ -22,6 +22,9 @@ class Loading extends Phaser.Scene {
 
         this.loadIMG();
 
+        // load sound
+        this.loadSound();
+
         //add lag to see how it looks like
         
         // for(let i = 0;i<1000;i++){
@@ -56,6 +59,11 @@ class Loading extends Phaser.Scene {
         this.load.image('crafting', './assets/craft.png');
         this.load.image('require', './assets/require.png');
         this.load.image('requireText', './assets/requireText.png');
+
+    }
+
+    loadSound(){
+        this.load.audio('backgroundMusic', './assets/beeps-and-boops.mp3');
 
     }
 
