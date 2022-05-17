@@ -190,7 +190,7 @@ class Inventory extends Phaser.Scene {
             
             }
 
-            if (dropZone == subzone ){
+            if (dropZone == subzone && whichScene == 4){
 
                 graphicssub.clear();
                 graphicssub.lineStyle(2, 0x00ffff);
@@ -228,9 +228,9 @@ class Inventory extends Phaser.Scene {
                 }
             }
 
-            if (dropZone == subzone){
+            if (dropZone == subzone && whichScene == 4){
                 
-        
+                
                 graphicssub.clear();
                 graphicssub.lineStyle(2, 0xffff00);
                 graphicssub.strokeRect(subzone.x - subzone.input.hitArea.width / 2, subzone.y - zone.input.hitArea.height / 2, subzone.input.hitArea.width, subzone.input.hitArea.height);
@@ -262,7 +262,7 @@ class Inventory extends Phaser.Scene {
 
         if(whichScene != 4){
 
-
+            
             for(var i = 0; i < numbSet;i++){
 
                 
@@ -272,6 +272,7 @@ class Inventory extends Phaser.Scene {
             }
         }
         else{
+            
             this.sellbutt.visible = true;
             for(var i = 0; i < this.allPartsArray.length;i++){
 
