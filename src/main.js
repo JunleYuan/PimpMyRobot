@@ -29,6 +29,10 @@ let keyF, keyR, keyLEFT, keyRIGHT, pointLEFT;
 
 var numbRequire = 2;
 
+var whichScene = 0;
+
+var numbSet = 2;
+
 var arrayOfTraits = ['cute','cool'];
 
 var arrayOfRule = [];

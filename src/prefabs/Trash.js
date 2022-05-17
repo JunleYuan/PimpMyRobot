@@ -1,24 +1,15 @@
 // Rocket prefab
-class Object extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture,traits,part) {
+class Trash extends Phaser.GameObjects.Sprite {
+    constructor(scene, x, y, texture) {
         super(scene, x, y, texture);
 
         scene.add.existing(this);   // add to existing, displayList, updateList
 
-        this.setScale(.2);
-        
-        // 0:head 1:body 2:arms 3:leg
-        this.which_part = part;
-
-        this.isInInventory = false;
-
-        this.roboTraits = traits.slice();
-
-        console.log("robo traits: "+this.roboTraits);
-
         this.setInteractive({ pixelPerfect: true, alphaTolerance: 120, draggable: true });
 
         scene.input.setDraggable(this);
+
+        this.roboTraits = ['trash'];
 
         this.setDepth(1);
 

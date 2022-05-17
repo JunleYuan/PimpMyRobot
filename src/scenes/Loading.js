@@ -46,6 +46,7 @@ class Loading extends Phaser.Scene {
         
         this.scene.start("UIScene");
         this.scene.start("buildMain");
+        this.scene.start("inventory");
         //this.scene.start("test");
     }
 
@@ -59,6 +60,7 @@ class Loading extends Phaser.Scene {
         this.load.image('crafting', './assets/craft.png');
         this.load.image('require', './assets/require.png');
         this.load.image('requireText', './assets/requireText.png');
+        this.load.image('backButt', './assets/back_butt.png');
 
         this.load.image('cute_h', './assets/cute_head.png');
         this.load.image('cute_b', './assets/cute_body.png');

@@ -39,12 +39,45 @@ class Workshop extends Phaser.Scene {
         this.cameras.main.setBounds(0, 0, this.backg.width*4, this.backg.height*4);
 
 
-        //crafting
-        this.craftTable = this.add.image(1800, 300, 'crafting').setOrigin(0, 0).setScale(2);
-        this.craftTable.setInteractive();
+        //boxes
+        this.box1 = this.add.image(1400, 300, 'crafting').setOrigin(0, 0).setScale(1);
+        this.box1.setInteractive();
 
-        this.craftTable.on('pointerdown', () => {
-            this.scene.start("inventory");
+        this.box1.on('pointerdown', () => {
+            whichScene = 0;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
+
+        });
+
+        
+        this.box2 = this.add.image(1600, 300, 'crafting').setOrigin(0, 0).setScale(1);
+        this.box2.setInteractive();
+
+        this.box2.on('pointerdown', () => {
+            whichScene = 1;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
+
+        });
+
+        this.box3 = this.add.image(1400, 450, 'crafting').setOrigin(0, 0).setScale(1);
+        this.box3.setInteractive();
+
+        this.box3.on('pointerdown', () => {
+            whichScene = 2;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
+
+        });
+
+        this.box4 = this.add.image(1600, 450, 'crafting').setOrigin(0, 0).setScale(1);
+        this.box4.setInteractive();
+
+        this.box4.on('pointerdown', () => {
+            whichScene = 3;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
 
         });
 
