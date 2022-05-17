@@ -60,6 +60,17 @@ class Loading extends Phaser.Scene {
         this.load.image('require', './assets/require.png');
         this.load.image('requireText', './assets/requireText.png');
 
+        this.load.image('cute_h', './assets/cute_head.png');
+        this.load.image('cute_b', './assets/cute_body.png');
+        this.load.image('cute_a', './assets/cute_arm.png');
+        this.load.image('cute_l', './assets/cute_leg.png');
+
+        this.load.image('cool_h', './assets/cool_head.png');
+        this.load.image('cool_b', './assets/cool_body.png');
+        this.load.image('cool_a', './assets/cool_arm.png');
+        this.load.image('cool_l', './assets/cool_leg.png');
+
+
     }
 
     loadSound(){

@@ -10,13 +10,13 @@ class Inventory extends Phaser.Scene {
         
         console.log("Inventory open");
 
-        this.part = new Object(this, 500,342, 'crafting',['cool','cute'],0);
+        this.part = new Object(this, 500,342, 'cute_h',['cool','cute'],0);
 
-        this.part2 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
+        this.part2 = new Object(this, 500,342, 'cute_b',['cool','cute'],0);
 
-        this.part3 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
+        this.part3 = new Object(this, 500,342, 'cute_a',['cool','cute'],0);
 
-        this.part4 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
+        this.part4 = new Object(this, 500,342, 'cute_l',['cool','cute'],0);
 
         this.part5 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
@@ -32,6 +32,8 @@ class Inventory extends Phaser.Scene {
                 gameObject.y = (storeParts.length*100)+100;
 
                 gameObject.disableInteractive();
+
+                gameObject.setScale(.1);
 
                 console.log(gameObject.roboTraits);
 
