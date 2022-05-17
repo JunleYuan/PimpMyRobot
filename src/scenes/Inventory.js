@@ -10,17 +10,17 @@ class Inventory extends Phaser.Scene {
         
         console.log("Inventory open");
 
-        this.part = new Rocket(this, 500,342, 'crafting',['cool','cute']);
+        this.part = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
-        this.part2 = new Rocket(this, 500,342, 'crafting',['cool','cute']);
+        this.part2 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
-        this.part3 = new Rocket(this, 500,342, 'crafting',['cool','cute']);
+        this.part3 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
-        this.part4 = new Rocket(this, 500,342, 'crafting',['cool','cute']);
+        this.part4 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
-        this.part5 = new Rocket(this, 500,342, 'crafting',['cool','cute']);
+        this.part5 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
-        this.part6 = new Rocket(this, 500,342, 'crafting',['cool','cute']);
+        this.part6 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
         console.log("length"+storeParts.length);
 
