@@ -12,6 +12,8 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.isInInventory = false;
 
+        this.isInSub = false;
+
         this.roboTraits = traits.slice();
 
         console.log("robo traits: "+this.roboTraits);
@@ -42,6 +44,44 @@ class Object extends Phaser.GameObjects.Sprite {
 
             this.setDepth(1);
 
+            if(this.isInInventory){
+                
+                this.x = 55;
+                switch(this.which_part){
+
+                    case 0:
+    
+                        this.y = 200;
+    
+                        break;
+    
+                    case 1:
+    
+                        this.y = 240;
+    
+                        break;
+                    case 2:
+
+                        this.y = 350;
+    
+                        break;
+
+                    case 3:
+
+                        this.y = 380;
+    
+                        break;
+    
+                }
+
+            }
+
+            if (this.isInSub){
+
+                this.x = 1280/2;
+                this.y = 720/2;
+
+            }
 
         });
 

@@ -13,6 +13,8 @@ class Inventory extends Phaser.Scene {
         this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(1);
         this.backbutt.setInteractive();
 
+        //this.backbutt.visible = false;
+
         this.backbutt.on('pointerdown', () => {
             this.visOff();
             //this.scene.start("buildMain");
@@ -33,66 +35,103 @@ class Inventory extends Phaser.Scene {
         
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
-            var alreadyIn = false;
+            
+            //console.log(dropZone == zone);
 
-            for(var i = 0; i < storeParts.length; i++){
-                if(storeParts[i].which_part == gameObject.which_part){
-                    alreadyIn = true;
+            //if zone is inventory zone
+            if(dropZone == zone && storeParts.length<4 && gameObject.roboTraits[0] != 'trash'){
 
-                }
-                
-            }
 
-            if(storeParts.length<4 && !alreadyIn&& gameObject.roboTraits[0] != 'trash'){
+                //check if type of parts is already in inventory
+                var alreadyIn = false;
+                for(var i = 0; i < storeParts.length; i++){
+                    if(storeParts[i].which_part == gameObject.which_part){
+                        alreadyIn = true;
 
-                gameObject.x = 55;
-                switch(gameObject.which_part){
-
-                    case 0:
-    
-                        gameObject.y = 200;
-    
-                        break;
-    
-                    case 1:
-    
-                        gameObject.y = 240;
-    
-                        break;
-                    case 2:
-
-                        gameObject.y = 350;
-    
-                        break;
-
-                    case 3:
-
-                        gameObject.y = 380;
-    
-                        break;
-    
-    
+                    }
+                    
                 }
 
-                //gameObject.disableInteractive();
 
-                //gameObject.visible = false;
+                if(!alreadyIn){
 
-                gameObject.setScale(.1);
-                gameObject.isInInventory = true;
+                    gameObject.x = 55;
+                    switch(gameObject.which_part){
 
-                console.log(gameObject.roboTraits);
+                        case 0:
+        
+                            gameObject.y = 200;
+        
+                            break;
+        
+                        case 1:
+        
+                            gameObject.y = 240;
+        
+                            break;
+                        case 2:
 
-                storeParts.push(gameObject);
-                
-                console.log("length"+storeParts.length);
+                            gameObject.y = 350;
+        
+                            break;
+
+                        case 3:
+
+                            gameObject.y = 380;
+        
+                            break;
+        
+                    }
+
+                    //gameObject.disableInteractive();
+
+                    //gameObject.visible = false;
+
+                    gameObject.setScale(.1);
+                    gameObject.isInInventory = true;
+                    gameObject.isInSub = false;
+
+                    console.log(gameObject.roboTraits);
+
+                    storeParts.push(gameObject);
+                    
+                    console.log("length"+storeParts.length);
+
+                }
+            }
+
+            //if zone is submit zone
+            if(dropZone == subzone && gameObject.roboTraits[0] != 'trash' && whichScene == 4 && subParts.length<4){
+
+                //check if type of parts is already in inventory
+                var alreadyIn = false;
+                for(var i = 0; i < subParts.length; i++){
+                    if(subParts[i].which_part == gameObject.which_part){
+                        alreadyIn = true;
+
+                    }
+                    
+                }
+
+                if(!alreadyIn){
+
+
+                    gameObject.x = 1280/2;
+                    gameObject.y = 720/2;
+
+                    gameObject.isInSub = true;
+                    gameObject.isInInventory = false;
+
+                    subParts.push(gameObject);
+
+                }
 
             }
-    
+            //console.log("in sub: "+ gameObject.isInSub+ " in inv:"+gameObject.isInInventory);
         });
         
 
-            //  A drop zone
+        //  A drop zone
         var zone = this.add.zone(0, 300, 250, 500).setRectangleDropZone(250, 500);
 
         //  Just a visual display of the drop zone
@@ -100,38 +139,88 @@ class Inventory extends Phaser.Scene {
         graphics.lineStyle(2, 0xffff00);
         graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
 
+        //  A drop zone
+        var subzone = this.add.zone(this.game.renderer.width/2, this.game.renderer.height/2, 250, 500).setRectangleDropZone(250, 500);
+
+        //  Just a visual display of the drop zone
+        var graphicssub = this.add.graphics();
+        graphicssub.lineStyle(2, 0xffff00);
+        graphicssub.strokeRect(subzone.x - subzone.input.hitArea.width / 2, subzone.y - subzone.input.hitArea.height / 2, subzone.input.hitArea.width, subzone.input.hitArea.height);
+
 
         this.input.on('dragenter', function (pointer, gameObject, dropZone) {
 
-            graphics.clear();
-            graphics.lineStyle(2, 0x00ffff);
-            graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
+
+            if (dropZone == zone){
+
+                graphics.clear();
+                graphics.lineStyle(2, 0x00ffff);
+                graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
+            
+            }
+
+            if (dropZone == subzone ){
+
+                graphicssub.clear();
+                graphicssub.lineStyle(2, 0x00ffff);
+                graphicssub.strokeRect(subzone.x - subzone.input.hitArea.width / 2, subzone.y - subzone.input.hitArea.height / 2, subzone.input.hitArea.width, subzone.input.hitArea.height);
+
+            }
+
+
 
         });
 
         this.input.on('dragleave', function (pointer, gameObject, dropZone) {
 
-            graphics.clear();
-            graphics.lineStyle(2, 0xffff00);
-            graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
+            if (dropZone == zone){
 
-            if(gameObject.roboTraits[0] != 'trash'){
+                graphics.clear();
+                graphics.lineStyle(2, 0xffff00);
+                graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
 
-            
-                for(var i = 0; i < storeParts.length; i++){
 
-                    if ( storeParts[i] === gameObject) { 
-            
-                        storeParts.splice(i, 1); 
+                if(gameObject.roboTraits[0] != 'trash'){
+
+                
+                    for(var i = 0; i < storeParts.length; i++){
+
+                        if ( storeParts[i] === gameObject) { 
+                
+                            storeParts.splice(i, 1); 
+                        }
+
                     }
-
+                    gameObject.setScale(.2);
+                    gameObject.isInInventory = false;
+                    console.log("array length:"+ storeParts.length);
                 }
-                gameObject.setScale(.2);
-                gameObject.isInInventory = false;
-                console.log("array length:"+ storeParts.length);
             }
-            
 
+            if (dropZone == subzone){
+                
+        
+                graphicssub.clear();
+                graphicssub.lineStyle(2, 0xffff00);
+                graphicssub.strokeRect(subzone.x - subzone.input.hitArea.width / 2, subzone.y - zone.input.hitArea.height / 2, subzone.input.hitArea.width, subzone.input.hitArea.height);
+                
+                if(gameObject.roboTraits[0] != 'trash'){
+
+                
+                    for(var i = 0; i < subParts.length; i++){
+
+                        if ( subParts[i] === gameObject) { 
+                
+                            subParts.splice(i, 1); 
+                        }
+
+                    }
+                    
+                    gameObject.isInSub = false;
+                    console.log("array length:"+ subParts.length);
+                }
+
+            }
         });
 
         this.scene.sleep("inventory");
@@ -140,9 +229,28 @@ class Inventory extends Phaser.Scene {
 
     update(delta) {
 
-        for(var i = 0; i < numbSet;i++){
+        if(whichScene != 4){
 
-            this.allPartsArray[i+(whichScene)*numbSet].visible = true;
+
+            for(var i = 0; i < numbSet;i++){
+
+                
+                if(this.allPartsArray[i+(whichScene)*numbSet].isInSub == false)
+                    this.allPartsArray[i+(whichScene)*numbSet].visible = true;
+
+            }
+        }
+        else{
+            for(var i = 0; i < this.allPartsArray.length;i++){
+
+                if(this.allPartsArray[i].isInInventory == true || this.allPartsArray[i].isInSub == true){
+                    this.allPartsArray[i].visible = true;
+                } 
+
+                
+
+            }
+
 
         }
 
@@ -197,7 +305,7 @@ class Inventory extends Phaser.Scene {
     visOff(){
         for (var i = 0; i < this.allPartsArray.length;i++) {
 
-            if(!this.allPartsArray[i].isInInventory)
+            if(!this.allPartsArray[i].isInInventory || (whichScene != 4 && this.allPartsArray[i].isInSub))
                 this.allPartsArray[i].visible = false;
         }
 

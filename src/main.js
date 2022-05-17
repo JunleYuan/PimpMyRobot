@@ -27,14 +27,23 @@ let game = new Phaser.Game(config);
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT, pointLEFT;
 
-var numbRequire = 2;
+//number of rules
+var numbRequire = 1;
 
+//detect which box should it be
 var whichScene = 0;
 
+//number of sets of robot
 var numbSet = 2;
 
+//all traits
 var arrayOfTraits = ['cute','cool'];
 
+//the rule of the day
 var arrayOfRule = [];
 
+//parts in inventory
 var storeParts =[];
+
+//parts beening submited
+var subParts = [];
