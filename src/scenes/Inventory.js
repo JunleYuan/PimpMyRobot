@@ -103,6 +103,7 @@ class Inventory extends Phaser.Scene {
             }
 
         }
+        gameObject.setScale(.2);
         console.log("array length:"+ storeParts.length);
         
 
