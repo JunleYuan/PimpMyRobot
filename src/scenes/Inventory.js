@@ -57,13 +57,14 @@ class Inventory extends Phaser.Scene {
     
                 }
 
-                gameObject.disableInteractive();
+                //gameObject.disableInteractive();
 
                 gameObject.setScale(.1);
 
                 console.log(gameObject.roboTraits);
 
                 storeParts.push(gameObject);
+                
                 console.log("length"+storeParts.length);
 
             }
@@ -93,6 +94,17 @@ class Inventory extends Phaser.Scene {
         graphics.clear();
         graphics.lineStyle(2, 0xffff00);
         graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
+
+        for(var i = 0; i < storeParts.length; i++){
+
+            if ( storeParts[i] === gameObject) { 
+    
+                storeParts.splice(i, 1); 
+            }
+
+        }
+        console.log("array length:"+ storeParts.length);
+        
 
     });
 
