@@ -12,11 +12,11 @@ class Inventory extends Phaser.Scene {
 
         this.part = new Object(this, 500,342, 'cute_h',['cool','cute'],0);
 
-        this.part2 = new Object(this, 500,342, 'cute_b',['cool','cute'],0);
+        this.part2 = new Object(this, 500,342, 'cute_b',['cool','cute'],1);
 
-        this.part3 = new Object(this, 500,342, 'cute_a',['cool','cute'],0);
+        this.part3 = new Object(this, 500,342, 'cute_a',['cool','cute'],2);
 
-        this.part4 = new Object(this, 500,342, 'cute_l',['cool','cute'],0);
+        this.part4 = new Object(this, 500,342, 'cute_l',['cool','cute'],3);
 
         this.part5 = new Object(this, 500,342, 'crafting',['cool','cute'],0);
 
@@ -28,8 +28,34 @@ class Inventory extends Phaser.Scene {
         this.input.on('drop', function (pointer, gameObject, dropZone) {
             if(storeParts.length<4){
 
-                gameObject.x = 50;
-                gameObject.y = (storeParts.length*100)+100;
+                gameObject.x = 55;
+                switch(gameObject.which_part){
+
+                    case 0:
+    
+                        gameObject.y = 200;
+    
+                        break;
+    
+                    case 1:
+    
+                        gameObject.y = 240;
+    
+                        break;
+                    case 2:
+
+                        gameObject.y = 350;
+    
+                        break;
+
+                    case 3:
+
+                        gameObject.y = 380;
+    
+                        break;
+    
+    
+                }
 
                 gameObject.disableInteractive();
 
@@ -46,7 +72,7 @@ class Inventory extends Phaser.Scene {
         
 
         //  A drop zone
-    var zone = this.add.zone(0, 300, 200, 500).setRectangleDropZone(200, 500);
+    var zone = this.add.zone(0, 300, 250, 500).setRectangleDropZone(250, 500);
 
     //  Just a visual display of the drop zone
     var graphics = this.add.graphics();

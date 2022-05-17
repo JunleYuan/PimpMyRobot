@@ -7,7 +7,7 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.setScale(.2);
         
-        // 0:leg 1:body 2:arms 3:head
+        // 0:head 1:body 2:arms 3:leg
         this.which_part = part;
 
         this.roboTraits = traits.slice();
