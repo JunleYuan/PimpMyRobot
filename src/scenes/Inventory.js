@@ -10,6 +10,7 @@ class Inventory extends Phaser.Scene {
         
         console.log("Inventory open");
 
+        //return button
         this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(1);
         this.backbutt.setInteractive();
 
@@ -23,6 +24,7 @@ class Inventory extends Phaser.Scene {
 
         });
 
+        //sell button
         this.sellbutt = this.add.image(1280, 720, 'sellButt').setOrigin(1, 1).setScale(1);
         this.sellbutt.setInteractive();
 
@@ -32,10 +34,10 @@ class Inventory extends Phaser.Scene {
 
             if(subParts.length == 4){
 
-                this.givePoints()
+                this.givePoints();
 
                 //reset values
-                this.resetValue();
+                this.resetValue(true);
 
                 //empty inventory
                 storeParts = [];
@@ -54,9 +56,15 @@ class Inventory extends Phaser.Scene {
             }
         });
 
+
+        //add all parts needed
         this.allParts();
 
-        this.resetValue();
+        //set random location and parts to boxes
+        this.resetValue(true);
+
+        //shuffle boxes
+        this.todayPartOrder = this.shuffle(this.allPartsArray);
 
         //this.trash = new Trash(this, 500,342, 'crafting');
 
@@ -290,6 +298,7 @@ class Inventory extends Phaser.Scene {
 
     }
 
+    //create parts
     allParts(){
 
         this.part = new Object(this, 500,342, 'cute_h',['cute'],0);
@@ -348,19 +357,21 @@ class Inventory extends Phaser.Scene {
         return Math.random() * (max - min) + min;
     }
 
-    resetValue(){
+    resetValue(ranloc){
         for(var i = 0; i < this.allPartsArray.length;i++){
 
-            this.allPartsArray[i].x = this.getRandom(1280/2-300,1280/2+300);
-            this.allPartsArray[i].y = this.getRandom(720/2-100,720/2+100);
+            if(ranloc){
 
+                this.allPartsArray[i].x = this.getRandom(1280/2-300,1280/2+300);
+                this.allPartsArray[i].y = this.getRandom(720/2-100,720/2+100);
+            
+            }
             this.allPartsArray[i].isInInventory = false;
             this.allPartsArray[i].isInSub = false;
             this.allPartsArray[i].setScale(.2);
         }
 
-        //shuffle boxes
-        this.todayPartOrder = this.shuffle(this.allPartsArray);
+        
 
     }
 
@@ -370,6 +381,9 @@ class Inventory extends Phaser.Scene {
         for(var i = 0; i<subParts.length;i++){
 
             totalTraits = totalTraits.concat(subParts[i].roboTraits);
+
+            subParts[i].x = this.getRandom(1280/2-300,1280/2+300);
+            subParts[i].y = this.getRandom(720/2-100,720/2+100);
         }
 
         //console.log("total trait:" + totalTraits);
