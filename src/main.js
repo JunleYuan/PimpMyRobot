@@ -37,7 +37,7 @@ var whichScene = 0;
 var numbSet = 2;
 
 //all traits
-var arrayOfTraits = ['cute','cool','dress','sharp','cute pink','cute platinum','cool ruby','cool blue','sharp jade','sharp teal'];
+var arrayOfTraits = ['cute','cool','dress','cute pink','cute platinum','cool ruby','cool blue','sharp','sharp jade','sharp teal'];
 
 //the rule at the time
 var arrayOfRule = [];

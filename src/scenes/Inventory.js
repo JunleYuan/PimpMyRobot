@@ -288,13 +288,9 @@ class Inventory extends Phaser.Scene {
                     this.allPartsArray[i].visible = true;
                 } 
 
-                
-
             }
 
-
         }
-
 
     }
 
@@ -331,9 +327,78 @@ class Inventory extends Phaser.Scene {
 
     parts_2(){
 
+        
+        this.part9 = new Object(this, 500,342, 'sharp_h_j',['sharp','sharp jade'],0);
+        this.part9.visible = false;
+
+        this.part10 = new Object(this, 500,342, 'sharp_b_j',['sharp','sharp jade'],1);
+        this.part10.visible = false;
+
+        this.part11 = new Object(this, 500,342, 'sharp_a_j',['sharp','sharp jade'],2);
+        this.part11.visible = false;
+
+        this.part12 = new Object(this, 500,342, 'sharp_l_j',['sharp','sharp jade'],3);
+        this.part12.visible = false;
+
+        var temp = [this.part9,this.part10,this.part11,this.part12];
+
+        this.allPartsArray = this.allPartsArray.concat(temp);
+
+    }
+
+    parts_3(){
+
+        this.part13 = new Object(this, 500,342, 'cute_h_p',['cute','cute pink'],0);
+        this.part13.visible = false;
+
+        this.part14 = new Object(this, 500,342, 'cute_b_p',['cute','cute pink'],1);
+        this.part14.visible = false;
+
+        this.part15 = new Object(this, 500,342, 'cute_a_p',['cute','cute pink'],2);
+        this.part15.visible = false;
+
+        this.part16 = new Object(this, 500,342, 'cute_l_p',['cute','cute pink'],3);
+        this.part16.visible = false;
+
+
+
+        this.part17 = new Object(this, 500,342, 'cool_h_r',['cool','cool ruby'],0);
+        this.part17.visible = false;
+
+        this.part18 = new Object(this, 500,342, 'cool_b_r',['cool','cool ruby'],1);
+        this.part18.visible = false;
+
+        this.part19 = new Object(this, 500,342, 'cool_a_r',['cool','cool ruby'],2);
+        this.part19.visible = false;
+
+        this.part20 = new Object(this, 500,342, 'cool_l_r',['cool','cool ruby'],3);
+        this.part20.visible = false;
+
+
+        this.part21 = new Object(this, 500,342, 'sharp_h_t',['sharp','sharp teal'],0);
+        this.part21.visible = false;
+
+        this.part22 = new Object(this, 500,342, 'sharp_b_t',['sharp','sharp teal'],1);
+        this.part22.visible = false;
+
+        this.part23 = new Object(this, 500,342, 'sharp_a_t',['sharp','sharp teal'],2);
+        this.part23.visible = false;
+
+        this.part24 = new Object(this, 500,342, 'sharp_l_t',['sharp','sharp teal'],3);
+        this.part24.visible = false;
+
+
+
+        var temp = [this.part13,this.part14,this.part15,this.part16, 
+                    this.part17,this.part18,this.part19,this.part20,
+                    this.part21,this.part22,this.part23,this.part24];
+
+        this.allPartsArray = this.allPartsArray.concat(temp);
+
 
 
     }
+
 
     shuffle(array){
         for (var i = array.length - 1; i > 0; i--) {
