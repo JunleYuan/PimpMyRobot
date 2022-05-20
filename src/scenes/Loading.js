@@ -63,16 +63,35 @@ class Loading extends Phaser.Scene {
         this.load.image('backButt', './assets/back_butt.png');
         this.load.image('sellButt', './assets/sell.png');
 
-        this.load.image('cute_h', './assets/cute_head.png');
-        this.load.image('cute_b', './assets/cute_body.png');
-        this.load.image('cute_a', './assets/cute_arm.png');
-        this.load.image('cute_l', './assets/cute_leg.png');
+        this.load.image('cool_h_b', './assets/Cool-Head-Blue.png');
+        this.load.image('cool_b_b', './assets/Cool-Torso-Blue.png');
+        this.load.image('cool_a_b', './assets/Cool-Arms-Blue.png');
+        this.load.image('cool_l_b', './assets/Cool-Legs-Blue.png');
 
-        this.load.image('cool_h', './assets/cool_head.png');
-        this.load.image('cool_b', './assets/cool_body.png');
-        this.load.image('cool_a', './assets/cool_arm.png');
-        this.load.image('cool_l', './assets/cool_leg.png');
+        this.load.image('cool_h_r', './assets/Cool-Head-Ruby.png');
+        this.load.image('cool_b_r', './assets/Cool-Torso-Ruby.png');
+        this.load.image('cool_a_r', './assets/Cool-Arms-Ruby.png');
+        this.load.image('cool_l_r', './assets/Cool-Legs-Ruby.png');
 
+        this.load.image('cute_h_p', './assets/Cute-Head-Platinum.png');
+        this.load.image('cute_b_p', './assets/Cute-Torso-Platinum.png');
+        this.load.image('cute_a_p', './assets/Cute-Arms-Platinum.png');
+        this.load.image('cute_l_p', './assets/Cute-Legs-Platinum.png');
+
+        this.load.image('cute_h_r', './assets/Cute-Head-RosePink.png');
+        this.load.image('cute_b_r', './assets/Cute-Torso-RosePink.png');
+        this.load.image('cute_a_r', './assets/Cute-Arms-RosePink.png');
+        this.load.image('cute_l_r', './assets/Cute-Legs-RosePink.png');
+
+        this.load.image('sharp_h_j', './assets/Sharp-Head-Jade.png');
+        this.load.image('sharp_b_j', './assets/Sharp-Torso-Jade.png');
+        this.load.image('sharp_a_j', './assets/Sharp-Arms-Jade.png');
+        this.load.image('sharp_l_j', './assets/Sharp-Legs-Jade.png');
+
+        this.load.image('sharp_h_t', './assets/Sharp-Head-Teal.png');
+        this.load.image('sharp_b_t', './assets/Sharp-Torso-Teal.png');
+        this.load.image('sharp_a_t', './assets/Sharp-Arms-Teal.png');
+        this.load.image('sharp_l_t', './assets/Sharp-Legs-Teal.png');
 
     }
 
