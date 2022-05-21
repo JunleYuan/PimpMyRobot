@@ -37,13 +37,13 @@ class RequireList extends Phaser.Scene {
             case 5:
 
                 this.CurTrait = arrayOfTraits.slice(4,10);
-                numbRequire = 5;
+                numbRequire = 4;
 
                 break;
             case 6:
 
                 this.CurTrait = arrayOfTraits.slice(4,10);
-                numbRequire = 6;
+                numbRequire = 4;
 
                 break;
         }

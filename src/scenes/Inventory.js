@@ -512,7 +512,7 @@ class Inventory extends Phaser.Scene {
             case 0:
 
                 if(array.filter(x => x==rule[0]).length == 0){
-                    return 30;
+                    return 10;
                 }
 
                 return 0;
@@ -521,7 +521,7 @@ class Inventory extends Phaser.Scene {
             case 1:
 
                 if(array.filter(x => x==rule[0]).length > 0){
-                    return 30;
+                    return 10;
                 }
 
                 return 0;
