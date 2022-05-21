@@ -16,7 +16,7 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.roboTraits = traits.slice();
 
-        console.log("robo traits: "+this.roboTraits);
+        //console.log("robo traits: "+this.roboTraits);
 
         this.setInteractive({ pixelPerfect: true, alphaTolerance: 120, draggable: true });
 

@@ -58,7 +58,48 @@ class Inventory extends Phaser.Scene {
 
 
         //add all parts needed
-        this.Parts_1();
+        switch(lvl){
+            case 1:
+                numbSet = 2;
+                this.Parts_1();
+
+                break;
+            case 2:
+                numbSet = 2;
+                this.Parts_1();
+
+                break;
+            case 3:
+
+                numbSet = 3;
+                this.Parts_1();
+                this.Parts_2();
+
+                break;
+            case 4:
+
+                numbSet = 3;
+                this.Parts_1();
+                this.Parts_2();
+
+                break;
+            case 5:
+
+                numbSet = 6;
+                this.Parts_1();
+                this.Parts_2();
+                this.Parts_3();
+
+                break;
+            case 6:
+
+                numbSet = 6;
+                this.Parts_1();
+                this.Parts_2();
+                this.Parts_3();
+
+                break;
+        }
 
         //set random location and parts to boxes
         this.resetValue(true);
@@ -300,7 +341,7 @@ class Inventory extends Phaser.Scene {
         this.part = new Object(this, 500,342, 'cute_h_p',['cute','cute platinum'],0);
         this.part.visible = false;
 
-        this.part2 = new Object(this, 500,342, 'cute_b_p',['cute','cute platinum','dress'],1);
+        this.part2 = new Object(this, 500,342, 'cute_b_p',['cute','cute platinum','in a dress'],1);
         this.part2.visible = false;
 
         this.part3 = new Object(this, 500,342, 'cute_a_p',['cute','cute platinum'],2);
@@ -325,7 +366,7 @@ class Inventory extends Phaser.Scene {
 
     }
 
-    parts_2(){
+    Parts_2(){
 
         
         this.part9 = new Object(this, 500,342, 'sharp_h_j',['sharp','sharp jade'],0);
@@ -346,21 +387,19 @@ class Inventory extends Phaser.Scene {
 
     }
 
-    parts_3(){
+    Parts_3(){
 
-        this.part13 = new Object(this, 500,342, 'cute_h_p',['cute','cute pink'],0);
+        this.part13 = new Object(this, 500,342, 'cute_h_r',['cute','cute pink'],0);
         this.part13.visible = false;
 
-        this.part14 = new Object(this, 500,342, 'cute_b_p',['cute','cute pink'],1);
+        this.part14 = new Object(this, 500,342, 'cute_b_r',['cute','cute pink','in a dress'],1);
         this.part14.visible = false;
 
-        this.part15 = new Object(this, 500,342, 'cute_a_p',['cute','cute pink'],2);
+        this.part15 = new Object(this, 500,342, 'cute_a_r',['cute','cute pink'],2);
         this.part15.visible = false;
 
-        this.part16 = new Object(this, 500,342, 'cute_l_p',['cute','cute pink'],3);
+        this.part16 = new Object(this, 500,342, 'cute_l_r',['cute','cute pink'],3);
         this.part16.visible = false;
-
-
 
         this.part17 = new Object(this, 500,342, 'cool_h_r',['cool','cool ruby'],0);
         this.part17.visible = false;

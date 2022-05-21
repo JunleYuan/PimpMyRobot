@@ -9,8 +9,44 @@ class RequireList extends Phaser.Scene {
 
         //format (trait, yes or no)
 
-        this.CurTrait = arrayOfTraits.slice();
+        switch(lvl){
+            case 1:
+                this.CurTrait = arrayOfTraits.slice(0,3);
+                numbRequire = 1;
 
+                break;
+            case 2:
+                this.CurTrait = arrayOfTraits.slice(0,3);
+                numbRequire = 2;
+
+
+
+                break;
+            case 3:
+
+                this.CurTrait = arrayOfTraits.slice(0,4);
+                numbRequire = 3;
+
+                break;
+            case 4:
+
+                this.CurTrait = arrayOfTraits.slice(0,4);
+                numbRequire = 4;
+
+                break;
+            case 5:
+
+                this.CurTrait = arrayOfTraits.slice(4,10);
+                numbRequire = 5;
+
+                break;
+            case 6:
+
+                this.CurTrait = arrayOfTraits.slice(4,10);
+                numbRequire = 6;
+
+                break;
+        }
         //console.log(this.CurTrait);
 
         console.log("req open");
