@@ -49,8 +49,8 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 5;
+var lvl = 6;
 
 var money = 40;
 
-var timer = 60;
+var timer = 60*5;
