@@ -46,7 +46,7 @@ class Inventory extends Phaser.Scene {
                 //reset vis
                 this.visOff();
 
-                //var ticket = this.scene.get('requireList');
+                var ticket = this.scene.get('requireList');
 
                 //this.scene.stop('requireList');
                 //this.scene.launch('requireList');
