@@ -59,6 +59,33 @@ class Inventory extends Phaser.Scene {
             }
         });
 
+        //sell button
+        this.colorbutt = this.add.image(500, 720, 'sellButt').setOrigin(1, 1).setScale(1);
+        this.colorbutt.setInteractive();
+
+        this.colorbutt.visible = false;
+
+        this.colorbutt.on('pointerdown', () => {
+
+            if(curColor == 1){
+                curColor = 0;
+            }else{
+                curColor = 1;
+            }
+                
+
+            console.log("clicked");
+            if(subParts.length == 4){
+                
+                for(var i = 0; i < subParts.length; i++){
+                    subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                }
+                
+                
+
+            }
+        });
+
 
         //add all parts needed
         switch(lvl){
@@ -91,7 +118,7 @@ class Inventory extends Phaser.Scene {
                 numbSet = 6;
                 this.Parts_1();
                 this.Parts_2();
-                this.Parts_3();
+                
 
                 break;
             case 6:
@@ -99,7 +126,7 @@ class Inventory extends Phaser.Scene {
                 numbSet = 6;
                 this.Parts_1();
                 this.Parts_2();
-                this.Parts_3();
+                
 
                 break;
         }
@@ -108,7 +135,7 @@ class Inventory extends Phaser.Scene {
         this.resetValue(true);
 
         //shuffle boxes
-        this.todayPartOrder = this.shuffle(this.allPartsArray);
+        //this.todayPartOrder = this.shuffle(this.allPartsArray);
 
         //this.trash = new Trash(this, 500,342, 'crafting');
 
@@ -315,17 +342,32 @@ class Inventory extends Phaser.Scene {
         if(whichScene != 4){
 
             
+            // for(var i = 0; i < numbSet;i++){
+
+                
+            //     if(this.allPartsArray[i+(whichScene)*numbSet].isInSub == false)
+            //         this.allPartsArray[i+(whichScene)*numbSet].visible = true;
+
+            // }
+
+            // for(var i = 0; i < this.allPartsArray.length;i++){
+            //     this.allPartsArray[i].visible = true;
+
+            // }
+
             for(var i = 0; i < numbSet;i++){
 
                 
-                if(this.allPartsArray[i+(whichScene)*numbSet].isInSub == false)
-                    this.allPartsArray[i+(whichScene)*numbSet].visible = true;
+                if(this.allPartsArray[i*4+whichScene].isInSub == false)
+                    this.allPartsArray[i*4+whichScene].visible = true;
 
             }
+
         }
         else{
-            
+            this.colorbutt.visible = true;
             this.sellbutt.visible = true;
+
             for(var i = 0; i < this.allPartsArray.length;i++){
 
                 if(this.allPartsArray[i].isInInventory == true || this.allPartsArray[i].isInSub == true){
@@ -341,28 +383,28 @@ class Inventory extends Phaser.Scene {
     //create parts
     Parts_1(){
 
-        this.part = new Object(this, 500,342, 'cute_h_p',['cute','cute platinum'],0);
+        this.part = new Object(this, 500,342, 'cute_h_p','cute_h_r',['cute'],0);
         this.part.visible = false;
 
-        this.part2 = new Object(this, 500,342, 'cute_b_p',['cute','cute platinum','in a dress'],1);
+        this.part2 = new Object(this, 500,342, 'cute_b_p','cute_b_r',['cute'],1);
         this.part2.visible = false;
 
-        this.part3 = new Object(this, 500,342, 'cute_a_p',['cute','cute platinum'],2);
+        this.part3 = new Object(this, 500,342, 'cute_a_p','cute_a_r',['cute'],2);
         this.part3.visible = false;
 
-        this.part4 = new Object(this, 500,342, 'cute_l_p',['cute','cute platinum'],3);
+        this.part4 = new Object(this, 500,342, 'cute_l_p','cute_l_r',['cute'],3);
         this.part4.visible = false;
 
-        this.part5 = new Object(this, 500,342, 'cool_h_b',['cool','cool blue'],0);
+        this.part5 = new Object(this, 500,342, 'cool_h_b','cool_h_r',['cool'],0);
         this.part5.visible = false;
 
-        this.part6 = new Object(this, 500,342, 'cool_b_b',['cool','cool blue'],1);
+        this.part6 = new Object(this, 500,342, 'cool_b_b','cool_b_r',['cool'],1);
         this.part6.visible = false;
 
-        this.part7 = new Object(this, 500,342, 'cool_a_b',['cool','cool blue'],2);
+        this.part7 = new Object(this, 500,342, 'cool_a_b','cool_a_r',['cool'],2);
         this.part7.visible = false;
 
-        this.part8 = new Object(this, 500,342, 'cool_l_b',['cool','cool blue'],3);
+        this.part8 = new Object(this, 500,342, 'cool_l_b','cool_l_r',['cool'],3);
         this.part8.visible = false;
 
         this.allPartsArray = [this.part,this.part2,this.part3,this.part4,this.part5,this.part6,this.part7,this.part8];
@@ -372,16 +414,16 @@ class Inventory extends Phaser.Scene {
     Parts_2(){
 
         
-        this.part9 = new Object(this, 500,342, 'sharp_h_j',['sharp','sharp jade'],0);
+        this.part9 = new Object(this, 500,342, 'sharp_h_j','sharp_h_t',['sharp'],0);
         this.part9.visible = false;
 
-        this.part10 = new Object(this, 500,342, 'sharp_b_j',['sharp','sharp jade'],1);
+        this.part10 = new Object(this, 500,342, 'sharp_b_j','sharp_b_t',['sharp'],1);
         this.part10.visible = false;
 
-        this.part11 = new Object(this, 500,342, 'sharp_a_j',['sharp','sharp jade'],2);
+        this.part11 = new Object(this, 500,342, 'sharp_a_j','sharp_a_t',['sharp'],2);
         this.part11.visible = false;
 
-        this.part12 = new Object(this, 500,342, 'sharp_l_j',['sharp','sharp jade'],3);
+        this.part12 = new Object(this, 500,342, 'sharp_l_j','sharp_l_t',['sharp'],3);
         this.part12.visible = false;
 
         var temp = [this.part9,this.part10,this.part11,this.part12];
@@ -395,7 +437,7 @@ class Inventory extends Phaser.Scene {
         this.part13 = new Object(this, 500,342, 'cute_h_r',['cute','cute pink'],0);
         this.part13.visible = false;
 
-        this.part14 = new Object(this, 500,342, 'cute_b_r',['cute','cute pink','in a dress'],1);
+        this.part14 = new Object(this, 500,342, 'cute_b_r',['cute','cute pink'],1);
         this.part14.visible = false;
 
         this.part15 = new Object(this, 500,342, 'cute_a_r',['cute','cute pink'],2);

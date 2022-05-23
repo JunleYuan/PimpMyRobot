@@ -45,13 +45,11 @@ class Workshop extends Phaser.Scene {
 
         this.box1.on('pointerdown', () => {
 
-            if(money >= 10){
-                money = money - 10;
-                whichScene = 0;
-                this.scene.sleep("buildMain");
-                this.scene.wake("inventory");
+        
+            whichScene = 0;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
 
-            }  
 
         });
 
@@ -60,36 +58,33 @@ class Workshop extends Phaser.Scene {
         this.box2.setInteractive();
 
         this.box2.on('pointerdown', () => {
-            if(money >= 10){
-                money = money - 10;
-                whichScene = 1;
-                this.scene.sleep("buildMain");
-                this.scene.wake("inventory");
-            }
+        
+            whichScene = 1;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
+            
         });
 
         this.box3 = this.add.image(1400, 450, 'crafting').setOrigin(0, 0).setScale(1);
         this.box3.setInteractive();
 
         this.box3.on('pointerdown', () => {
-            if(money >= 10){
-                money = money - 10;
+            
                 whichScene = 2;
                 this.scene.sleep("buildMain");
                 this.scene.wake("inventory");
-            }
+            
         });
 
         this.box4 = this.add.image(1600, 450, 'crafting').setOrigin(0, 0).setScale(1);
         this.box4.setInteractive();
 
         this.box4.on('pointerdown', () => {
-            if(money >= 10){
-                money = money - 10;
-                whichScene = 3;
-                this.scene.sleep("buildMain");
-                this.scene.wake("inventory");
-            }
+        
+            whichScene = 3;
+            this.scene.sleep("buildMain");
+            this.scene.wake("inventory");
+        
         });
 
         this.craft = this.add.image(1800, 400, 'crafting').setOrigin(0, 0).setScale(1);
