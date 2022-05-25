@@ -62,6 +62,7 @@ class Loading extends Phaser.Scene {
         this.load.image('requireText', './assets/requireText.png');
         this.load.image('backButt', './assets/back_butt.png');
         this.load.image('sellButt', './assets/sell.png');
+        this.load.image('UI', './assets/UI_Trial.png');
 
         this.load.image('cool_h_b', './assets/Cool-Head-Blue.png');
         this.load.image('cool_b_b', './assets/Cool-Torso-Blue.png');

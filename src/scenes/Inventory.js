@@ -151,13 +151,15 @@ class Inventory extends Phaser.Scene {
             //if zone is inventory zone
             if(dropZone == zone && storeParts.length<4 && gameObject.roboTraits[0] != 'trash'){
 
+                console.log("dropped");
 
                 //check if type of parts is already in inventory
                 var alreadyIn = false;
                 for(var i = 0; i < storeParts.length; i++){
+                    console.log("dropped: "+ storeParts[i].which_part);
                     if(storeParts[i].which_part == gameObject.which_part){
                         alreadyIn = true;
-
+                        //console.log("already in inv");
                     }
                     
                 }
@@ -364,6 +366,8 @@ class Inventory extends Phaser.Scene {
             }
 
         }
+
+
 
     }
 

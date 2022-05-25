@@ -1,6 +1,6 @@
 // Rocket prefab
 class Object extends Phaser.GameObjects.Sprite {
-    constructor(scene, x, y, texture,texture2,traits,part) {
+    constructor(scene, x, y, texture,texture2,texture3,traits,part) {
         super(scene, x, y, texture);
 
         scene.add.existing(this);   // add to existing, displayList, updateList
@@ -12,7 +12,7 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.which_color = 0;
 
-        this.textureArray = [texture,texture2];
+        this.textureArray = [texture,texture2,texture3];
 
         this.isInInventory = false;
 
