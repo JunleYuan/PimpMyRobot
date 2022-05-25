@@ -383,28 +383,29 @@ class Inventory extends Phaser.Scene {
     //create parts
     Parts_1(){
 
-        this.part = new Object(this, 500,342, 'cute_h_p','cute_h_r',['cute'],0);
+        this.part = new Object(this, 500,342, 'cute_h_n','cute_h_p','cute_h_r',['cute'],0);
         this.part.visible = false;
 
-        this.part2 = new Object(this, 500,342, 'cute_b_p','cute_b_r',['cute'],1);
+        this.part2 = new Object(this, 500,342, 'cute_b_n','cute_b_p','cute_b_r',['cute'],1);
         this.part2.visible = false;
 
-        this.part3 = new Object(this, 500,342, 'cute_a_p','cute_a_r',['cute'],2);
+        this.part3 = new Object(this, 500,342, 'cute_a_n','cute_a_p','cute_a_r',['cute'],2);
         this.part3.visible = false;
 
-        this.part4 = new Object(this, 500,342, 'cute_l_p','cute_l_r',['cute'],3);
+        this.part4 = new Object(this, 500,342, 'cute_l_n','cute_l_p','cute_l_r',['cute'],3);
         this.part4.visible = false;
 
-        this.part5 = new Object(this, 500,342, 'cool_h_b','cool_h_r',['cool'],0);
+
+        this.part5 = new Object(this, 500,342, 'cool_h_n','cool_h_b','cool_h_r',['cool'],0);
         this.part5.visible = false;
 
-        this.part6 = new Object(this, 500,342, 'cool_b_b','cool_b_r',['cool'],1);
+        this.part6 = new Object(this, 500,342, 'cool_b_n','cool_b_b','cool_b_r',['cool'],1);
         this.part6.visible = false;
 
-        this.part7 = new Object(this, 500,342, 'cool_a_b','cool_a_r',['cool'],2);
+        this.part7 = new Object(this, 500,342, 'cool_a_n','cool_a_b','cool_a_r',['cool'],2);
         this.part7.visible = false;
 
-        this.part8 = new Object(this, 500,342, 'cool_l_b','cool_l_r',['cool'],3);
+        this.part8 = new Object(this, 500,342, 'cool_l_n','cool_l_b','cool_l_r',['cool'],3);
         this.part8.visible = false;
 
         this.allPartsArray = [this.part,this.part2,this.part3,this.part4,this.part5,this.part6,this.part7,this.part8];
@@ -414,16 +415,16 @@ class Inventory extends Phaser.Scene {
     Parts_2(){
 
         
-        this.part9 = new Object(this, 500,342, 'sharp_h_j','sharp_h_t',['sharp'],0);
+        this.part9 = new Object(this, 500,342, 'sharp_h_n','sharp_h_j','sharp_h_t',['sharp'],0);
         this.part9.visible = false;
 
-        this.part10 = new Object(this, 500,342, 'sharp_b_j','sharp_b_t',['sharp'],1);
+        this.part10 = new Object(this, 500,342, 'sharp_b_n','sharp_b_j','sharp_b_t',['sharp'],1);
         this.part10.visible = false;
 
-        this.part11 = new Object(this, 500,342, 'sharp_a_j','sharp_a_t',['sharp'],2);
+        this.part11 = new Object(this, 500,342, 'sharp_a_n','sharp_a_j','sharp_a_t',['sharp'],2);
         this.part11.visible = false;
 
-        this.part12 = new Object(this, 500,342, 'sharp_l_j','sharp_l_t',['sharp'],3);
+        this.part12 = new Object(this, 500,342, 'sharp_l_n','sharp_l_j','sharp_l_t',['sharp'],3);
         this.part12.visible = false;
 
         var temp = [this.part9,this.part10,this.part11,this.part12];

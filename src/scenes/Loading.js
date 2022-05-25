@@ -93,6 +93,22 @@ class Loading extends Phaser.Scene {
         this.load.image('sharp_a_t', './assets/Sharp-Arms-Teal.png');
         this.load.image('sharp_l_t', './assets/Sharp-Legs-Teal.png');
 
+        this.load.image('sharp_h_n', './assets/Sharp-Head-Uncolored.png');
+        this.load.image('sharp_b_n', './assets/Sharp-Torso-Uncolored.png');
+        this.load.image('sharp_a_n', './assets/Sharp-Arms-Uncolored.png');
+        this.load.image('sharp_l_n', './assets/Sharp-Legs-Uncolored.png');
+
+        this.load.image('cute_h_n', './assets/Cute-Head-Uncolored.png');
+        this.load.image('cute_b_n', './assets/Cute-Torso-Uncolored.png');
+        this.load.image('cute_a_n', './assets/Cute-Arms-Uncolored.png');
+        this.load.image('cute_l_n', './assets/Cute-Legs-Uncolored.png');
+
+        this.load.image('cool_h_n', './assets/Cool-Head-Uncolored.png');
+        this.load.image('cool_b_n', './assets/Cool-Torso-Uncolored.png');
+        this.load.image('cool_a_n', './assets/Cool-Arms-Uncolored.png');
+        this.load.image('cool_l_n', './assets/Cool-Legs-Uncolored.png');
+
+
     }
 
     loadSound(){
