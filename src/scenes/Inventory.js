@@ -19,7 +19,8 @@ class Inventory extends Phaser.Scene {
         this.backbutt.on('pointerdown', () => {
             this.visOff();
             //this.scene.start("buildMain");
-            this.scene.sleep("inventory");
+            //this.scene.sleep("inventory");
+            whichScene = 5;
             this.scene.wake("buildMain");
 
         });
@@ -341,10 +342,20 @@ class Inventory extends Phaser.Scene {
 
     update(delta) {
 
-        if(whichScene != 4){
+        if(whichScene == 5){
+            for(let i = 0;i< this.allPartsArray.length;i++){
+                if(!this.allPartsArray[i].isInInventory){
+                    this.allPartsArray[i].visible = false;
+                }
+                
+            }
+
+
+
+        }else if(whichScene != 4){
 
             
-            for(var i = 0; i < numbSet;i++){
+            for(let i = 0; i < numbSet;i++){
 
                 
                 if(this.allPartsArray[i*4+whichScene].isInSub == false)

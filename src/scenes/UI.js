@@ -11,7 +11,7 @@ class UIScene extends Phaser.Scene {
 
         this.pageOpen = false;
 
-        //this.see_ui = this.add.image(0, 0, 'UI').setOrigin(0, 0).setScale(1);
+        this.see_ui = this.add.image(0, 0, 'UI').setOrigin(0, 0).setScale(1);
 
         this.see_time = this.add.text(100, 0, "Time left: ", { font: '48px Arial', fill: '#0000FF' });
 
