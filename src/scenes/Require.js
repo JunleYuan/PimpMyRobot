@@ -51,8 +51,11 @@ class RequireList extends Phaser.Scene {
 
         console.log("req open");
 
+        this.notUseParts = ['head','body','arms','legs'];
 
-        this.testText = this.add.text(0,-250,'Ticket').setOrigin(.5, .5);
+        this.testText = this.add.bitmapText(0,-270, 'bm', 'Ticket', 32).setOrigin(.5, .5);
+
+        
 
         this.page = this.add.image(0, 0, 'requireText').setOrigin(.5, .5).setScale(2);
         // var ourGame = this.scene.get('buildMain');
@@ -60,9 +63,11 @@ class RequireList extends Phaser.Scene {
         let textArray = [];
 
         for(let i = 0;i<numbRequire;i++){
-            console.log(i);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
             arrayOfRule[i] = this.whatTraits();
-            textArray[i] = this.add.text(-170,-200+i*80,this.ranText(arrayOfRule[i])).setOrigin(0, .5);
+            textArray[i] = this.add.bitmapText(-170,-200+i*80, 'bm', this.ranText(arrayOfRule[i]), 25).setOrigin(0, .5).setMaxWidth(380);
+
+            
 
         }
         this.base = [this.page, this.testText];
@@ -96,61 +101,122 @@ class RequireList extends Phaser.Scene {
     
     whatTraits(){
 
-        //console.log("what: "+this.CurTrait);
+        //var to see if trait is already in
+        let alreadyin = false;
+        //temp var to store yes and no if is already in
+        let tempvar = 0;
 
-        this.ranTraits = Math.floor(Math.random() * this.CurTrait.length);
+        let ranTraits = Math.floor(Math.random() * this.CurTrait.length);
 
-        this.yesNo = Math.floor(Math.random() * 2);
+        //want or do not want traits
+        let yesNo = Math.floor(Math.random() * 2);
 
-        let temptrait = this.CurTrait.slice(this.ranTraits+0,this.ranTraits+1);
+        let temptrait = this.CurTrait.slice(ranTraits+0,ranTraits+1);
 
-        //console.log("temp:"+temptrait);
 
-        this.CurTrait.splice(this.ranTraits, 1);
+        //check if already in loop
+        arrayOfRule.forEach(element => {
+            //console.log("cur "+arrayOfTraits[ranTraits]);
+            //console.log("ele "+element[0]);
+            if(element[0] == arrayOfTraits[ranTraits]){
+                alreadyin = true;
+                //console.log("already in");
+                tempvar = element[1];
+            }
+        });
 
-        return [temptrait,this.yesNo]
+        if(alreadyin){
+
+            if(tempvar == 1 || tempvar == 2){
+
+                switch(Math.floor(Math.random() * 2)){
+
+                    case 0:
+
+                        this.CurTrait.splice(ranTraits, 1);
+                        return [temptrait,4]
+                    
+                    case 1:
+
+                        let ranpart = Math.floor(Math.random() * this.notUseParts.length);
+
+                        let temptrait2 = this.notUseParts.slice(ranpart+0,ranpart+1);
+
+                        this.notUseParts.splice(ranTraits, 1);
+
+                        return [temptrait,2,temptrait2]
+                }  
+
+            }else if(tempvar == 0){
+
+                this.CurTrait.splice(ranTraits, 1);
+                return [temptrait,3]
+
+            }
+
+            
+
+        }
+
+        
+
+        
+
+        return [temptrait,yesNo]
         
     }
     ranText( rule ){
         
-        if(rule[1]){
-            switch(Math.floor(Math.random() * 2)){
+        
+        switch(rule[1]){
 
-                case 0:
+            case 1:
+                switch(Math.floor(Math.random() * 2)){
 
-                    return 'We want our robots to be ' + rule[0]
+                    case 0:
 
-                    break;
-
-                case 1:
-
-                    return  rule[0] + ' would be nice'
-
-                    break;
+                        return 'We want our robots to be ' + rule[0]
 
 
-            }
+                    case 1:
 
-        }else{
-
-            switch(Math.floor(Math.random() * 2)){
-
-                case 0:
-
-                    return 'I hate ' + rule[0]
-
-                    break;
-
-                case 1:
-
-                    return 'It better not be '+ rule[0]
-
-                    break;
+                        return  rule[0] + ' would be nice'
 
 
-            }
+
+                }
+            break;
+
+            case 0:
+
+                switch(Math.floor(Math.random() * 2)){
+
+                    case 0:
+
+                        return 'We hate ' + rule[0]
 
 
+                    case 1:
+
+                        return 'We do not like '+ rule[0]
+
+
+
+                }
+            break;
+
+            case 2:
+
+                return 'I want the '+ rule[2] + ' to be ' +  rule[0]
+
+
+            case 3:
+
+                return 'if there is even one part that is '+  rule[0]+' we are not paying'
+
+            case 4:
+
+                return 'we want at least 2 part that is ' + rule[0]
 
 
         }

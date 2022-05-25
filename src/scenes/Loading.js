@@ -109,6 +109,7 @@ class Loading extends Phaser.Scene {
         this.load.image('cool_l_n', './assets/Cool-Legs-Uncolored.png');
 
 
+        this.load.bitmapFont('bm', 'assets/bm_0.png', 'assets/bm.xml');
     }
 
     loadSound(){

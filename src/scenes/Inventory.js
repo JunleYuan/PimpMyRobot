@@ -342,19 +342,6 @@ class Inventory extends Phaser.Scene {
         if(whichScene != 4){
 
             
-            // for(var i = 0; i < numbSet;i++){
-
-                
-            //     if(this.allPartsArray[i+(whichScene)*numbSet].isInSub == false)
-            //         this.allPartsArray[i+(whichScene)*numbSet].visible = true;
-
-            // }
-
-            // for(var i = 0; i < this.allPartsArray.length;i++){
-            //     this.allPartsArray[i].visible = true;
-
-            // }
-
             for(var i = 0; i < numbSet;i++){
 
                 
