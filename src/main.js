@@ -31,7 +31,7 @@ let keyF, keyR, keyLEFT, keyRIGHT, pointLEFT;
 var numbRequire = 1;
 
 //detect which box should it be / scene
-var whichScene = 0;
+var whichScene = 4;
 
 //number of sets of robot
 var numbSet = 2;
@@ -51,7 +51,7 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 4;
+var lvl = 1;
 
 var money = 40;
 

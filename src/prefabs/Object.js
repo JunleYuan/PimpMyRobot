@@ -54,25 +54,25 @@ class Object extends Phaser.GameObjects.Sprite {
                 switch(this.which_part){
 
                     case 0:
-    
-                        this.y = 200;
+                        this.setScale(.15);
+                        this.y = 335;
     
                         break;
     
                     case 1:
-    
-                        this.y = 240;
+                        this.setScale(.12);
+                        this.y = 355;
     
                         break;
                     case 2:
-
-                        this.y = 350;
+                        this.setScale(.1);
+                        this.y = 440;
     
                         break;
 
                     case 3:
-
-                        this.y = 380;
+                        this.setScale(.07);
+                        this.y = 490;
     
                         break;
     

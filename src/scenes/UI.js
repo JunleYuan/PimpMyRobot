@@ -41,7 +41,7 @@ class UIScene extends Phaser.Scene {
             }else{
                 console.log("open");
                 this.scene.wake("requireList");
-                this.scene.bringToTop();
+                
                 this.pageOpen = true;
             }
 
@@ -57,7 +57,6 @@ class UIScene extends Phaser.Scene {
 
         this.see_money.text = "Money: "+ money; 
 
-        
 
     }
     timer() {

@@ -20,7 +20,7 @@ class Inventory extends Phaser.Scene {
             this.visOff();
             //this.scene.start("buildMain");
             //this.scene.sleep("inventory");
-            whichScene = 5;
+            whichScene = 4;
             this.scene.wake("buildMain");
 
         });
@@ -54,24 +54,35 @@ class Inventory extends Phaser.Scene {
 
                 ticket.scene.restart();
                 
-                this.scene.sleep("inventory");
+                //this.scene.sleep("inventory");
                 this.scene.wake("buildMain");
                 
             }
         });
 
         //sell button
-        this.colorbutt = this.add.image(500, 720, 'sellButt').setOrigin(1, 1).setScale(1);
+        this.colorbutt = this.add.image(900, 400, 'sellButt').setOrigin(1, 1).setScale(1);
         this.colorbutt.setInteractive();
 
         this.colorbutt.visible = false;
 
         this.colorbutt.on('pointerdown', () => {
 
-            if(curColor == 1){
-                curColor = 0;
-            }else{
-                curColor = 1;
+            
+
+            switch(curColor){
+                case 0:
+                    curColor = 1;
+                    break
+
+                case 1:
+                    curColor = 2;
+                    break
+
+                case 2:
+                    curColor = 1;
+                    break
+
             }
                 
 
@@ -169,38 +180,12 @@ class Inventory extends Phaser.Scene {
                 if(!alreadyIn){
 
                     gameObject.x = 55;
-                    switch(gameObject.which_part){
-
-                        case 0:
-        
-                            gameObject.y = 200;
-        
-                            break;
-        
-                        case 1:
-        
-                            gameObject.y = 240;
-        
-                            break;
-                        case 2:
-
-                            gameObject.y = 350;
-        
-                            break;
-
-                        case 3:
-
-                            gameObject.y = 380;
-        
-                            break;
-        
-                    }
 
                     //gameObject.disableInteractive();
 
                     //gameObject.visible = false;
 
-                    gameObject.setScale(.1);
+                    
                     gameObject.isInInventory = true;
                     gameObject.isInSub = false;
 
@@ -245,7 +230,7 @@ class Inventory extends Phaser.Scene {
         
 
         //  A drop zone
-        var zone = this.add.zone(0, 300, 250, 500).setRectangleDropZone(250, 500);
+        var zone = this.add.zone(0, 362, 275, 490).setRectangleDropZone(275, 490);
 
         //  Just a visual display of the drop zone
         var graphics = this.add.graphics();
@@ -336,24 +321,19 @@ class Inventory extends Phaser.Scene {
             }
         });
 
-        this.scene.sleep("inventory");
+        //this.scene.sleep("inventory");
 
     }
 
     update(delta) {
 
-        if(whichScene == 5){
-            for(let i = 0;i< this.allPartsArray.length;i++){
-                if(!this.allPartsArray[i].isInInventory){
-                    this.allPartsArray[i].visible = false;
-                }
-                
-            }
+        
 
-
-
-        }else if(whichScene != 4){
-
+        if(whichScene != 4){
+            this.colorbutt.visible = false;
+            this.backbutt.visible = true;
+            
+            this.visOff();
             
             for(let i = 0; i < numbSet;i++){
 
@@ -367,12 +347,14 @@ class Inventory extends Phaser.Scene {
         else{
             this.colorbutt.visible = true;
             this.sellbutt.visible = true;
+            this.backbutt.visible = false;
 
             for(var i = 0; i < this.allPartsArray.length;i++){
 
                 if(this.allPartsArray[i].isInInventory == true || this.allPartsArray[i].isInSub == true){
                     this.allPartsArray[i].visible = true;
                 } 
+                
 
             }
 
@@ -505,8 +487,10 @@ class Inventory extends Phaser.Scene {
     visOff(){
         for (var i = 0; i < this.allPartsArray.length;i++) {
 
-            if(!this.allPartsArray[i].isInInventory || (whichScene != 4 && this.allPartsArray[i].isInSub))
+            if(!this.allPartsArray[i].isInInventory){
+
                 this.allPartsArray[i].visible = false;
+            }
         }
 
     }
@@ -533,10 +517,13 @@ class Inventory extends Phaser.Scene {
 
     }
 
+
     givePoints(){
 
-        var totalTraits = [];
-        for(var i = 0; i<subParts.length;i++){
+        let totalTraits = [];
+
+        let roundMoney = 0;
+        for(let i = 0; i<subParts.length;i++){
 
             totalTraits = totalTraits.concat(subParts[i].roboTraits);
 
@@ -545,32 +532,53 @@ class Inventory extends Phaser.Scene {
         }
 
         //console.log("total trait:" + totalTraits);
-        for(var i = 0; i<arrayOfRule.length;i++){
+        for(let i = 0; i<arrayOfRule.length;i++){
 
-            money = money + this.checkRule(totalTraits,arrayOfRule[i]);
+            roundMoney = roundMoney + this.checkRule(totalTraits,arrayOfRule[i]);
+        }
+
+        if(roundMoney>0){
+            money = roundMoney + money;
+
         }
 
     }
 
     checkRule(array,rule){
         switch(rule[1]){
+
+            //give money if don't have the trait
             case 0:
 
                 if(array.filter(x => x==rule[0]).length == 0){
-                    return 10;
+                    return 10
                 }
 
-                return 0;
+                return 0
 
-
+            
+            //give money if the trait is there
             case 1:
 
                 if(array.filter(x => x==rule[0]).length > 0){
-                    return 10;
+                    return 10
                 }
 
-                return 0;
-                
+                return 0
+
+            //if curtain parts is curtain trait give money
+            case 2:
+
+                return 0
+
+            
+            //give whole order is worthless if the trait is there
+            case 3:
+                return 0
+            
+            //give money if there is 2 of a kind
+            case 4:
+                return 0 
 
 
         }
