@@ -62,6 +62,8 @@ class RequireList extends Phaser.Scene {
 
         let textArray = [];
 
+        let ticketLength = 0;
+
         for(let i = 0;i<numbRequire;i++){
 
             if(this.CurTrait.length == 0){
@@ -72,11 +74,15 @@ class RequireList extends Phaser.Scene {
             }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             arrayOfRule[i] = this.whatTraits();
-            textArray[i] = this.add.bitmapText(-170,-200+i*80, 'bm', this.ranText(arrayOfRule[i]), 25).setOrigin(0, .5).setMaxWidth(380);
+            ticketLength = -200+i*80;
+            textArray[i] = this.add.bitmapText(-170,ticketLength, 'bm', this.ranText(arrayOfRule[i]), 25).setOrigin(0, .5).setMaxWidth(380);
 
             //console.log("trait: "+ arrayOfRule[i][0] +" rule"+arrayOfRule[i][1]);
 
         }
+
+
+
         this.base = [this.page, this.testText];
 
         this.base = this.base.concat(textArray);
@@ -95,7 +101,12 @@ class RequireList extends Phaser.Scene {
 
 
         });
-        console.log(this.CurTrait);
+
+
+        for(let i = 0; i< arrayOfRule.length; i++){
+            console.log(arrayOfRule[i][0] + " :" + arrayOfRule[i][1] + " :" + arrayOfRule[i][2]+ " :" + arrayOfRule[i][3]);
+
+        }
         this.scene.sleep("requireList");
     }
 
@@ -106,7 +117,7 @@ class RequireList extends Phaser.Scene {
     
     whatTraits(){
 
-        console.log("whatTraits called");
+        //console.log("whatTraits called");
 
         //var to see if trait is already in
         let alreadyin = false;
@@ -135,7 +146,7 @@ class RequireList extends Phaser.Scene {
             if(element[0] == ranTraits){
                 
                 alreadyin = true;
-                console.log("already in");
+                //console.log("already in");
                 tempvar = element[1];
             }
         });
@@ -155,19 +166,27 @@ class RequireList extends Phaser.Scene {
 
                 this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                console.log(this.CurTrait);
+                //console.log(this.CurTrait);
 
                 this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
-                console.log(this.CurTrait);
+
+                //console.log(this.CurTrait);
 
                 return [temptrait,2,ranpart]
             
 
             }else if(tempvar == 0){
 
+                let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+
+                this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
                 this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
-                return [temptrait,3]
+
+                let ranTraits2 = arrayOfTraits[Math.floor(Math.random() * arrayOfTraits.length)];
+
+                 return [temptrait,3,ranTraits2,ranpart]
 
             }
 
@@ -176,42 +195,42 @@ class RequireList extends Phaser.Scene {
         }
 
         //make sure there is at least one trait that is yes in the ticket
-        if(this.iffirst){
-            this.iffirst = false;
+        // if(this.iffirst){
+        //     this.iffirst = false;
 
-            switch(Math.floor(Math.random() * 2)){
+        //     switch(Math.floor(Math.random() * 2)){
 
-                case 0:
+        //         case 0:
 
-                    if(ranTraits==0){
+        //             if(ranTraits==0){
                         
-                        var chosenValue = Math.random() < 0.5 ? 1 : 2;
+        //                 var chosenValue = Math.random() < 0.5 ? 1 : 2;
                         
-                    }else if(ranTraits==1){
+        //             }else if(ranTraits==1){
 
-                        var chosenValue = Math.random() < 0.5 ? 0 : 2;
+        //                 var chosenValue = Math.random() < 0.5 ? 0 : 2;
 
-                    }else{
+        //             }else{
 
-                        var chosenValue = Math.random() < 0.5 ? 0 : 1;
+        //                 var chosenValue = Math.random() < 0.5 ? 0 : 1;
 
-                    }
+        //             }
 
-                    console.log("temptrait:"+ temptrait+" value gone"+ chosenValue);
+        //             //console.log("temptrait:"+ temptrait+" value gone"+ chosenValue);
 
-                    //this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+        //             //this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
-                    console.log("cur trait"+this.CurTrait);
-                    return [temptrait,4]
+        //             //console.log("cur trait"+this.CurTrait);
+        //             return [temptrait,4]
 
 
-                case 1:
+        //         case 1:
 
-                    return [temptrait,1]
+        //             return [temptrait,1]
 
-            }
+        //     }
 
-        }
+        // }
 
         
         //if it's not already in rule, randomly deside of we want the trait or not
@@ -265,7 +284,7 @@ class RequireList extends Phaser.Scene {
 
             case 3:
 
-                return 'if there is even one part that is '+  rule[0]+' we are not paying'
+                return 'if '+ rule[3] + ' is '+  rule[2]+ ' ignore what I prevously said about '+  rule[0] +' parts and add it ';
 
             case 4:
 

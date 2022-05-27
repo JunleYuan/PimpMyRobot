@@ -35,6 +35,13 @@ class Inventory extends Phaser.Scene {
 
             if(subParts.length == 4){
 
+                for(let i = 0; i< subParts.length;i++){
+                    console.log("end part"+subParts[i].which_part+" trait: "+ subParts[i].roboTraits[0]);
+                    
+
+                }
+                
+
                 //close ticket
                 TpageOpen = false;
 
@@ -130,7 +137,7 @@ class Inventory extends Phaser.Scene {
                 break;
             case 5:
 
-                numbSet = 6;
+                numbSet = 3;
                 this.Parts_1();
                 this.Parts_2();
                 
@@ -138,7 +145,7 @@ class Inventory extends Phaser.Scene {
                 break;
             case 6:
 
-                numbSet = 6;
+                numbSet = 3;
                 this.Parts_1();
                 this.Parts_2();
                 
@@ -155,7 +162,7 @@ class Inventory extends Phaser.Scene {
         //this.trash = new Trash(this, 500,342, 'crafting');
 
 
-        console.log("length"+storeParts.length);
+        //console.log("length"+storeParts.length);
 
         
         this.input.on('drop', function (pointer, gameObject, dropZone) {
@@ -166,12 +173,12 @@ class Inventory extends Phaser.Scene {
             //if zone is inventory zone
             if(dropZone == zone && storeParts.length<4 && gameObject.roboTraits[0] != 'trash'){
 
-                console.log("dropped");
+                //console.log("dropped");
 
                 //check if type of parts is already in inventory
                 var alreadyIn = false;
                 for(var i = 0; i < storeParts.length; i++){
-                    console.log("dropped: "+ storeParts[i].which_part);
+                    //console.log("dropped: "+ storeParts[i].which_part);
                     if(storeParts[i].which_part == gameObject.which_part){
                         alreadyIn = true;
                         //console.log("already in inv");
@@ -192,11 +199,11 @@ class Inventory extends Phaser.Scene {
                     gameObject.isInInventory = true;
                     gameObject.isInSub = false;
 
-                    console.log(gameObject.roboTraits);
+                    //console.log(gameObject.roboTraits);
 
                     storeParts.push(gameObject);
                     
-                    console.log("length"+storeParts.length);
+                    //console.log("length"+storeParts.length);
 
                 }
             }
@@ -294,7 +301,7 @@ class Inventory extends Phaser.Scene {
                     }
                     gameObject.setScale(.2);
                     gameObject.isInInventory = false;
-                    console.log("array length:"+ storeParts.length);
+                    //console.log("array length:"+ storeParts.length);
                 }
             }
 
@@ -500,8 +507,9 @@ class Inventory extends Phaser.Scene {
             case 0:
 
                 for(let i = 0; i<subParts.length;i++){
-                    console.log(subParts[i].roboTraits);
+                    //console.log(subParts[i].roboTraits);
                     if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+                        console.log("case 0 fail");
                         return 0
                     }
                     
@@ -521,36 +529,53 @@ class Inventory extends Phaser.Scene {
                     }
                     
                 }
-
+                console.log("case 1 fail");
                 return 0
 
             //if certain parts is curtain trait give money
             case 2:
+                //console.log("rule: "+ rule[2]+ "case 2 index " + arrayOfPart.indexOf(rule[2]));
 
                 for(let i = 0; i<subParts.length;i++){
-                    console.log("part "+subParts[i].which_part+" rule "+rule[2]);
-                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0 && subParts[i].which_part == rule[2]){
-                        console.log("case 2 pass");
-                        return 10
+                    if(subParts[i].which_part == arrayOfPart.indexOf(rule[2])){
+                        if(subParts[i].roboTraits[0]==rule[0]){
+
+                            console.log("case 2 pass");
+                            return 10
+                        }
+
                     }
 
                 }
+                
                 console.log("case 2 fail");
                 return 0
 
             
-            //the whole order is worthless if the trait is there
+            //if condition is meet it's ok to have the trait
             case 3:
 
+                console.log("rule0: "+ rule[0]+ " rule2: "+ rule[2]+ " rule3: "+ rule[3]);
+
+                console.log("sub part: "+subParts[arrayOfPart.indexOf(rule[3])].roboTraits[0]);
+
                 for(let i = 0; i<subParts.length;i++){
-                    console.log(subParts[i].roboTraits);
-                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
-                        console.log("case 3 fail");
-                        return -9999
+                    if(subParts[i].which_part == arrayOfPart.indexOf(rule[3])){
+                        if(subParts[i].roboTraits[0]==rule[2]){
+
+                            for(let j = 0; j<subParts.length;j++){
+                                if(subParts[j].roboTraits.filter(x => x==rule[0]).length > 0){
+                                    console.log("case 3 pass");
+                                    return 20
+                                }
+                            }
+
+                        }
+
                     }
-                    
+
                 }
-                console.log("case 3 pass");
+                console.log("case 3 fail");
                 return 0
             
             //give money if there is 2 of a certain kind

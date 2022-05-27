@@ -39,6 +39,9 @@ var numbSet = 2;
 //all traits
 var arrayOfTraits = ['cute','cool','sharp'];
 
+//all parts
+var arrayOfPart = ['head','body','arms','legs'];
+
 var curColor = 0;
 
 //the rule at the time
