@@ -51,8 +51,11 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 1;
+var lvl = 4;
 
 var money = 40;
 
 var timer = 60*5;
+
+//ticket opened or closed
+TpageOpen = false;

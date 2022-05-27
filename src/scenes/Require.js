@@ -6,50 +6,50 @@ class RequireList extends Phaser.Scene {
     
 
     create() {
+        console.log("req open");
 
-        //format (trait, yes or no)
+        arrayOfRule = [];
 
+        this.iffirst = true;
+
+        //console.log(arrayOfRule);
+
+
+        this.CurTrait = arrayOfTraits.slice(0,3);
         switch(lvl){
             case 1:
-                this.CurTrait = arrayOfTraits.slice(0,3);
+                
                 numbRequire = 1;
 
                 break;
             case 2:
-                this.CurTrait = arrayOfTraits.slice(0,3);
+                
                 numbRequire = 2;
-
-
 
                 break;
             case 3:
 
-                this.CurTrait = arrayOfTraits.slice(0,4);
+               
                 numbRequire = 3;
 
                 break;
             case 4:
 
-                this.CurTrait = arrayOfTraits.slice(0,4);
                 numbRequire = 4;
 
                 break;
             case 5:
 
-                this.CurTrait = arrayOfTraits.slice(4,10);
                 numbRequire = 4;
 
                 break;
             case 6:
 
-                this.CurTrait = arrayOfTraits.slice(4,10);
                 numbRequire = 4;
 
                 break;
         }
-        //console.log(this.CurTrait);
 
-        console.log("req open");
 
         this.notUseParts = ['head','body','arms','legs'];
 
@@ -67,7 +67,7 @@ class RequireList extends Phaser.Scene {
             arrayOfRule[i] = this.whatTraits();
             textArray[i] = this.add.bitmapText(-170,-200+i*80, 'bm', this.ranText(arrayOfRule[i]), 25).setOrigin(0, .5).setMaxWidth(380);
 
-            
+            //console.log("trait: "+ arrayOfRule[i][0] +" rule"+arrayOfRule[i][1]);
 
         }
         this.base = [this.page, this.testText];
@@ -89,8 +89,6 @@ class RequireList extends Phaser.Scene {
 
         });
 
-        //console.log(this.CurTrait);
-
         this.scene.sleep("requireList");
     }
 
@@ -100,6 +98,8 @@ class RequireList extends Phaser.Scene {
     }
     
     whatTraits(){
+
+        console.log("whatTraits called");
 
         //var to see if trait is already in
         let alreadyin = false;
@@ -119,14 +119,18 @@ class RequireList extends Phaser.Scene {
             //console.log("cur "+arrayOfTraits[ranTraits]);
             //console.log("ele "+element[0]);
             if(element[0] == arrayOfTraits[ranTraits]){
+                
                 alreadyin = true;
-                //console.log("already in");
+                console.log("already in");
                 tempvar = element[1];
             }
         });
 
+        //if trait is already in
         if(alreadyin){
 
+            //tempvar is the already existing trait's rule
+            //check ranText's switch case to see what temp var match with what rule
             if(tempvar == 1 || tempvar == 2){
 
                 switch(Math.floor(Math.random() * 2)){
@@ -158,10 +162,15 @@ class RequireList extends Phaser.Scene {
 
         }
 
-        
+        //make sure there is at least one trait that is yes in the ticket
+        if(this.iffirst){
+            this.iffirst = false;
+            return [temptrait,1]
+
+        }
 
         
-
+        //if it's not already in rule, randomly deside of we want the trait or not
         return [temptrait,yesNo]
         
     }

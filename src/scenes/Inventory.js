@@ -35,6 +35,9 @@ class Inventory extends Phaser.Scene {
 
             if(subParts.length == 4){
 
+                //close ticket
+                TpageOpen = false;
+
                 this.givePoints();
 
                 //reset values
@@ -417,57 +420,6 @@ class Inventory extends Phaser.Scene {
 
     }
 
-    Parts_3(){
-
-        this.part13 = new Object(this, 500,342, 'cute_h_r',['cute','cute pink'],0);
-        this.part13.visible = false;
-
-        this.part14 = new Object(this, 500,342, 'cute_b_r',['cute','cute pink'],1);
-        this.part14.visible = false;
-
-        this.part15 = new Object(this, 500,342, 'cute_a_r',['cute','cute pink'],2);
-        this.part15.visible = false;
-
-        this.part16 = new Object(this, 500,342, 'cute_l_r',['cute','cute pink'],3);
-        this.part16.visible = false;
-
-        this.part17 = new Object(this, 500,342, 'cool_h_r',['cool','cool ruby'],0);
-        this.part17.visible = false;
-
-        this.part18 = new Object(this, 500,342, 'cool_b_r',['cool','cool ruby'],1);
-        this.part18.visible = false;
-
-        this.part19 = new Object(this, 500,342, 'cool_a_r',['cool','cool ruby'],2);
-        this.part19.visible = false;
-
-        this.part20 = new Object(this, 500,342, 'cool_l_r',['cool','cool ruby'],3);
-        this.part20.visible = false;
-
-
-        this.part21 = new Object(this, 500,342, 'sharp_h_t',['sharp','sharp teal'],0);
-        this.part21.visible = false;
-
-        this.part22 = new Object(this, 500,342, 'sharp_b_t',['sharp','sharp teal'],1);
-        this.part22.visible = false;
-
-        this.part23 = new Object(this, 500,342, 'sharp_a_t',['sharp','sharp teal'],2);
-        this.part23.visible = false;
-
-        this.part24 = new Object(this, 500,342, 'sharp_l_t',['sharp','sharp teal'],3);
-        this.part24.visible = false;
-
-
-
-        var temp = [this.part13,this.part14,this.part15,this.part16, 
-                    this.part17,this.part18,this.part19,this.part20,
-                    this.part21,this.part22,this.part23,this.part24];
-
-        this.allPartsArray = this.allPartsArray.concat(temp);
-
-
-
-    }
-
 
     shuffle(array){
         for (var i = array.length - 1; i > 0; i--) {
@@ -520,21 +472,18 @@ class Inventory extends Phaser.Scene {
 
     givePoints(){
 
-        let totalTraits = [];
 
         let roundMoney = 0;
         for(let i = 0; i<subParts.length;i++){
 
-            totalTraits = totalTraits.concat(subParts[i].roboTraits);
 
             subParts[i].x = this.getRandom(1280/2-300,1280/2+300);
             subParts[i].y = this.getRandom(720/2-100,720/2+100);
         }
 
-        //console.log("total trait:" + totalTraits);
         for(let i = 0; i<arrayOfRule.length;i++){
 
-            roundMoney = roundMoney + this.checkRule(totalTraits,arrayOfRule[i]);
+            roundMoney = roundMoney + this.checkRule(arrayOfRule[i]);
         }
 
         if(roundMoney>0){
@@ -544,40 +493,81 @@ class Inventory extends Phaser.Scene {
 
     }
 
-    checkRule(array,rule){
+    checkRule(rule){
         switch(rule[1]){
 
             //give money if don't have the trait
             case 0:
 
-                if(array.filter(x => x==rule[0]).length == 0){
-                    return 10
+                for(let i = 0; i<subParts.length;i++){
+                    console.log(subParts[i].roboTraits);
+                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+                        return 0
+                    }
+                    
                 }
-
-                return 0
+                console.log("case 0 pass");
+                return 10
 
             
             //give money if the trait is there
             case 1:
 
-                if(array.filter(x => x==rule[0]).length > 0){
-                    return 10
+                for(let i = 0; i<subParts.length;i++){
+                    
+                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+                        console.log("case 1 pass");
+                        return 10
+                    }
+                    
                 }
 
                 return 0
 
-            //if curtain parts is curtain trait give money
+            //if certain parts is curtain trait give money
             case 2:
 
+                for(let i = 0; i<subParts.length;i++){
+                    console.log("part "+subParts[i].which_part+" rule "+rule[2]);
+                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0 && subParts[i].which_part == rule[2]){
+                        console.log("case 2 pass");
+                        return 10
+                    }
+
+                }
+                console.log("case 2 fail");
                 return 0
 
             
-            //give whole order is worthless if the trait is there
+            //the whole order is worthless if the trait is there
             case 3:
+
+                for(let i = 0; i<subParts.length;i++){
+                    console.log(subParts[i].roboTraits);
+                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+                        console.log("case 3 fail");
+                        return -9999
+                    }
+                    
+                }
+                console.log("case 3 pass");
                 return 0
             
-            //give money if there is 2 of a kind
+            //give money if there is 2 of a certain kind
             case 4:
+                let countNumTrait = 0
+                for(let i = 0; i<subParts.length;i++){
+                    
+                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+                        countNumTrait++;
+                    }
+                    
+                }
+                if(countNumTrait>1){
+                    console.log("case 4 pass");
+                    return 10
+                }
+                console.log("case 4 fail");
                 return 0 
 
 

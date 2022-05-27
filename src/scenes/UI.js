@@ -9,7 +9,7 @@ class UIScene extends Phaser.Scene {
 
         this.scene.launch("requireList");
 
-        this.pageOpen = false;
+        TpageOpen = false;
 
         this.see_ui = this.add.image(0, 0, 'UI').setOrigin(0, 0).setScale(1);
 
@@ -34,15 +34,15 @@ class UIScene extends Phaser.Scene {
             
             
             console.log("ran");
-            if(this.pageOpen){
+            if(TpageOpen){
                 console.log("close");
                 this.scene.sleep("requireList");
-                this.pageOpen = false;
+                TpageOpen = false;
             }else{
                 console.log("open");
                 this.scene.wake("requireList");
                 
-                this.pageOpen = true;
+                TpageOpen = true;
             }
 
             
