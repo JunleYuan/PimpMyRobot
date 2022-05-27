@@ -40,12 +40,12 @@ class RequireList extends Phaser.Scene {
                 break;
             case 5:
 
-                numbRequire = 4;
+                numbRequire = 5;
 
                 break;
             case 6:
 
-                numbRequire = 4;
+                numbRequire = 5;
 
                 break;
         }
@@ -88,7 +88,7 @@ class RequireList extends Phaser.Scene {
 
 
         });
-
+        console.log(this.CurTrait);
         this.scene.sleep("requireList");
     }
 
@@ -106,19 +106,26 @@ class RequireList extends Phaser.Scene {
         //temp var to store yes and no if is already in
         let tempvar = 0;
 
-        let ranTraits = Math.floor(Math.random() * this.CurTrait.length);
+
+        let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
 
         //want or do not want traits
         let yesNo = Math.floor(Math.random() * 2);
 
-        let temptrait = this.CurTrait.slice(ranTraits+0,ranTraits+1);
+        //console.log("ran "+ranTraits);
+
+        //console.log("ran ind"+this.CurTrait.indexOf(ranTraits));
+        
+        let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
 
 
         //check if already in loop
         arrayOfRule.forEach(element => {
             //console.log("cur "+arrayOfTraits[ranTraits]);
+            //console.log("cur "+ranTraits);
+            
             //console.log("ele "+element[0]);
-            if(element[0] == arrayOfTraits[ranTraits]){
+            if(element[0] == ranTraits){
                 
                 alreadyin = true;
                 console.log("already in");
@@ -131,29 +138,24 @@ class RequireList extends Phaser.Scene {
 
             //tempvar is the already existing trait's rule
             //check ranText's switch case to see what temp var match with what rule
-            if(tempvar == 1 || tempvar == 2){
+            if(tempvar == 1 || tempvar == 2|| tempvar == 4){
 
-                switch(Math.floor(Math.random() * 2)){
+                let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+                
+                console.log(this.notUseParts);
 
-                    case 0:
+                console.log("ran part "+ranpart);
 
-                        this.CurTrait.splice(ranTraits, 1);
-                        return [temptrait,4]
-                    
-                    case 1:
+                this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                        let ranpart = Math.floor(Math.random() * this.notUseParts.length);
+                console.log(this.notUseParts);
 
-                        let temptrait2 = this.notUseParts.slice(ranpart+0,ranpart+1);
-
-                        this.notUseParts.splice(ranTraits, 1);
-
-                        return [temptrait,2,temptrait2]
-                }  
+                return [temptrait,2,ranpart]
+            
 
             }else if(tempvar == 0){
 
-                this.CurTrait.splice(ranTraits, 1);
+                this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
                 return [temptrait,3]
 
             }
@@ -165,7 +167,38 @@ class RequireList extends Phaser.Scene {
         //make sure there is at least one trait that is yes in the ticket
         if(this.iffirst){
             this.iffirst = false;
-            return [temptrait,1]
+
+            switch(Math.floor(Math.random() * 2)){
+
+                case 0:
+
+                    if(ranTraits==0){
+                        
+                        var chosenValue = Math.random() < 0.5 ? 1 : 2;
+                        
+                    }else if(ranTraits==1){
+
+                        var chosenValue = Math.random() < 0.5 ? 0 : 2;
+
+                    }else{
+
+                        var chosenValue = Math.random() < 0.5 ? 0 : 1;
+
+                    }
+
+                    console.log("temptrait:"+ temptrait+" value gone"+ chosenValue);
+
+                    this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+                    console.log("cur trait"+this.CurTrait);
+                    return [temptrait,4]
+
+
+                case 1:
+
+                    return [temptrait,1]
+
+            }
 
         }
 

@@ -51,7 +51,7 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 4;
+var lvl = 5;
 
 var money = 40;
 
