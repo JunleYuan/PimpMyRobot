@@ -186,7 +186,7 @@ class RequireList extends Phaser.Scene {
 
                 let ranTraits2 = arrayOfTraits[Math.floor(Math.random() * arrayOfTraits.length)];
 
-                 return [temptrait,3,ranTraits2,ranpart]
+                return [temptrait,3,ranTraits2,ranpart]
 
             }
 
