@@ -148,7 +148,7 @@ class RequireList extends Phaser.Scene {
 
                 this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                console.log(this.notUseParts);
+                this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
                 return [temptrait,2,ranpart]
             
