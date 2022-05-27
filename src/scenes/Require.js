@@ -45,7 +45,7 @@ class RequireList extends Phaser.Scene {
                 break;
             case 6:
 
-                numbRequire = 5;
+                numbRequire = 6;
 
                 break;
         }
@@ -63,6 +63,13 @@ class RequireList extends Phaser.Scene {
         let textArray = [];
 
         for(let i = 0;i<numbRequire;i++){
+
+            if(this.CurTrait.length == 0){
+
+                console.log("ran out of traits");
+
+                break;
+            }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
             arrayOfRule[i] = this.whatTraits();
             textArray[i] = this.add.bitmapText(-170,-200+i*80, 'bm', this.ranText(arrayOfRule[i]), 25).setOrigin(0, .5).setMaxWidth(380);
@@ -142,13 +149,17 @@ class RequireList extends Phaser.Scene {
 
                 let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
                 
-                console.log(this.notUseParts);
+                //console.log(this.notUseParts);
 
-                console.log("ran part "+ranpart);
+                //console.log("ran part "+ranpart);
 
                 this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
+                console.log(this.CurTrait);
+
                 this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+                console.log(this.CurTrait);
 
                 return [temptrait,2,ranpart]
             
@@ -188,7 +199,7 @@ class RequireList extends Phaser.Scene {
 
                     console.log("temptrait:"+ temptrait+" value gone"+ chosenValue);
 
-                    this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+                    //this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
                     console.log("cur trait"+this.CurTrait);
                     return [temptrait,4]
