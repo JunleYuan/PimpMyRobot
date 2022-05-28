@@ -87,6 +87,17 @@ class Workshop extends Phaser.Scene {
         
         });
 
+        this.box5 = this.add.image(800, 600, 'crafting').setOrigin(0, 0).setScale(1);
+        this.box5.setInteractive();
+
+        this.box5.on('pointerdown', () => {
+        
+            whichScene = 5;
+            this.scene.sleep("buildMain");
+            //this.scene.wake("inventory");
+        
+        });
+
         // this.craft = this.add.image(1800, 400, 'crafting').setOrigin(0, 0).setScale(1);
         // this.craft.setInteractive();
 
