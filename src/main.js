@@ -16,7 +16,7 @@ let config = {
         }
         
     },
-    scene: [Loading,Workshop,UIScene,Test, RequireList,Inventory ]
+    scene: [Loading,Workshop,UIScene, RequireList,Inventory ]
 
     
 }
