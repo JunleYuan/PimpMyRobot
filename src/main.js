@@ -47,6 +47,8 @@ var curColor = 0;
 //the rule at the time
 var arrayOfRule = [];
 
+var colorRule;
+
 //parts in inventory
 var storeParts = [];
 

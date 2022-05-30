@@ -62,9 +62,9 @@ class RequireList extends Phaser.Scene {
 
         let textArray = [];
 
-        let ticketLength = 0;
+        let tlength = 0
 
-        for(let i = 0;i<numbRequire;i++){
+        for(tlength; tlength<=numbRequire;tlength++){
 
             if(this.CurTrait.length == 0){
 
@@ -73,16 +73,24 @@ class RequireList extends Phaser.Scene {
                 break;
             }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-            arrayOfRule[i] = this.whatTraits();
-            ticketLength = -200+i*80;
-            textArray[i] = this.add.bitmapText(-170,ticketLength, 'bm', this.ranText(arrayOfRule[i]), 25).setOrigin(0, .5).setMaxWidth(380);
+            
+
+            if(tlength!=numbRequire){
+                arrayOfRule[tlength] = this.whatTraits();
+
+                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'bm', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
+                
+            }else{
+
+                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'bm', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
+
+            }
+            
 
             //console.log("trait: "+ arrayOfRule[i][0] +" rule"+arrayOfRule[i][1]);
 
         }
-
-
-
+        
         this.base = [this.page, this.testText];
 
         this.base = this.base.concat(textArray);
@@ -103,10 +111,11 @@ class RequireList extends Phaser.Scene {
         });
 
 
-        for(let i = 0; i< arrayOfRule.length; i++){
-            console.log(arrayOfRule[i][0] + " :" + arrayOfRule[i][1] + " :" + arrayOfRule[i][2]+ " :" + arrayOfRule[i][3]);
+        // for(let i = 0; i< arrayOfRule.length; i++){
+        //     console.log(arrayOfRule[i][0] + " :" + arrayOfRule[i][1] + " :" + arrayOfRule[i][2]+ " :" + arrayOfRule[i][3]);
 
-        }
+        // }
+        
         this.scene.sleep("requireList");
     }
 
@@ -194,49 +203,35 @@ class RequireList extends Phaser.Scene {
 
         }
 
-        //make sure there is at least one trait that is yes in the ticket
-        // if(this.iffirst){
-        //     this.iffirst = false;
-
-        //     switch(Math.floor(Math.random() * 2)){
-
-        //         case 0:
-
-        //             if(ranTraits==0){
-                        
-        //                 var chosenValue = Math.random() < 0.5 ? 1 : 2;
-                        
-        //             }else if(ranTraits==1){
-
-        //                 var chosenValue = Math.random() < 0.5 ? 0 : 2;
-
-        //             }else{
-
-        //                 var chosenValue = Math.random() < 0.5 ? 0 : 1;
-
-        //             }
-
-        //             //console.log("temptrait:"+ temptrait+" value gone"+ chosenValue);
-
-        //             //this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
-
-        //             //console.log("cur trait"+this.CurTrait);
-        //             return [temptrait,4]
-
-
-        //         case 1:
-
-        //             return [temptrait,1]
-
-        //     }
-
-        // }
-
         
         //if it's not already in rule, randomly deside of we want the trait or not
         return [temptrait,yesNo]
         
     }
+
+    
+    ranColor(){
+
+        let yesNo = Math.floor(Math.random() * 2);
+
+
+        colorRule = yesNo;
+
+        switch(yesNo){
+            case 0:
+
+                return 'We want the color to be first type'
+
+
+            case 1:
+
+                return 'We want the color to be second type'
+
+        }
+
+    }
+
+
     ranText( rule ){
         
         

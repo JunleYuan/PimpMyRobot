@@ -35,10 +35,14 @@ class Inventory extends Phaser.Scene {
 
             if(subParts.length == 4){
 
-                for(let i = 0; i< subParts.length;i++){
-                    console.log("end part"+subParts[i].which_part+" trait: "+ subParts[i].roboTraits[0]);
+                // for(let i = 0; i< subParts.length;i++){
+                //     console.log("end part"+subParts[i].which_part+" trait: "+ subParts[i].roboTraits[0]);
                     
 
+                // }
+
+                for(var i = 0; i < subParts.length; i++){
+                    subParts[i].setTexture(subParts[i].textureArray[0]);
                 }
                 
 
@@ -48,7 +52,7 @@ class Inventory extends Phaser.Scene {
                 this.givePoints();
 
                 //reset values
-                this.resetValue(true);
+                this.resetValue();
 
                 //empty inventory
                 storeParts = [];
@@ -70,7 +74,7 @@ class Inventory extends Phaser.Scene {
             }
         });
 
-        //sell button
+        //color button
         this.colorbutt = this.add.image(900, 400, 'sellButt').setOrigin(1, 1).setScale(1);
         this.colorbutt.setInteractive();
 
@@ -154,7 +158,7 @@ class Inventory extends Phaser.Scene {
         }
 
         //set random location and parts to boxes
-        this.resetValue(true);
+        this.resetValue();
 
         //shuffle boxes
         //this.todayPartOrder = this.shuffle(this.allPartsArray);
@@ -466,15 +470,14 @@ class Inventory extends Phaser.Scene {
         return Math.random() * (max - min) + min;
     }
 
-    resetValue(ranloc){
+    resetValue(){
         for(var i = 0; i < this.allPartsArray.length;i++){
 
-            if(ranloc){
-
-                this.allPartsArray[i].x = this.getRandom(1280/2-300,1280/2+300);
-                this.allPartsArray[i].y = this.getRandom(720/2-100,720/2+100);
+        
+            this.allPartsArray[i].x = this.getRandom(1280/2-300,1280/2+300);
+            this.allPartsArray[i].y = this.getRandom(720/2-100,720/2+100);
+        
             
-            }
             this.allPartsArray[i].isInInventory = false;
             this.allPartsArray[i].isInSub = false;
             this.allPartsArray[i].setScale(.2);

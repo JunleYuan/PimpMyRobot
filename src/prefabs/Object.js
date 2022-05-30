@@ -10,8 +10,6 @@ class Object extends Phaser.GameObjects.Sprite {
         // 0:head 1:body 2:arms 3:leg
         this.which_part = part;
 
-        this.which_color = 0;
-
         this.textureArray = [texture,texture2,texture3];
 
         this.isInInventory = false;
