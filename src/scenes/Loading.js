@@ -65,7 +65,7 @@ class Loading extends Phaser.Scene {
         this.load.image('UI', './assets/UI_Trial.png');
         this.load.image('star', './assets/star.png');
 
-        this.load.atlas('cool_atlas', './assets/TrialSpritesheet/Cool-Robot.png', './assets/TrialSpritesheet/cool-robot.json');
+        //this.load.atlas('cool_atlas', './assets/TrialSpritesheet/Cool-Robot.png', './assets/TrialSpritesheet/cool-robot.json');
 
         this.load.image('cool_h_b', './assets/Cool-Head-Blue.png');
         this.load.image('cool_b_b', './assets/Cool-Torso-Blue.png');
@@ -111,6 +111,17 @@ class Loading extends Phaser.Scene {
         this.load.image('cool_b_n', './assets/Cool-Torso-Uncolored.png');
         this.load.image('cool_a_n', './assets/Cool-Arms-Uncolored.png');
         this.load.image('cool_l_n', './assets/Cool-Legs-Uncolored.png');
+
+
+        for(let i = 0; i < 10;i++){
+
+            this.load.image('cool_H_'+i, './assets/NewRobotParts/Cool-Head-'+i+'.png');
+
+            this.load.image('cool_A_'+i, './assets/NewRobotParts/Cool-Arms-'+i+'.png');
+
+        }
+
+        
 
 
         this.load.bitmapFont('bm', 'assets/bm_0.png', 'assets/bm.xml');
