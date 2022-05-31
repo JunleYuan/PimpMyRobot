@@ -117,9 +117,37 @@ class Loading extends Phaser.Scene {
 
             this.load.image('cool_H_'+i, './assets/NewRobotParts/Cool-Head-'+i+'.png');
 
+            this.load.image('cool_B_'+i, './assets/NewRobotParts/Cool-Torso-'+i+'.png');
+
             this.load.image('cool_A_'+i, './assets/NewRobotParts/Cool-Arms-'+i+'.png');
 
+            this.load.image('cool_L_'+i, './assets/NewRobotParts/Cool-Legs-'+i+'.png');
+
+
+
+
+            this.load.image('cute_H_'+i, './assets/NewRobotParts/Cute-Head-'+i+'.png');
+
+            this.load.image('cute_B_'+i, './assets/NewRobotParts/Cute-Torso-'+i+'.png');
+
+            this.load.image('cute_A_'+i, './assets/NewRobotParts/Cute-Arms-'+i+'.png');
+
+            this.load.image('cute_L_'+i, './assets/NewRobotParts/Cute-Legs-'+i+'.png');
+
+
+            
+
+            this.load.image('sharp_H_'+i, './assets/NewRobotParts/Sharp-Head-'+i+'.png');
+
+            this.load.image('sharp_B_'+i, './assets/NewRobotParts/Sharp-Torso-'+i+'.png');
+
+            this.load.image('sharp_A_'+i, './assets/NewRobotParts/Sharp-Arms-'+i+'.png');
+
+            this.load.image('sharp_L_'+i, './assets/NewRobotParts/Sharp-Legs-'+i+'.png');
+
         }
+
+        
 
         
 

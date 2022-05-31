@@ -45,6 +45,7 @@ class Workshop extends Phaser.Scene {
 
         this.box1.on('pointerdown', () => {
 
+            newScene = true;
         
             whichScene = 0;
             this.scene.sleep("buildMain");
@@ -58,7 +59,9 @@ class Workshop extends Phaser.Scene {
         this.box2.setInteractive();
 
         this.box2.on('pointerdown', () => {
-        
+            
+            newScene = true;
+
             whichScene = 1;
             this.scene.sleep("buildMain");
             //this.scene.wake("inventory");
@@ -69,7 +72,9 @@ class Workshop extends Phaser.Scene {
         this.box3.setInteractive();
 
         this.box3.on('pointerdown', () => {
-        
+            
+            newScene = true;
+
             whichScene = 2;
             this.scene.sleep("buildMain");
             //this.scene.wake("inventory");
@@ -80,7 +85,9 @@ class Workshop extends Phaser.Scene {
         this.box4.setInteractive();
 
         this.box4.on('pointerdown', () => {
-        
+            
+            newScene = true;
+
             whichScene = 3;
             this.scene.sleep("buildMain");
             //this.scene.wake("inventory");
@@ -91,7 +98,9 @@ class Workshop extends Phaser.Scene {
         this.box5.setInteractive();
 
         this.box5.on('pointerdown', () => {
-        
+            
+            newScene = true;
+
             whichScene = 5;
             this.scene.sleep("buildMain");
             //this.scene.wake("inventory");

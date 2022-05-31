@@ -30,7 +30,7 @@ var numbRequire = 1;
 var whichScene = 4;
 
 //number of sets of robot
-var numbSet = 1;
+var numbSet = 2;
 
 //all traits
 var arrayOfTraits = ['cute','cool','sharp'];
@@ -46,6 +46,9 @@ var curColor = 0;
 
 //what color the robo needs to be
 var colorRule;
+
+//when entering new scene
+var newScene = false;
 
 //parts in inventory
 var storeParts = [];

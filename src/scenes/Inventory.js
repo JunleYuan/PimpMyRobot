@@ -17,6 +17,7 @@ class Inventory extends Phaser.Scene {
         //this.backbutt.visible = false;
 
         this.backbutt.on('pointerdown', () => {
+            newScene = true;
             this.visOff();
             //this.scene.start("buildMain");
             //this.scene.sleep("inventory");
@@ -83,24 +84,19 @@ class Inventory extends Phaser.Scene {
         this.colorbutt.on('pointerdown', () => {
 
             
-            switch(curColor){
-                case 0:
-                    curColor = 1;
-                    break
-
-                case 1:
-                    curColor = 2;
-                    break
-
-                case 2:
-                    curColor = 1;
-                    break
-
-            }
-                
-
             console.log("clicked");
             if(subParts.length == 4){
+
+                
+
+                if(curColor <9){
+                    curColor = curColor + 1;
+
+                }else{
+                    curColor = 1;
+
+                }
+                console.log("cur color: "+curColor);
                 
                 for(var i = 0; i < subParts.length; i++){
                     subParts[i].setTexture(subParts[i].textureArray[curColor]);
@@ -111,7 +107,6 @@ class Inventory extends Phaser.Scene {
             }
         });
 
-        numbSet = 1;
         this.Parts_1();
 
         // //add all parts needed
@@ -327,101 +322,143 @@ class Inventory extends Phaser.Scene {
             }
         });
 
+        newScene = true;
+
         //this.scene.sleep("inventory");
 
     }
 
     update(delta) {
 
-        if(whichScene == 5){
+        if(newScene){
 
-            this.colorbutt.visible = false;
-            this.backbutt.visible = true;
-            
-            for(let i = 0; i< this.allPartsArray.length;i++){
-                this.allPartsArray[i].visible = true;
+            newScene = false;
 
-            }
+            if(whichScene == 5){
 
-        }else if(whichScene != 4){
-            this.colorbutt.visible = false;
-            this.backbutt.visible = true;
-            
-            this.visOff();
-            
-            for(let i = 0; i < numbSet;i++){
+                this.colorbutt.visible = false;
+                this.backbutt.visible = true;
                 
-                if(this.allPartsArray[i*4+whichScene].isInSub == false)
-                    this.allPartsArray[i*4+whichScene].visible = true;
-
-            }
-
-        }
-        else{
-            this.colorbutt.visible = true;
-            this.sellbutt.visible = true;
-            this.backbutt.visible = false;
-
-            for(var i = 0; i < this.allPartsArray.length;i++){
-
-                if(this.allPartsArray[i].isInInventory == true || this.allPartsArray[i].isInSub == true){
+                for(let i = 0; i< this.allPartsArray.length;i++){
                     this.allPartsArray[i].visible = true;
-                } 
+
+                }
+
+            }else if(whichScene != 4){
+                this.colorbutt.visible = false;
+                this.backbutt.visible = true;
                 
+                this.visOff();
+                
+                for(let i = 0; i < numbSet;i++){
+                    
+                    
+                    if(this.allPartsArray[i*4+whichScene].isInSub == false)
+                        this.allPartsArray[i*4+whichScene].visible = true;
+
+                }
+
+            }
+            else{
+                this.colorbutt.visible = true;
+                this.sellbutt.visible = true;
+                this.backbutt.visible = false;
+
+                for(var i = 0; i < this.allPartsArray.length;i++){
+
+                    if(this.allPartsArray[i].isInInventory == true || this.allPartsArray[i].isInSub == true){
+                        this.allPartsArray[i].visible = true;
+                    } 
+                    
+
+                }
 
             }
 
         }
-
-
 
     }
 
     //create parts
     Parts_1(){
 
-        // this.part = new Object(this, 500,342, 'cute_h_n','cute_h_p','cute_h_r',['cute'],0);
-        // this.part.visible = false;
+        this.part = new Object(this, 500,342, 'cute_H_0',['cute'],0);
+        this.part.visible = false;
 
-        // this.part2 = new Object(this, 500,342, 'cute_b_n','cute_b_p','cute_b_r',['cute'],1);
-        // this.part2.visible = false;
+        this.part2 = new Object(this, 500,342, 'cute_B_0',['cute'],1);
+        this.part2.visible = false;
 
-        // this.part3 = new Object(this, 500,342, 'cute_a_n','cute_a_p','cute_a_r',['cute'],2);
-        // this.part3.visible = false;
+        this.part3 = new Object(this, 500,342, 'cute_A_0',['cute'],2);
+        this.part3.visible = false;
 
-        // this.part4 = new Object(this, 500,342, 'cute_l_n','cute_l_p','cute_l_r',['cute'],3);
-        // this.part4.visible = false;
+        this.part4 = new Object(this, 500,342, 'cute_L_0',['cute'],3);
+        this.part4.visible = false;
 
-        // this.anims.create({ 
-        //     key: 'Cool_Head', 
-        //     frames: this.anims.generateFrameNames('cool_atlas', {      
-        //         prefix: 'Cool_Head_',
-        //         start: 0,
-        //         end: 8,
-        //         suffix: '.png',
-        //         zeroPad: 1
-        //     }), 
-        //     frameRate: 30,
-        //     repeat: 0 
-        // });
         
-
-
-        this.part5 = new Object(this, 500,342, 'cool_h_b',['cool'],0);
+        this.part5 = new Object(this, 500,342, 'cool_H_0',['cool'],0);
         this.part5.visible = false;
 
-        this.part6 = new Object(this, 500,342, 'cool_A_0',['cool'],1);
+        this.part6 = new Object(this, 500,342, 'cool_B_0',['cool'],1);
         this.part6.visible = false;
 
-        this.part7 = new Object(this, 500,342, 'cool_h_b',['cool'],2);
+        this.part7 = new Object(this, 500,342, 'cool_A_0',['cool'],2);
         this.part7.visible = false;
 
-        this.part8 = new Object(this, 500,342, 'cool_h_b',['cool'],3);
+        this.part8 = new Object(this, 500,342, 'cool_L_0',['cool'],3);
         this.part8.visible = false;
 
-        //this.allPartsArray = [this.part,this.part2,this.part3,this.part4,this.part5,this.part6,this.part7,this.part8];
+        this.allPartsArray = [this.part,this.part2,this.part3,this.part4,this.part5,this.part6,this.part7,this.part8];
 
-        this.allPartsArray = [this.part5,this.part6,this.part7,this.part8];
+
+        for(let j = 1; j < 10;j++){
+
+            this.part.textureArray[j] = 'cute_H_'+j;
+
+        }
+
+        for(let j = 1; j < 10;j++){
+
+            this.part2.textureArray[j] = 'cute_B_'+j;
+
+        }
+        for(let j = 1; j < 10;j++){
+
+            this.part3.textureArray[j] = 'cute_A_'+j;
+
+        }
+        for(let j = 1; j < 10;j++){
+
+            this.part4.textureArray[j] = 'cute_L_'+j;
+
+        }
+
+        for(let j = 1; j < 10;j++){
+
+            this.part5.textureArray[j] = 'cool_H_'+j;
+
+        }
+
+        for(let j = 1; j < 10;j++){
+
+            this.part6.textureArray[j] = 'cool_B_'+j;
+
+        }
+        for(let j = 1; j < 10;j++){
+
+            this.part7.textureArray[j] = 'cool_A_'+j;
+
+        }
+        for(let j = 1; j < 10;j++){
+
+            this.part8.textureArray[j] = 'cool_L_'+j;
+
+        }
+
+            
+
+
+        
+
 
     }
 
