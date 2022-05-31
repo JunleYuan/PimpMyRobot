@@ -70,6 +70,8 @@ class UIScene extends Phaser.Scene {
             }else{
                 timer = 60*2;
 
+                this.game.sound.stopAll();
+
                 this.scene.stop('requireList');
                 this.scene.stop('inventory');
                 this.scene.stop('buildMain');

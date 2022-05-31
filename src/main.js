@@ -5,8 +5,7 @@ let config = {
     width: 1280,
     height: 720,
     fps: {
-        target: 60,
-        forceSetTimeOut: true
+        target: 60
     },
     physics: {
         default: 'arcade',
@@ -61,7 +60,7 @@ var money = 0;
 
 var rent = 40;
 
-var timer = 60;
+var timer = 1;
 
 //ticket opened or closed
 TpageOpen = false;
