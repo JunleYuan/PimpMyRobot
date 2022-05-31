@@ -10,13 +10,10 @@ let config = {
     },
     physics: {
         default: 'arcade',
-        arcade: {
-            gravity: {y:1200},
-            debug: true
-        }
+        
         
     },
-    scene: [Loading,Workshop,UIScene, RequireList,Inventory ]
+    scene: [Loading,Workshop,UIScene,Rent, RequireList,Inventory ]
 
     
 }
@@ -42,11 +39,13 @@ var arrayOfTraits = ['cute','cool','sharp'];
 //all parts
 var arrayOfPart = ['head','body','arms','legs'];
 
-var curColor = 0;
-
 //the rule at the time
 var arrayOfRule = [];
 
+//current robo color
+var curColor = 0;
+
+//what color the robo needs to be
 var colorRule;
 
 //parts in inventory
@@ -56,11 +55,13 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 5;
+var lvl = 1;
 
-var money = 40;
+var money = 0;
 
-var timer = 60*5;
+var rent = 40;
+
+var timer = 2;
 
 //ticket opened or closed
 TpageOpen = false;

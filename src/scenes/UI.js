@@ -67,6 +67,16 @@ class UIScene extends Phaser.Scene {
             if (timer > 0) {
                 
                 this.timer();
+            }else{
+                timer = 60*2;
+
+                this.scene.stop('requireList');
+                this.scene.stop('inventory');
+                this.scene.stop('buildMain');
+                this.scene.stop('UIScene');
+
+                this.scene.start("rent");
+
             }
 
         }, null, this);

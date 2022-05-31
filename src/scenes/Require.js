@@ -167,22 +167,32 @@ class RequireList extends Phaser.Scene {
             //check ranText's switch case to see what temp var match with what rule
             if(tempvar == 1 || tempvar == 2|| tempvar == 4){
 
-                let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
-                
-                //console.log(this.notUseParts);
 
-                //console.log("ran part "+ranpart);
+                if(Math.random() > .5){
 
-                this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+                    let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+                    
+                    //console.log(this.notUseParts);
 
-                //console.log(this.CurTrait);
+                    //console.log("ran part "+ranpart);
 
-                this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+                    this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+                    //console.log(this.CurTrait);
+
+                    this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
 
-                //console.log(this.CurTrait);
+                    //console.log(this.CurTrait);
 
-                return [temptrait,2,ranpart]
+                    return [temptrait,2,ranpart]
+
+                }else{
+
+
+                    return [temptrait,4]
+
+                }
             
 
             }else if(tempvar == 0){
