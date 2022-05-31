@@ -83,7 +83,6 @@ class Inventory extends Phaser.Scene {
         this.colorbutt.on('pointerdown', () => {
 
             
-
             switch(curColor){
                 case 0:
                     curColor = 1;
@@ -159,15 +158,6 @@ class Inventory extends Phaser.Scene {
 
         //set random location and parts to boxes
         this.resetValue();
-
-        //shuffle boxes
-        //this.todayPartOrder = this.shuffle(this.allPartsArray);
-
-        //this.trash = new Trash(this, 500,342, 'crafting');
-
-
-        //console.log("length"+storeParts.length);
-
         
         this.input.on('drop', function (pointer, gameObject, dropZone) {
 
@@ -492,16 +482,21 @@ class Inventory extends Phaser.Scene {
 
 
         let roundMoney = 0;
-        for(let i = 0; i<subParts.length;i++){
+        // for(let i = 0; i<subParts.length;i++){
 
 
-            subParts[i].x = this.getRandom(1280/2-300,1280/2+300);
-            subParts[i].y = this.getRandom(720/2-100,720/2+100);
-        }
+        //     subParts[i].x = this.getRandom(1280/2-300,1280/2+300);
+        //     subParts[i].y = this.getRandom(720/2-100,720/2+100);
+        // }
 
         for(let i = 0; i<arrayOfRule.length;i++){
 
             roundMoney = roundMoney + this.checkRule(arrayOfRule[i]);
+        }
+
+        if(curColor == colorRule){
+            roundMoney = roundMoney + 10;
+
         }
 
         if(roundMoney>0){
@@ -534,7 +529,7 @@ class Inventory extends Phaser.Scene {
 
                 for(let i = 0; i<subParts.length;i++){
                     
-                    if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+                    if(subParts[i].roboTraits[0]==rule[0]){
                         console.log("case 1 pass");
                         return 10
                     }
