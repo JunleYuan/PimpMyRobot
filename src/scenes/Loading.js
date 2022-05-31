@@ -114,7 +114,9 @@ class Loading extends Phaser.Scene {
     }
 
     loadSound(){
-        this.load.audio('backgroundMusic', './assets/beeps-and-boops.mp3');
+        this.load.audio('backgroundMusic', './assets/Mimi.mp3');
+        this.load.audio('introMusic', './assets/My_song_3.mp3');
+        
 
     }
 
