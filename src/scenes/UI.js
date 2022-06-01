@@ -13,9 +13,9 @@ class UIScene extends Phaser.Scene {
 
         this.see_ui = this.add.image(0, 0, 'UI').setOrigin(0, 0).setScale(1);
 
-        this.see_time = this.add.text(100, 0, "Time left: ", { font: '48px Arial', fill: '#0000FF' });
+        this.see_time = this.add.text(500, 5, "1", { font: '64px Arial', fill: '#0000FF' });
 
-        this.see_money = this.add.text(400, 0, "Money: 0", { font: '48px Arial', fill: '#0000FF' });
+        this.see_money = this.add.text(825, 5, "0", { font: '64px Arial', fill: '#0000FF' });
 
         
 
@@ -53,9 +53,9 @@ class UIScene extends Phaser.Scene {
     }
 
     update(delta) {
-        this.see_time.text = "Time left: "+ timer; 
+        this.see_time.text = ""+ timer; 
 
-        this.see_money.text = "Money: "+ money; 
+        this.see_money.text = ""+ money; 
 
 
     }
