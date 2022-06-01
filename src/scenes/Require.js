@@ -222,20 +222,51 @@ class RequireList extends Phaser.Scene {
     
     ranColor(){
 
-        let yesNo = Math.floor(Math.random() * 2);
+        let pickColor = Math.random() * (10 - 1) + 1;
 
 
-        colorRule = yesNo;
+        colorRule = pickColor;
 
-        switch(yesNo){
-            case 0:
-
-                return 'We want the color to be first type'
-
-
+        switch(pickColor){
             case 1:
 
-                return 'We want the color to be second type'
+                return 'We want the color to be Black'
+
+            case 2:
+
+                return 'We want the color to be Blue'
+
+            case 3:
+
+                return 'We want the color to be Camo'
+
+
+            case 4:
+
+                return 'We want the color to be Gold'
+
+
+
+            case 5:
+
+                return 'We want the color to be Orange'
+
+            case 6:
+
+                return 'We want the color to be Pink'
+
+
+            case 7:
+
+                return 'We want the color to be Purple'
+
+            case 8:
+
+                return 'We want the color to be Silver'
+
+            case 9:
+
+                return 'We want the color to be Turquoise'
 
         }
 
