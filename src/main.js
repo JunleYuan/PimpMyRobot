@@ -12,7 +12,7 @@ let config = {
         
         
     },
-    scene: [Loading,Workshop,UIScene,Rent, RequireList,Inventory ]
+    scene: [Menu, Tutorial, Settings, Loading, Workshop, UIScene, Rent, RequireList, Inventory ]
 
     
 }
