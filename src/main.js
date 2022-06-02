@@ -30,7 +30,7 @@ var numbRequire = 1;
 var whichScene = 4;
 
 //number of sets of robot
-var numbSet = 2;
+var numbSet = 3;
 
 //all traits
 var arrayOfTraits = ['cute','cool','sharp'];

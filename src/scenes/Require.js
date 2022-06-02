@@ -10,12 +10,19 @@ class RequireList extends Phaser.Scene {
 
         arrayOfRule = [];
 
-        this.iffirst = true;
-
         //console.log(arrayOfRule);
 
 
         this.CurTrait = arrayOfTraits.slice(0,3);
+
+
+        //if level is below 3 don't add sharp
+        if(lvl < 3){
+            this.CurTrait.splice(this.CurTrait.indexOf(3), 1);
+
+        }
+        
+
         switch(lvl){
             case 1:
                 

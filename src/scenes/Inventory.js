@@ -108,6 +108,7 @@ class Inventory extends Phaser.Scene {
         });
 
         this.Parts_1();
+        this.Parts_2();
 
         // //add all parts needed
         // switch(lvl){
@@ -338,6 +339,7 @@ class Inventory extends Phaser.Scene {
 
                 this.colorbutt.visible = false;
                 this.backbutt.visible = true;
+                this.sellbutt.visible = false;
 
                 this.visOff();
                 
@@ -538,14 +540,27 @@ class Inventory extends Phaser.Scene {
     resetValue(){
         for(var i = 0; i < this.allPartsArray.length;i++){
 
+            let buffer = 0;
+
+            //console.log(parseInt(i/4, 10));
+
+            //console.log(i%4);
+
+            if(i%4>2){
+                buffer = -250;
+                
+            }else if(i%4>0){
+                buffer = -100;
+
+            }
         
-            this.allPartsArray[i].x = this.getRandom(1280/2-300,1280/2+300);
-            this.allPartsArray[i].y = this.getRandom(720/2-100,720/2+100);
+            this.allPartsArray[i].x = 300+(i%4)*200;
+            this.allPartsArray[i].y = buffer + 400 + 160*(parseInt(i/4, 10));
         
             
             this.allPartsArray[i].isInInventory = false;
             this.allPartsArray[i].isInSub = false;
-            this.allPartsArray[i].setScale(.2);
+            this.allPartsArray[i].setScale(.18);
         }
 
         
