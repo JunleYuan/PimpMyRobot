@@ -60,15 +60,18 @@ class Loading extends Phaser.Scene {
         this.load.image('crafting', './assets/craft.png');
         this.load.image('require', './assets/require.png');
         this.load.image('requireText', './assets/requireText.png');
+      
+        //Load Buttons
         this.load.image('backButt', './assets/back_butt.png');
         this.load.image('sellButt', './assets/SELL Button.png');
         this.load.image('colButt', './assets/ColorButt.jpg');
+
+        //Load UI Elements
         this.load.image('BRDR', './assets/BorderForParts.png');
         this.load.image('UI', './assets/UI_Trial.png');
         this.load.image('star', './assets/star.png');
 
-        //this.load.atlas('cool_atlas', './assets/TrialSpritesheet/Cool-Robot.png', './assets/TrialSpritesheet/cool-robot.json');
-
+        //Load Robot Parts
         this.load.image('cool_h_b', './assets/Cool-Head-Blue.png');
         this.load.image('cool_b_b', './assets/Cool-Torso-Blue.png');
         this.load.image('cool_a_b', './assets/Cool-Arms-Blue.png');
