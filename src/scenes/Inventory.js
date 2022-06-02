@@ -338,10 +338,14 @@ class Inventory extends Phaser.Scene {
 
                 this.colorbutt.visible = false;
                 this.backbutt.visible = true;
+
+                this.visOff();
                 
                 for(let i = 0; i< this.allPartsArray.length;i++){
-                    this.allPartsArray[i].visible = true;
-
+                    if(!this.allPartsArray[i].isInSub ){
+                        this.allPartsArray[i].visible = true;
+                    }
+                    
                 }
 
             }else if(whichScene != 4){
