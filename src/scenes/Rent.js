@@ -9,7 +9,7 @@ class Rent extends Phaser.Scene {
 
         storeParts = [];
         subParts = [];
-
+        whichScene = 4;
 
         let btext = this.add.bitmapText( 1280/2, 520, 'bm', 'You made $ '+ money , 50).setOrigin(.5, .5).setMaxWidth(400).setAlpha(0);
 
