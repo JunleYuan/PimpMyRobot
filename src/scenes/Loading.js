@@ -55,13 +55,15 @@ class Loading extends Phaser.Scene {
     }
 
     loadIMG(){
-        this.load.image('backgroundWS', './assets/back.png');
+        this.load.image('backgroundWS', './assets/TempBackground.jpg');
         this.load.image('inventory', './assets/inv.png');
         this.load.image('crafting', './assets/craft.png');
         this.load.image('require', './assets/require.png');
         this.load.image('requireText', './assets/requireText.png');
         this.load.image('backButt', './assets/back_butt.png');
-        this.load.image('sellButt', './assets/sell.png');
+        this.load.image('sellButt', './assets/SELL Button.png');
+        this.load.image('colButt', './assets/ColorButt.jpg');
+        this.load.image('BRDR', './assets/BorderForParts.png');
         this.load.image('UI', './assets/UI_Trial.png');
         this.load.image('star', './assets/star.png');
 

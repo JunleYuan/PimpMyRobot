@@ -76,7 +76,7 @@ class Inventory extends Phaser.Scene {
         });
 
         //color button
-        this.colorbutt = this.add.image(900, 400, 'sellButt').setOrigin(1, 1).setScale(1);
+        this.colorbutt = this.add.image(970, 400, 'colButt').setOrigin(1, 1).setScale(1);
         this.colorbutt.setInteractive();
 
         this.colorbutt.visible = false;
