@@ -63,7 +63,7 @@ var money = 0;
 
 var rent = 40;
 
-var timer = 70;
+var timer = 10;
 
 //ticket opened or closed
 TpageOpen = false;
