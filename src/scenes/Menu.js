@@ -5,8 +5,10 @@ class Menu extends Phaser.Scene {
 
     preload() {
 
+        this.load.atlas('main_atlas', 'assets/MainMenu.png', 'assets/TitleScreen.json');
+
+        this.load.image('ResultScreen', './assets/ResultsScreen.png');
         this.load.image('background', './assets/menuBackground.png');
-        this.load.image('title','./assets/title.png');
         this.load.image('play','./assets/playButton.png');
         this.load.image('tutorial','./assets/tutorialButton.png');
         this.load.image('settings','./assets/settingsButton.png');
@@ -14,12 +16,22 @@ class Menu extends Phaser.Scene {
     }
 
     create() {
-        //background image
-        this.background = this.add.image(0, 0, 'background').setOrigin(0, 0);
-
-        //title
-        this.title = this.add.image(game.config.width/2, game.config.height/4, 'title').setOrigin(0.5, 0.5);
-
+          //Title Screen Animation
+          this.anims.create({ 
+            key: 'title', 
+            frames: this.anims.generateFrameNames('main_atlas', {      
+                prefix: 'Title-10-FPS--',
+                start: 1,
+                end: 5,
+                suffix: '.png',
+                zeroPad: 1
+            }), 
+            frameRate: 10,
+            repeat: -1 
+        });
+      
+        this.titleScreen = this.add.sprite(0, 0).play('title').setOrigin(0,0).setScale(0.5);
+      
         //play button
         this.play = this.add.image(game.config.width/2, game.config.height/2, 'play').setOrigin(0.5, 0.5).setInteractive();
         this.play.on('pointerdown', () => {

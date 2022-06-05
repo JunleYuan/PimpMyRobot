@@ -55,7 +55,8 @@ class Loading extends Phaser.Scene {
     }
 
     loadIMG(){
-        this.load.image('backgroundWS', './assets/TempBackground.jpg');
+        this.load.image('backgroundWS', './assets/MainWorkshop.png');
+        this.load.image('backgroundSR', './assets/Shelves.png');
         this.load.image('inventory', './assets/inv.png');
         this.load.image('crafting', './assets/craft.png');
         this.load.image('require', './assets/require.png');

@@ -14,6 +14,8 @@ class Inventory extends Phaser.Scene {
         this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(1);
         this.backbutt.setInteractive();
 
+        this.backgroundStorage = this.add.image(0, 0, 'backgroundSR').setOrigin(0, 0).setScale(0.5);
+        this.backgroundStorage.visible = false;
         //this.backbutt.visible = false;
 
         this.backbutt.on('pointerdown', () => {
@@ -336,11 +338,11 @@ class Inventory extends Phaser.Scene {
             newScene = false;
 
             if(whichScene == 5){
-
+                
                 this.colorbutt.visible = false;
                 this.backbutt.visible = true;
                 this.sellbutt.visible = false;
-
+                
                 this.visOff();
                 
                 for(let i = 0; i< this.allPartsArray.length;i++){
