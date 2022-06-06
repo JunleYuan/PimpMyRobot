@@ -8,11 +8,8 @@ let config = {
         target: 60
     },
     physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: {y:1200},
-            debug: true
-        }
+        default: 'arcade'
+        
         
         
     },

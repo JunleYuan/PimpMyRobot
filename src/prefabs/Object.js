@@ -35,8 +35,6 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.on('drag', function (pointer, dragX, dragY) {
 
-            
-
             this.x = dragX;
             this.y = dragY;
 

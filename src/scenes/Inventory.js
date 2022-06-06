@@ -332,6 +332,7 @@ class Inventory extends Phaser.Scene {
 
         if(newScene){
 
+            console.log("update called");
             newScene = false;
 
             if(whichScene == 5){
