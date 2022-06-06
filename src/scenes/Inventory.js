@@ -110,39 +110,50 @@ class Inventory extends Phaser.Scene {
         });
 
         // //add all parts needed
-        switch(lvl){
-            case 1:
-                numbSet = 2;
-                this.Parts_1();
 
-                break;
-            case 2:
-                numbSet = 2;
-                this.Parts_1();
+        if(lvl < 4){
+            numbSet = 2;
+            this.Parts_1();
 
-                break;
-            case 3:
+        }else{
+            numbSet = 3;
+            this.Parts_1();
+            this.Parts_2();
 
-                numbSet = 3;
-                this.Parts_1();
-                this.Parts_2();
-
-                break;
-            case 4:
-
-                numbSet = 3;
-                this.Parts_1();
-                this.Parts_2();
-
-                break;
-            case 5:
-
-                numbSet = 3;
-                this.Parts_1();
-                this.Parts_2();
-                break;
-        
         }
+
+        // switch(lvl){
+        //     case 1:
+        //         numbSet = 2;
+        //         this.Parts_1();
+
+        //         break;
+        //     case 2:
+        //         numbSet = 2;
+        //         this.Parts_1();
+
+        //         break;
+        //     case 3:
+
+        //         numbSet = 2;
+        //         this.Parts_1();
+
+        //         break;
+        //     case 4:
+
+        //         numbSet = 3;
+        //         this.Parts_1();
+        //         this.Parts_2();
+
+        //         break;
+        //     case 5:
+
+        //         numbSet = 3;
+        //         this.Parts_1();
+        //         this.Parts_2();
+        //         break;
+        
+        // }
 
 
         //set random location and parts to boxes
@@ -572,8 +583,8 @@ class Inventory extends Phaser.Scene {
             roundMoney = roundMoney + this.checkRule(arrayOfRule[i]);
         }
 
-        if(curColor == colorRule){
-            roundMoney = roundMoney + 10;
+        if(curColor == colorRule && lvl >3){
+            roundMoney = roundMoney + 20;
 
         }
 

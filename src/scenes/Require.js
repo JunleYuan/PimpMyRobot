@@ -89,8 +89,12 @@ class RequireList extends Phaser.Scene {
                 
             }else{
 
-                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'bm', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
+                if(lvl>3){
 
+                    console.log("color rule");
+                    textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'bm', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
+                    
+                }
             }
             
 
@@ -229,8 +233,9 @@ class RequireList extends Phaser.Scene {
     
     ranColor(){
 
-        let pickColor = Math.random() * (10 - 1) + 1;
+        let pickColor = Math.floor(Math.random() * (10 - 1) + 1);
 
+        console.log(pickColor);
 
         colorRule = pickColor;
 
