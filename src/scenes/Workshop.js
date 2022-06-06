@@ -41,9 +41,10 @@ class Workshop extends Phaser.Scene {
 
         //boxes
         
-        this.box5 = this.add.image(150, 150, 'BRDR').setOrigin(0, 0).setScale(1);
+        this.box5 = this.add.text(200, 140,' ').setOrigin(0, 0).setScale(1);
         this.box5.setInteractive();
-
+        this.box5.setDisplaySize(200, 400);
+        //this.box5.setBackgroundColor('#DD002F');
         this.box5.on('pointerdown', () => {
             
             newScene = true;

@@ -9,6 +9,10 @@ let config = {
     },
     physics: {
         default: 'arcade',
+        arcade: {
+            gravity: {y:1200},
+            debug: true
+        }
         
         
     },
@@ -63,7 +67,7 @@ var money = 0;
 
 var rent = 40;
 
-var timer = 10;
+var timer = 60*2;
 
 //ticket opened or closed
 TpageOpen = false;

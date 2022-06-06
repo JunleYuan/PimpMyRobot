@@ -109,52 +109,41 @@ class Inventory extends Phaser.Scene {
             }
         });
 
-        this.Parts_1();
-        //this.Parts_2();
-
         // //add all parts needed
-        // switch(lvl){
-        //     case 1:
-        //         numbSet = 2;
-        //         this.Parts_1();
+        switch(lvl){
+            case 1:
+                numbSet = 2;
+                this.Parts_1();
 
-        //         break;
-        //     case 2:
-        //         numbSet = 2;
-        //         this.Parts_1();
+                break;
+            case 2:
+                numbSet = 2;
+                this.Parts_1();
 
-        //         break;
-        //     case 3:
+                break;
+            case 3:
 
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
+                numbSet = 3;
+                this.Parts_1();
+                this.Parts_2();
 
-        //         break;
-        //     case 4:
+                break;
+            case 4:
 
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
+                numbSet = 3;
+                this.Parts_1();
+                this.Parts_2();
 
-        //         break;
-        //     case 5:
+                break;
+            case 5:
 
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
-                
+                numbSet = 3;
+                this.Parts_1();
+                this.Parts_2();
+                break;
+        
+        }
 
-        //         break;
-        //     case 6:
-
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
-                
-
-        //         break;
-        // }
 
         //set random location and parts to boxes
         this.resetValue();
@@ -203,7 +192,7 @@ class Inventory extends Phaser.Scene {
             }
 
             //if zone is submit zone
-            if(dropZone == subzone && gameObject.roboTraits[0] != 'trash' && whichScene == 4 && subParts.length<4){
+            if(dropZone == subzone && whichScene == 4 && subParts.length<4){
 
                 //check if type of parts is already in inventory
                 var alreadyIn = false;
@@ -217,9 +206,6 @@ class Inventory extends Phaser.Scene {
 
                 if(!alreadyIn){
 
-
-                    gameObject.x = 1280/2;
-                    gameObject.y = 720/2;
 
                     gameObject.isInSub = true;
                     gameObject.isInInventory = false;
@@ -293,7 +279,7 @@ class Inventory extends Phaser.Scene {
                         }
 
                     }
-                    gameObject.setScale(.2);
+                    gameObject.setScale(.15);
                     gameObject.isInInventory = false;
                     //console.log("array length:"+ storeParts.length);
                 }
