@@ -33,10 +33,10 @@ class Workshop extends Phaser.Scene {
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
-        this.backg = this.add.image(0, 0, 'backgroundWS').setOrigin(0, 0);
+        this.backgroundWS = this.add.image(0, 0, 'backgroundWS').setOrigin(0, 0).setScale(0.5);
 
         //  Make our game world bound
-        this.cameras.main.setBounds(0, 0, this.backg.width*4, this.backg.height*4);
+        this.cameras.main.setBounds(0, 0, this.backgroundWS.width*4, this.backgroundWS.height*4);
 
 
         //boxes
