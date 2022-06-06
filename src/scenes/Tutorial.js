@@ -16,14 +16,14 @@ class Tutorial extends Phaser.Scene {
         //tutorial text
         let tutorialConfig = {
                fontFamily: 'Courier',
-               fontSize: '36px',
+               fontSize: '25px',
                color: '#000000',
                align: 'left',
             }
-        this.tutorText = this.add.text(32, 32, 'The goal of the game is to assemble robot parts \n to customer specifications as fast as you can. \n\n Customer orders will come in on tickets, and will \n tell you the kind of robot they want you to build. \n\n Assemble robots by dragging and dropping robot parts \n into the assembly area. \n\n Change the color of robots after placing all of their \n parts by clicking the button next to the assembly area. \n\n Once you are done creating the robot, click the \n sell button to send the robot to the customer. \n\n Robots that fit all of the customers specifications \n will get more money than robots that do not fit.', tutorialConfig);
+        this.tutorText = this.add.text(200, 90, 'The goal of the game is to assemble robot parts \n to customer specifications as fast as you can. \n\n Customer orders will come in on tickets, and will \n tell you the kind of robot they want you to build. \n\n Assemble robots by dragging and dropping robot parts \n into the assembly area. \n\n Change the color of robots after placing all of their \n parts by clicking the button next to the assembly area. \n\n Once you are done creating the robot, click the \n sell button to send the robot to the customer. \n\n Robots that fit all of the customers specifications \n will get more money than robots that do not fit.', tutorialConfig);
 
         //back to main menu button
-        this.menu = this.add.image(game.config.width/2, game.config.height - 72, 'mainMenu').setOrigin(0.5, 0.5).setInteractive();
+        this.menu = this.add.image(game.config.width/2, game.config.height - 120, 'mainMenu').setOrigin(0.5, 0.5).setInteractive();
         this.menu.on('pointerdown', () => {
             this.scene.start('menu'); 
           });
