@@ -43,8 +43,6 @@ class Loading extends Phaser.Scene {
 
     create() {
         
-        
-        
         this.scene.start("menu");
         
     }
