@@ -44,10 +44,9 @@ class Loading extends Phaser.Scene {
     create() {
         
         
-        this.scene.start("UIScene");
-        this.scene.start("buildMain");
-        this.scene.start("inventory");
-        //this.scene.start("test");
+        
+        this.scene.start("menu");
+        this.scene.start('tutorial');
     }
 
     update(delta) {
