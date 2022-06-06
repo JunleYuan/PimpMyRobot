@@ -27,11 +27,7 @@ class Menu extends Phaser.Scene {
       delay: 0
   }
 
-  let intro = this.sound.play('introMusic', this.soundconfig);
-
-
-
-
+  this.sound.play('introMusic', this.soundconfig);
 
     //Title Screen Animation
     this.anims.create({
