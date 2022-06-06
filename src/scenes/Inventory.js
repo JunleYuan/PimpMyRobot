@@ -108,7 +108,7 @@ class Inventory extends Phaser.Scene {
         });
 
         this.Parts_1();
-        this.Parts_2();
+        //this.Parts_2();
 
         // //add all parts needed
         // switch(lvl){
