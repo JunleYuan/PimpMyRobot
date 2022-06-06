@@ -11,8 +11,16 @@ class Inventory extends Phaser.Scene {
         console.log("Inventory open");
 
         //return button
-        this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(1);
+        this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(0.65);
         this.backbutt.setInteractive();
+
+    
+          this.backbutt.on('pointerout', () => {
+            this.backbutt.setScale(0.65); 
+          });
+          this.backbutt.on('pointerover', () => {
+            this.backbutt.setScale(0.75); 
+          });
 
         this.backgroundStorage = this.add.image(0, 0, 'backgroundSR').setOrigin(0, 0).setScale(0.5);
         this.backgroundStorage.visible = false;

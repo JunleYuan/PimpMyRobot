@@ -64,7 +64,7 @@ class RequireList extends Phaser.Scene {
 
         
 
-        this.page = this.add.image(0, 0, 'requireText').setOrigin(.5, .5).setScale(2);
+        this.page = this.add.image(0, 0, 'requireText').setOrigin(.5, .5).setScale(1.5,1);
         // var ourGame = this.scene.get('buildMain');
 
         let textArray = [];
