@@ -117,10 +117,19 @@ class Inventory extends Phaser.Scene {
             }
         });
 
-        this.Parts_1();
-        this.Parts_2();
-
         // //add all parts needed
+
+        if(lvl < 4){
+            numbSet = 2;
+            this.Parts_1();
+
+        }else{
+            numbSet = 3;
+            this.Parts_1();
+            this.Parts_2();
+
+        }
+
         // switch(lvl){
         //     case 1:
         //         numbSet = 2;
@@ -134,9 +143,8 @@ class Inventory extends Phaser.Scene {
         //         break;
         //     case 3:
 
-        //         numbSet = 3;
+        //         numbSet = 2;
         //         this.Parts_1();
-        //         this.Parts_2();
 
         //         break;
         //     case 4:
@@ -151,18 +159,10 @@ class Inventory extends Phaser.Scene {
         //         numbSet = 3;
         //         this.Parts_1();
         //         this.Parts_2();
-                
-
         //         break;
-        //     case 6:
-
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
-                
-
-        //         break;
+        
         // }
+
 
         //set random location and parts to boxes
         this.resetValue();
@@ -211,7 +211,7 @@ class Inventory extends Phaser.Scene {
             }
 
             //if zone is submit zone
-            if(dropZone == subzone && gameObject.roboTraits[0] != 'trash' && whichScene == 4 && subParts.length<4){
+            if(dropZone == subzone && whichScene == 4 && subParts.length<4){
 
                 //check if type of parts is already in inventory
                 var alreadyIn = false;
@@ -225,9 +225,6 @@ class Inventory extends Phaser.Scene {
 
                 if(!alreadyIn){
 
-
-                    gameObject.x = 1280/2;
-                    gameObject.y = 720/2;
 
                     gameObject.isInSub = true;
                     gameObject.isInInventory = false;
@@ -301,7 +298,7 @@ class Inventory extends Phaser.Scene {
                         }
 
                     }
-                    gameObject.setScale(.2);
+                    gameObject.setScale(.15);
                     gameObject.isInInventory = false;
                     //console.log("array length:"+ storeParts.length);
                 }
@@ -343,6 +340,7 @@ class Inventory extends Phaser.Scene {
 
         if(newScene){
 
+            console.log("update called");
             newScene = false;
 
             if(whichScene == 5){
@@ -594,8 +592,8 @@ class Inventory extends Phaser.Scene {
             roundMoney = roundMoney + this.checkRule(arrayOfRule[i]);
         }
 
-        if(curColor == colorRule){
-            roundMoney = roundMoney + 10;
+        if(curColor == colorRule && lvl >3){
+            roundMoney = roundMoney + 20;
 
         }
 

@@ -100,6 +100,7 @@ class Rent extends Phaser.Scene {
 
         this.clock = this.time.delayedCall(10000, () => {
 
+            money = 0;
             lvl = lvl +1;
 
             this.scene.start("UIScene");

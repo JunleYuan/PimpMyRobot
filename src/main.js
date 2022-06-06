@@ -8,11 +8,12 @@ let config = {
         target: 60
     },
     physics: {
-        default: 'arcade',
+        default: 'arcade'
+        
         
         
     },
-    scene: [Menu, Tutorial, Settings, Loading, Workshop, UIScene, Rent, RequireList, Inventory ]
+    scene: [Loading, Menu, Tutorial, Settings, Workshop, UIScene, Rent, RequireList, Inventory ]
 
     
 }
@@ -63,7 +64,7 @@ var money = 0;
 
 var rent = 40;
 
-var timer = 10;
+var timer = 60*2;
 
 //ticket opened or closed
 TpageOpen = false;

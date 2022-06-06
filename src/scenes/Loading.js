@@ -43,11 +43,8 @@ class Loading extends Phaser.Scene {
 
     create() {
         
+        this.scene.start("menu");
         
-        this.scene.start("UIScene");
-        this.scene.start("buildMain");
-        this.scene.start("inventory");
-        //this.scene.start("test");
     }
 
     update(delta) {
@@ -166,7 +163,7 @@ class Loading extends Phaser.Scene {
 
     loadSound(){
         this.load.audio('backgroundMusic', './assets/Mimi.mp3');
-        this.load.audio('introMusic', './assets/My_song_3.mp3');
+        this.load.audio('introMusic', './assets/My_Song_3.mp3');
         this.load.audio('star5', './assets/star5.mp3');
         
 

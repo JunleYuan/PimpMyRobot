@@ -35,8 +35,6 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.on('drag', function (pointer, dragX, dragY) {
 
-            
-
             this.x = dragX;
             this.y = dragY;
 
@@ -81,7 +79,12 @@ class Object extends Phaser.GameObjects.Sprite {
             if (this.isInSub){
 
                 this.x = 1280/2;
-                this.y = 720/2;
+                this.y = 720/2+40;
+
+                if(this.which_part==1){
+
+                    this.setDepth(3);
+                }
 
             }
 
