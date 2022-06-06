@@ -46,7 +46,7 @@ class Loading extends Phaser.Scene {
         
         
         this.scene.start("menu");
-        this.scene.start('tutorial');
+        
     }
 
     update(delta) {

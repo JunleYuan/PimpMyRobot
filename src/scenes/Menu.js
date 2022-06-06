@@ -16,6 +16,23 @@ class Menu extends Phaser.Scene {
   }
 
   create() {
+
+    this.soundconfig = {
+      mute: false,
+      volume: .1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0
+  }
+
+  let intro = this.sound.play('introMusic', this.soundconfig);
+
+
+
+
+
     //Title Screen Animation
     this.anims.create({
       key: 'title',
@@ -37,7 +54,14 @@ class Menu extends Phaser.Scene {
     //this.play.setBackgroundColor('#DD002F');
     this.play.setDisplaySize(250, 150);
     this.play.on('pointerdown', () => {
-      this.scene.start('loading');
+
+      this.game.sound.stopAll();
+      
+      this.scene.start("UIScene");
+      this.scene.start("buildMain");
+      this.scene.start("inventory");
+
+
     });
 
 
@@ -46,7 +70,8 @@ class Menu extends Phaser.Scene {
     //this.tutorial.setBackgroundColor('#DD002F');
     this.tutorial.setDisplaySize(250, 150);
     this.tutorial.on('pointerdown', () => {
-      this.scene.start('tutorial');
+      
+      this.scene.launch("tutorial");
     });
     
 

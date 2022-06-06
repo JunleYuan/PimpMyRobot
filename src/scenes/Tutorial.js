@@ -25,7 +25,7 @@ class Tutorial extends Phaser.Scene {
         //back to main menu button
         this.menu = this.add.image(game.config.width/2, game.config.height - 120, 'mainMenu').setOrigin(0.5, 0.5).setInteractive();
         this.menu.on('pointerdown', () => {
-            this.scene.start('menu'); 
+            this.scene.stop('tutorial'); 
           });
           this.menu.on('pointerout', () => {
             this.menu.setScale(1); 
@@ -33,6 +33,8 @@ class Tutorial extends Phaser.Scene {
           this.menu.on('pointerover', () => {
             this.menu.setScale(1.1); 
           });
+
+      
     }
 
     update() {
