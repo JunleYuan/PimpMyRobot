@@ -72,5 +72,7 @@ var total_money = 0;
 
 var total_star = 0;
 
+var sellready = false;
+
 //ticket opened or closed
 TpageOpen = false;

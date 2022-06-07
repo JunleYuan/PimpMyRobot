@@ -180,7 +180,7 @@ class Inventory extends Phaser.Scene {
 
         //sell button
 
-        this.sellready = true;
+        sellready = true;
 
         this.sellbutt = this.add.image(1280, 720, 'sellButt3').setOrigin(1, 1).setScale(1).setDepth(4);
         this.sellbutt.setInteractive();
@@ -200,9 +200,9 @@ class Inventory extends Phaser.Scene {
                     
 
                 // }
-                this.time.delayedCall(800, () => {
+                this.time.delayedCall(1500, () => {
                     this.sellbutt.setTexture('sellButt3');
-                    this.sellready = true;
+                    sellready = true;
                     for(var i = 0; i < subParts.length; i++){
                         subParts[i].setTexture(subParts[i].textureArray[0]);
                     }
@@ -744,9 +744,9 @@ class Inventory extends Phaser.Scene {
 
     update(delta) {
 
-        if(subParts.length == 4 && this.sellready){
+        if(subParts.length == 4 && sellready){
 
-            this.sellready = false;
+            sellready = false;
             this.sellbutt.setTexture('sellButt');
 
         }
