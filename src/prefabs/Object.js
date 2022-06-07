@@ -79,7 +79,7 @@ class Object extends Phaser.GameObjects.Sprite {
             if (this.isInSub){
 
                 this.x = 1280/2;
-                this.y = 720/2+40;
+                this.y = 720/2-20;
 
                 if(this.which_part==1){
 
