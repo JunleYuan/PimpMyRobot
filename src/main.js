@@ -13,7 +13,7 @@ let config = {
         
         
     },
-    scene: [Loading, Menu, Tutorial, Settings, Workshop, UIScene, Rent, RequireList, Inventory ]
+    scene: [Loading, Menu, Tutorial, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage]
 
     
 }
@@ -51,6 +51,8 @@ var colorRule;
 //when entering new scene
 var newScene = false;
 
+//when entering storage room
+var enterSR = false;
 //parts in inventory
 var storeParts = [];
 

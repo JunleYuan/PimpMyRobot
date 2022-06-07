@@ -3,23 +3,20 @@ class Menu extends Phaser.Scene {
         super("menu");
     }
 
-    preload() {
-
-        this.load.atlas('main_atlas', 'assets/Animations/MainMenu.png', 'assets/Animations/TitleScreen.json');
-
-        this.load.atlas('door_atlas', 'assets/Animations/Door_Open.png', 'assets/Animations/door_open.json');
-        this.load.atlas('bluespray_atlas', 'assets/Animations/blue_spray.png', 'assets/Animations/blue_spray.json');
-       
-        this.load.image('ResultScreen', './assets/ResultsScreen.png');
-        this.load.image('background', './assets/menuBackground.png');
-        this.load.image('play','./assets/playButton.png');
-        this.load.image('tutorial','./assets/ControlButton.png');
-        this.load.image('settings','./assets/settingsButton.png');
-
-    }
-
     create() {
           //Title Screen Animation
+          this.soundconfig = {
+            mute: false,
+            volume: .1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        }
+
+        this.sound.play('introMusic', this.soundconfig);
+
           this.anims.create({ 
             key: 'title', 
             frames: this.anims.generateFrameNames('main_atlas', {      
@@ -33,38 +30,19 @@ class Menu extends Phaser.Scene {
             repeat: -1 
         });
         
-        this.anims.create({ 
-          key: 'door', 
-          frames: this.anims.generateFrameNames('door_atlas', {      
-              prefix: 'Door_',
-              start: 1,
-              end: 9,
-              suffix: '.png',
-              zeroPad: 2
-          }), 
-          frameRate: 30
-      });
-      
-      this.anims.create({ 
-        key: 'test_spray', 
-        frames: this.anims.generateFrameNames('bluespray_atlas', {      
-            prefix: 'Blue_Spray_',
-            start: 1,
-            end: 23,
-            suffix: '.png',
-            zeroPad: 2
-        }), 
-        frameRate: 20,
-        yoyo: 1
-    });
-
         this.titleScreen = this.add.sprite(0, 0).play('title').setOrigin(0,0).setScale(0.5);
       
-        this.doorScreen = this.add.sprite(0, 0).play('test_spray').setOrigin(0,0);
+        
+      
+       
         //play button
         this.play = this.add.image(game.config.width/2 - 175, game.config.height/2 + 200, 'play').setOrigin(0.5, 0.5).setScale(0.5).setInteractive();
         this.play.on('pointerdown', () => {
-            this.scene.start('loading'); 
+          
+            this.game.sound.stopAll();
+            this.scene.start("UIScene");
+            this.scene.start("buildMain");
+            this.scene.start("inventory");
           });
           this.play.on('pointerout', () => {
             this.play.setScale(0.5); 
@@ -76,7 +54,7 @@ class Menu extends Phaser.Scene {
         //tutorial/controls button
         this.tutorial = this.add.image(game.config.width/2 + 175, game.config.height/2 + 200, 'tutorial').setOrigin(0.5, 0.5).setScale(0.5).setInteractive();
         this.tutorial.on('pointerdown', () => {
-            this.scene.start('tutorial'); 
+            this.scene.launch('tutorial'); 
           });
         this.tutorial.on('pointerout', () => {
             this.tutorial.setScale(0.5); 

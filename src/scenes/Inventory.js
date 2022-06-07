@@ -7,14 +7,155 @@ class Inventory extends Phaser.Scene {
 
     create() {
 
-        
-        console.log("Inventory open");
+        this.anims.create({ 
+            key: 'Blue_spray', 
+            frames: this.anims.generateFrameNames('bluespray_atlas', {      
+                prefix: 'Blue_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
 
+        this.anims.create({ 
+            key: 'Black_spray', 
+            frames: this.anims.generateFrameNames('blackspray_atlas', {      
+                prefix: 'Black_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.anims.create({ 
+            key: 'Gold_spray', 
+            frames: this.anims.generateFrameNames('goldspray_atlas', {      
+                prefix: 'Gold_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+
+        this.anims.create({ 
+            key: 'Green_spray', 
+            frames: this.anims.generateFrameNames('greenspray_atlas', {      
+                prefix: 'Green_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.anims.create({ 
+            key: 'Orange_spray', 
+            frames: this.anims.generateFrameNames('orangespray_atlas', {      
+                prefix: 'Orange_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.anims.create({ 
+            key: 'Pink_spray', 
+            frames: this.anims.generateFrameNames('pinkspray_atlas', {      
+                prefix: 'Pink_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.anims.create({ 
+            key: 'Purple_spray', 
+            frames: this.anims.generateFrameNames('purplespray_atlas', {      
+                prefix: 'Purple_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.anims.create({ 
+            key: 'Silver_spray', 
+            frames: this.anims.generateFrameNames('silverspray_atlas', {      
+                prefix: 'Silver_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.anims.create({ 
+            key: 'Teal_spray', 
+            frames: this.anims.generateFrameNames('tealspray_atlas', {      
+                prefix: 'Teal_Spray_',
+                start: 1,
+                end: 23,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+
+        this.anims.create({ 
+            key: 'Sell Window', 
+            frames: this.anims.generateFrameNames('sell_atlas', {      
+                prefix: 'Sell_Vent_',
+                start: 1,
+                end: 16,
+                suffix: '.png',
+                zeroPad: 2
+            }), 
+            frameRate: 20,
+            yoyo: 1
+        });
+
+        this.spray = this.add.sprite(640, 360).setDepth(4);
+        this.spray.visible = false;
+
+        this.spray.on('animationcomplete', () => {
+            this.spray.visible = false;
+            
+        });
+
+        console.log("Inventory open");
+        this.see_inv = this.add.image(-15, 40, 'Inventory_Bar').setOrigin(0, 0).setScale(0.45,0.45).setDepth(1);
         //return button
         this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(0.65);
         this.backbutt.setInteractive();
 
-    
+        
+
+
           this.backbutt.on('pointerout', () => {
             this.backbutt.setScale(0.65); 
           });
@@ -22,8 +163,8 @@ class Inventory extends Phaser.Scene {
             this.backbutt.setScale(0.75); 
           });
 
-        this.backgroundStorage = this.add.image(0, 0, 'backgroundSR').setOrigin(0, 0).setScale(0.5);
-        this.backgroundStorage.visible = false;
+        
+        
         //this.backbutt.visible = false;
 
         this.backbutt.on('pointerdown', () => {
@@ -33,90 +174,321 @@ class Inventory extends Phaser.Scene {
             //this.scene.sleep("inventory");
             whichScene = 4;
             this.scene.wake("buildMain");
+            this.scene.stop("storageBG");
 
         });
 
         //sell button
-        this.sellbutt = this.add.image(1280, 720, 'sellButt').setOrigin(1, 1).setScale(1);
+        this.sellbutt = this.add.image(1280, 720, 'sellButt').setOrigin(1, 1).setScale(1).setDepth(4);
         this.sellbutt.setInteractive();
 
         this.sellbutt.visible = false;
 
+
+
         this.sellbutt.on('pointerdown', () => {
 
             if(subParts.length == 4){
-
+                this.spray.visible = true;
+                this.spray.play('Sell Window');
                 // for(let i = 0; i< subParts.length;i++){
                 //     console.log("end part"+subParts[i].which_part+" trait: "+ subParts[i].roboTraits[0]);
                     
 
                 // }
+                this.time.delayedCall(800, () => {
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[0]);
+                    }
+                    
 
-                for(var i = 0; i < subParts.length; i++){
-                    subParts[i].setTexture(subParts[i].textureArray[0]);
-                }
-                
+                    //close ticket
+                    TpageOpen = false;
 
-                //close ticket
-                TpageOpen = false;
+                    this.givePoints();
 
-                this.givePoints();
+                    //reset values
+                    this.resetValue();
 
-                //reset values
-                this.resetValue();
+                    //empty inventory
+                    storeParts = [];
+                    subParts = [];
 
-                //empty inventory
-                storeParts = [];
-                subParts = [];
+                    //reset vis
+                    this.visOff();
 
-                //reset vis
-                this.visOff();
+                    var ticket = this.scene.get('requireList');
 
-                var ticket = this.scene.get('requireList');
+                    //this.scene.stop('requireList');
+                    //this.scene.launch('requireList');
 
-                //this.scene.stop('requireList');
-                //this.scene.launch('requireList');
-
-                ticket.scene.restart();
-                
-                //this.scene.sleep("inventory");
-                this.scene.wake("buildMain");
+                    ticket.scene.restart();
+                    
+                    //this.scene.sleep("inventory");
+                    this.scene.wake("buildMain");
+                });
                 
             }
         });
 
         //color button
-        this.colorbutt = this.add.image(970, 400, 'colButt').setOrigin(1, 1).setScale(1);
-        this.colorbutt.setInteractive();
-
+        this.colorbutt = this.add.image(1280,720, 'colButt').setOrigin(1, 1).setScale(0.5);
         this.colorbutt.visible = false;
 
-        this.colorbutt.on('pointerdown', () => {
+        this.blueButton = this.add.image(910, 240, 'BlueColor').setOrigin(1, 1).setScale(0.5);
+        this.blueButton.setInteractive();
+        this.blueButton.visible = false;
 
-            
-            console.log("clicked");
+        this.blackButton = this.add.image(910, 280, 'BlackColor').setOrigin(1, 1).setScale(0.5);
+        this.blackButton.setInteractive();
+        this.blackButton.visible = false;
+
+        this.goldButton = this.add.image(910, 320, 'GoldColor').setOrigin(1, 1).setScale(0.5);
+        this.goldButton.setInteractive();
+        this.goldButton.visible = false;
+
+        this.greenButton = this.add.image(970, 240, 'GreenColor').setOrigin(1, 1).setScale(0.5);
+        this.greenButton.setInteractive();
+        this.greenButton.visible = false;
+
+        this.pinkButton = this.add.image(970, 280, 'PinkColor').setOrigin(1, 1).setScale(0.5);
+        this.pinkButton.setInteractive();
+        this.pinkButton.visible = false;
+
+        this.orangeButton = this.add.image(970, 320, 'OrangeColor').setOrigin(1, 1).setScale(0.5);
+        this.orangeButton.setInteractive();
+        this.orangeButton.visible = false;
+
+        this.purpleButton = this.add.image(1030, 240, 'PurpleColor').setOrigin(1, 1).setScale(0.5);
+        this.purpleButton.setInteractive();
+        this.purpleButton.visible = false;
+
+        this.silverButton = this.add.image(1030, 280, 'SilverColor').setOrigin(1, 1).setScale(0.5);
+        this.silverButton.setInteractive();
+        this.silverButton.visible = false;
+
+        this.tealButton = this.add.image(1030, 320, 'TealColor').setOrigin(1, 1).setScale(0.5);
+        this.tealButton.setInteractive();
+        this.tealButton.visible = false;
+
+        //Color Function For Blue Button
+        this.blueButton.on('pointerdown', () => {
+            console.log("clicked on blue button");
             if(subParts.length == 4){
-
-                
-
-                if(curColor <9){
-                    curColor = curColor + 1;
-
-                }else{
-                    curColor = 1;
-
-                }
-                console.log("cur color: "+curColor);
-                
-                for(var i = 0; i < subParts.length; i++){
-                    subParts[i].setTexture(subParts[i].textureArray[curColor]);
-                }
-                
-                
-
+                this.spray.visible = true;
+                this.spray.play('Blue_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 2
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
             }
         });
+        this.blueButton.on('pointerout', () => {
+            this.blueButton.setScale(0.5); 
+          });
+        this.blueButton.on('pointerover', () => {
+            this.blueButton.setScale(0.55); 
+        });
 
+
+
+        //Color Function For Gold Button
+        this.goldButton.on('pointerdown', () => {
+            console.log("clicked on gold button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Gold_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 4;
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.goldButton.on('pointerout', () => {
+            this.goldButton.setScale(0.5); 
+          });
+        this.goldButton.on('pointerover', () => {
+            this.goldButton.setScale(0.55); 
+        });
+        
+
+
+        //Color Functions for Green Button
+        this.greenButton.on('pointerdown', () => {
+            console.log("clicked on green button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Green_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 3
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.greenButton.on('pointerout', () => {
+            this.greenButton.setScale(0.5); 
+          });
+        this.greenButton.on('pointerover', () => {
+            this.greenButton.setScale(0.55); 
+        });
+
+
+
+        //Color Functions for Black Button
+        this.blackButton.on('pointerdown', () => {
+            console.log("clicked on black button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Black_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 1;
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.blackButton.on('pointerout', () => {
+            this.blackButton.setScale(0.5); 
+          });
+        this.blackButton.on('pointerover', () => {
+            this.blackButton.setScale(0.55); 
+        });
+
+
+
+        //Color Functions for Orange Button
+        this.orangeButton.on('pointerdown', () => {
+            console.log("clicked on orange button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Orange_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 5
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.orangeButton.on('pointerout', () => {
+            this.orangeButton.setScale(0.5); 
+          });
+        this.orangeButton.on('pointerover', () => {
+            this.orangeButton.setScale(0.55); 
+        });
+
+
+
+        //Color Function For Pink
+        this.pinkButton.on('pointerdown', () => {
+            console.log("clicked on Pink button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Pink_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 6;
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.pinkButton.on('pointerout', () => {
+            this.pinkButton.setScale(0.5); 
+          });
+        this.pinkButton.on('pointerover', () => {
+            this.pinkButton.setScale(0.55); 
+        });
+
+
+        //Color Functions for  Purple Button
+        this.purpleButton.on('pointerdown', () => {
+            console.log("clicked on purple button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Purple_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 7;
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.purpleButton.on('pointerout', () => {
+            this.purpleButton.setScale(0.5); 
+          });
+        this.purpleButton.on('pointerover', () => {
+            this.purpleButton.setScale(0.55); 
+        });
+
+
+        //Color Functions for Silver Button
+        this.silverButton.on('pointerdown', () => {
+            console.log("clicked on silver button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Silver_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 8
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.silverButton.on('pointerout', () => {
+            this.silverButton.setScale(0.5); 
+          });
+        this.silverButton.on('pointerover', () => {
+            this.silverButton.setScale(0.55); 
+        });
+
+        //Color Functions for Teal Button
+        this.tealButton.on('pointerdown', () => {
+            console.log("clicked on Teal button");
+            if(subParts.length == 4){
+                this.spray.visible = true;
+                this.spray.play('Teal_spray');
+                this.time.delayedCall(900, () => {
+                    curColor = 9;
+                    console.log("cur color: "+curColor);
+                    
+                    for(var i = 0; i < subParts.length; i++){
+                        subParts[i].setTexture(subParts[i].textureArray[curColor]);
+                    }
+                });
+            }
+        });
+        this.tealButton.on('pointerout', () => {
+            this.tealButton.setScale(0.5); 
+          });
+        this.tealButton.on('pointerover', () => {
+            this.tealButton.setScale(0.55); 
+        });
         // //add all parts needed
 
         if(lvl < 4){
@@ -298,7 +670,7 @@ class Inventory extends Phaser.Scene {
                         }
 
                     }
-                    gameObject.setScale(.15);
+                    gameObject.setScale(.18);
                     gameObject.isInInventory = false;
                     //console.log("array length:"+ storeParts.length);
                 }
@@ -346,6 +718,15 @@ class Inventory extends Phaser.Scene {
             if(whichScene == 5){
                 
                 this.colorbutt.visible = false;
+                this.blueButton.visible = false;
+                this.blackButton.visible = false;
+                this.greenButton.visible = false;
+                this.goldButton.visible = false;
+                this.orangeButton.visible = false;
+                this.pinkButton.visible = false;
+                this.purpleButton.visible = false;
+                this.silverButton.visible = false;
+                this.tealButton.visible = false;
                 this.backbutt.visible = true;
                 this.sellbutt.visible = false;
                 
@@ -360,6 +741,15 @@ class Inventory extends Phaser.Scene {
 
             }else if(whichScene != 4){
                 this.colorbutt.visible = false;
+                this.blueButton.visible = false;
+                this.blackButton.visible = false;
+                this.greenButton.visible = false;
+                this.goldButton.visible = false;
+                this.orangeButton.visible = false;
+                this.pinkButton.visible = false;
+                this.purpleButton.visible = false;
+                this.silverButton.visible = false;
+                this.tealButton.visible = false;
                 this.backbutt.visible = true;
                 
                 this.visOff();
@@ -375,6 +765,15 @@ class Inventory extends Phaser.Scene {
             }
             else{
                 this.colorbutt.visible = true;
+                this.blueButton.visible = true;
+                this.blackButton.visible = true;
+                this.greenButton.visible = true;
+                this.goldButton.visible = true;
+                this.orangeButton.visible = true;
+                this.pinkButton.visible = true;
+                this.purpleButton.visible = true;
+                this.silverButton.visible = true;
+                this.tealButton.visible = true;
                 this.sellbutt.visible = true;
                 this.backbutt.visible = false;
 
@@ -558,12 +957,12 @@ class Inventory extends Phaser.Scene {
                 buffer = -250;
                 
             }else if(i%4>0){
-                buffer = -100;
+                buffer = -80;
 
             }
         
-            this.allPartsArray[i].x = 300+(i%4)*200;
-            this.allPartsArray[i].y = buffer + 400 + 160*(parseInt(i/4, 10));
+            this.allPartsArray[i].x = 300+(i%4)*225;
+            this.allPartsArray[i].y = buffer + 320 + 160*(parseInt(i/4, 10));
         
             
             this.allPartsArray[i].isInInventory = false;

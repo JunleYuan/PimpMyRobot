@@ -7,6 +7,15 @@ class Rent extends Phaser.Scene {
 
     create() {
 
+        this.background = this.add.image(0, 0, 'ResultScreen').setOrigin(0, 0).setScale(0.5);
+        this.ResultText = this.add.image(0, 0, 'ResultText').setOrigin(0, 0).setScale(0.5);
+
+        this.tweens.add({
+            targets: this.ResultText,
+            ease: 'Sine.inOut',
+            duraton: 1000
+        });
+
         storeParts = [];
         subParts = [];
         whichScene = 4;
@@ -25,7 +34,7 @@ class Rent extends Phaser.Scene {
         
 
         let tween = this.tweens.add({
-            targets: btext,
+            targets: btext, 
             y: 300,
             alpha: 1,
             duration: 1000
