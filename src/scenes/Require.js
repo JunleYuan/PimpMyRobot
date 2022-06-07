@@ -3,8 +3,6 @@ class RequireList extends Phaser.Scene {
         super("requireList");
     }
 
-    
-
     create() {
         console.log("req open");
 

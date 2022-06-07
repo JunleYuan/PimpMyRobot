@@ -16,9 +16,9 @@ class Settings extends Phaser.Scene {
         //settings text
         let settingsConfig = {
             fontFamily: 'Courier',
-            fontSize: '36px',
+            fontSize: '32px',
             color: '#000000',
-            align: 'left',
+            align: 'center',
          }
      this.settingsText = this.add.text(game.config.width/2, game.config.height/2, 'Settings Options Here', settingsConfig).setOrigin(0.5, 0.5);
 
