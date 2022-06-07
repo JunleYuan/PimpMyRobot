@@ -20,7 +20,7 @@ class Rent extends Phaser.Scene {
         subParts = [];
         whichScene = 4;
 
-        let btext = this.add.bitmapText( 1280/2, 520, 'bm', 'You made $ '+ money , 50).setOrigin(.5, .5).setMaxWidth(400).setAlpha(0);
+        let btext = this.add.bitmapText( 1280/2, 520, 'vcrBM', 'You made $'+ money , 50).setOrigin(.5, .5).setMaxWidth(400).setAlpha(0);
 
         this.time.delayedCall(1000, () => {
 

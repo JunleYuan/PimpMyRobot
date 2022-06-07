@@ -147,6 +147,7 @@ class Loading extends Phaser.Scene {
 
 
         this.load.bitmapFont('bm', 'assets/bm_0.png', 'assets/bm.xml');
+        this.load.bitmapFont('vcrBM', './assets/vcr_osd_mono_0.png', './assets/vcr_osd_mono.fnt');
     }
 
     loadSound(){
