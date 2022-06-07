@@ -235,6 +235,8 @@ class Inventory extends Phaser.Scene {
         this.colorbutt = this.add.image(1280,720, 'colButt').setOrigin(1, 1).setScale(0.5);
         this.colorbutt.visible = false;
 
+       
+
         this.blueButton = this.add.image(910, 240, 'BlueColor').setOrigin(1, 1).setScale(0.5);
         this.blueButton.setInteractive();
         this.blueButton.visible = false;
@@ -546,7 +548,7 @@ class Inventory extends Phaser.Scene {
 
             //if zone is inventory zone
             if(dropZone == zone && storeParts.length<4 && gameObject.roboTraits[0] != 'trash'){
-
+                
                 //console.log("dropped");
 
                 //check if type of parts is already in inventory
@@ -628,8 +630,7 @@ class Inventory extends Phaser.Scene {
 
 
         this.input.on('dragenter', function (pointer, gameObject, dropZone) {
-
-
+            
             if (dropZone == zone){
 
                 graphics.clear();
@@ -718,6 +719,7 @@ class Inventory extends Phaser.Scene {
             if(whichScene == 5){
                 
                 this.colorbutt.visible = false;
+                
                 this.blueButton.visible = false;
                 this.blackButton.visible = false;
                 this.greenButton.visible = false;
@@ -741,6 +743,7 @@ class Inventory extends Phaser.Scene {
 
             }else if(whichScene != 4){
                 this.colorbutt.visible = false;
+               
                 this.blueButton.visible = false;
                 this.blackButton.visible = false;
                 this.greenButton.visible = false;
@@ -765,6 +768,7 @@ class Inventory extends Phaser.Scene {
             }
             else{
                 this.colorbutt.visible = true;
+            
                 this.blueButton.visible = true;
                 this.blackButton.visible = true;
                 this.greenButton.visible = true;
@@ -970,10 +974,10 @@ class Inventory extends Phaser.Scene {
             this.allPartsArray[i].setScale(.18);
         }
 
-        
-
     }
 
+    
+    
 
     givePoints(){
 

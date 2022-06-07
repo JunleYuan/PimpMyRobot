@@ -80,7 +80,7 @@ class Loading extends Phaser.Scene {
         this.load.image('BRDR', './assets/BorderForParts.png');
         this.load.image('Time_And_Money_UI', './assets/UI/Timer-And-Money.png');
         this.load.image('Inventory_Bar', './assets/UI/Parts-Bar.png');
-        
+        this.load.image('PAINT', './assets/PAINT.png');
         this.load.image('star', './assets/star.png');
 
         //Load Animations
