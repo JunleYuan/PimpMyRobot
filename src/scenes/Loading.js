@@ -56,66 +56,57 @@ class Loading extends Phaser.Scene {
         this.load.image('backgroundSR', './assets/Shelves.png');
         this.load.image('inventory', './assets/inv.png');
         this.load.image('crafting', './assets/craft.png');
-        this.load.image('require', './assets/require.png');
-        this.load.image('requireText', './assets/requireText.png');
+        this.load.image('require', './assets/UI/New_Orders.png');
+        this.load.image('requireText', './assets/UI/Ticket.png');
       
         //Load Buttons
-        this.load.image('backButt', './assets/back_butt.png');
-        this.load.image('sellButt', './assets/SELL Button.png');
-        this.load.image('colButt', './assets/ColorButt.jpg');
+        this.load.image('backButt', './assets/UI/New_Back_Button.png');
+        this.load.image('backButt', './assets/UI/New_Back_Button.png');
+        this.load.image('sellButt', './assets/UI/SELLBUTTON.png');
+        this.load.image('colButt', './assets/Color Changer/Color-Change.png');
+
+        //Load Color Buttons
+        this.load.image('BlackColor', './assets/New_Buttons/New_Black.png');
+        this.load.image('BlueColor', './assets/New_Buttons/New_Blue.png');
+        this.load.image('GoldColor', './assets/New_Buttons/New_Gold.png');
+        this.load.image('GreenColor', './assets/New_Buttons/New_Green.png');
+        this.load.image('OrangeColor', './assets/New_Buttons/New_Orange.png');
+        this.load.image('PinkColor', './assets/New_Buttons/New_Pink.png');
+        this.load.image('PurpleColor', './assets/New_Buttons/New_Purple.png');
+        this.load.image('SilverColor', './assets/New_Buttons/New_Silver.png');
+        this.load.image('TealColor', './assets/New_Buttons/New_Teal.png');
 
         //Load UI Elements
         this.load.image('BRDR', './assets/BorderForParts.png');
-        this.load.image('UI', './assets/UI_Trial.png');
+        this.load.image('Time_And_Money_UI', './assets/UI/Timer-And-Money.png');
+        this.load.image('Inventory_Bar', './assets/UI/Parts-Bar.png');
+        this.load.image('PAINT', './assets/PAINT.png');
         this.load.image('star', './assets/star.png');
 
+        //Load Animations
+        this.load.atlas('main_atlas', 'assets/Animations/MainMenu.png', 'assets/Animations/TitleScreen.json');
+
+        this.load.atlas('door_atlas', 'assets/Animations/Door_Open.png', 'assets/Animations/door_open.json');
+        this.load.atlas('bluespray_atlas', 'assets/Animations/blue_spray.png', 'assets/Animations/blue_spray.json');
+        this.load.atlas('blackspray_atlas', 'assets/Animations/black_spray.png', 'assets/Animations/black_spray.json');
+        this.load.atlas('greenspray_atlas', 'assets/Animations/green_spray.png', 'assets/Animations/green_spray.json');
+        this.load.atlas('goldspray_atlas', 'assets/Animations/gold_spray.png', 'assets/Animations/gold_spray.json');
+        this.load.atlas('orangespray_atlas', 'assets/Animations/orange_spray.png', 'assets/Animations/orange_spray.json');
+        this.load.atlas('pinkspray_atlas', 'assets/Animations/pink_spray.png', 'assets/Animations/pink_spray.json');
+        this.load.atlas('purplespray_atlas', 'assets/Animations/purple_spray.png', 'assets/Animations/purple_spray.json');
+        this.load.atlas('silverspray_atlas', 'assets/Animations/silver_spray.png', 'assets/Animations/silver_spray.json');
+        this.load.atlas('tealspray_atlas', 'assets/Animations/teal_spray.png', 'assets/Animations/teal_spray.json');
+        this.load.atlas('sell_atlas', 'assets/Animations/robot_sell.png', 'assets/Animations/robot_sell.json');
+
+        this.load.image('ResultScreen', './assets/ResultsScreen.png');
+        this.load.image('ResultText', './assets/Results.png');
+        this.load.image('mainMenu', './assets/menuButton.png');
+        this.load.image('background', './assets/menuBackground.png');
+        this.load.image('play','./assets/playButton.png');
+        this.load.image('tutorial','./assets/ControlButton.png');
+        this.load.image('settings','./assets/settingsButton.png');
+
         //Load Robot Parts
-        this.load.image('cool_h_b', './assets/Cool-Head-Blue.png');
-        this.load.image('cool_b_b', './assets/Cool-Torso-Blue.png');
-        this.load.image('cool_a_b', './assets/Cool-Arms-Blue.png');
-        this.load.image('cool_l_b', './assets/Cool-Legs-Blue.png');
-
-        this.load.image('cool_h_r', './assets/Cool-Head-Ruby.png');
-        this.load.image('cool_b_r', './assets/Cool-Torso-Ruby.png');
-        this.load.image('cool_a_r', './assets/Cool-Arms-Ruby.png');
-        this.load.image('cool_l_r', './assets/Cool-Legs-Ruby.png');
-
-        this.load.image('cute_h_p', './assets/Cute-Head-Platinum.png');
-        this.load.image('cute_b_p', './assets/Cute-Torso-Platinum.png');
-        this.load.image('cute_a_p', './assets/Cute-Arms-Platinum.png');
-        this.load.image('cute_l_p', './assets/Cute-Legs-Platinum.png');
-
-        this.load.image('cute_h_r', './assets/Cute-Head-RosePink.png');
-        this.load.image('cute_b_r', './assets/Cute-Torso-RosePink.png');
-        this.load.image('cute_a_r', './assets/Cute-Arms-RosePink.png');
-        this.load.image('cute_l_r', './assets/Cute-Legs-RosePink.png');
-
-        this.load.image('sharp_h_j', './assets/Sharp-Head-Jade.png');
-        this.load.image('sharp_b_j', './assets/Sharp-Torso-Jade.png');
-        this.load.image('sharp_a_j', './assets/Sharp-Arms-Jade.png');
-        this.load.image('sharp_l_j', './assets/Sharp-Legs-Jade.png');
-
-        this.load.image('sharp_h_t', './assets/Sharp-Head-Teal.png');
-        this.load.image('sharp_b_t', './assets/Sharp-Torso-Teal.png');
-        this.load.image('sharp_a_t', './assets/Sharp-Arms-Teal.png');
-        this.load.image('sharp_l_t', './assets/Sharp-Legs-Teal.png');
-
-        this.load.image('sharp_h_n', './assets/Sharp-Head-Uncolored.png');
-        this.load.image('sharp_b_n', './assets/Sharp-Torso-Uncolored.png');
-        this.load.image('sharp_a_n', './assets/Sharp-Arms-Uncolored.png');
-        this.load.image('sharp_l_n', './assets/Sharp-Legs-Uncolored.png');
-
-        this.load.image('cute_h_n', './assets/Cute-Head-Uncolored.png');
-        this.load.image('cute_b_n', './assets/Cute-Torso-Uncolored.png');
-        this.load.image('cute_a_n', './assets/Cute-Arms-Uncolored.png');
-        this.load.image('cute_l_n', './assets/Cute-Legs-Uncolored.png');
-
-        this.load.image('cool_h_n', './assets/Cool-Head-Uncolored.png');
-        this.load.image('cool_b_n', './assets/Cool-Torso-Uncolored.png');
-        this.load.image('cool_a_n', './assets/Cool-Arms-Uncolored.png');
-        this.load.image('cool_l_n', './assets/Cool-Legs-Uncolored.png');
-
-
         for(let i = 0; i < 10;i++){
 
             this.load.image('cool_H_'+i, './assets/NewRobotParts/Cool-Head-'+i+'.png');
@@ -156,6 +147,7 @@ class Loading extends Phaser.Scene {
 
 
         this.load.bitmapFont('bm', 'assets/bm_0.png', 'assets/bm.xml');
+        this.load.bitmapFont('vcrBM', './assets/vcr_osd_mono_0.png', './assets/vcr_osd_mono.fnt');
     }
 
     loadSound(){

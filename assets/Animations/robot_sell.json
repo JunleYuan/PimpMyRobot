@@ -1,0 +1,335 @@
+{
+	"frames": {
+		"Sell_Vent_01.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_02.png": {
+			"frame": {
+				"x": 603,
+				"y": 1,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_03.png": {
+			"frame": {
+				"x": 1205,
+				"y": 1,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_04.png": {
+			"frame": {
+				"x": 1807,
+				"y": 1,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_05.png": {
+			"frame": {
+				"x": 1,
+				"y": 723,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_06.png": {
+			"frame": {
+				"x": 603,
+				"y": 723,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_07.png": {
+			"frame": {
+				"x": 1205,
+				"y": 723,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_08.png": {
+			"frame": {
+				"x": 1807,
+				"y": 723,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_09.png": {
+			"frame": {
+				"x": 1,
+				"y": 1445,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_10.png": {
+			"frame": {
+				"x": 603,
+				"y": 1445,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_11.png": {
+			"frame": {
+				"x": 1205,
+				"y": 1445,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_12.png": {
+			"frame": {
+				"x": 1807,
+				"y": 1445,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_13.png": {
+			"frame": {
+				"x": 2409,
+				"y": 1,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_14.png": {
+			"frame": {
+				"x": 2409,
+				"y": 723,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_15.png": {
+			"frame": {
+				"x": 2409,
+				"y": 1445,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		},
+		"Sell_Vent_16.png": {
+			"frame": {
+				"x": 1,
+				"y": 2167,
+				"w": 600,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 600,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 600,
+				"h": 720
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "robot_sell.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 3010,
+			"h": 2888
+		},
+		"scale": "1"
+	}
+}

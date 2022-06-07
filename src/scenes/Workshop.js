@@ -48,9 +48,10 @@ class Workshop extends Phaser.Scene {
         this.box5.on('pointerdown', () => {
             
             newScene = true;
-
+            enterSR = true;
             whichScene = 5;
             this.scene.sleep("buildMain");
+            this.scene.launch("storageBG");
             //this.scene.wake("inventory");
         
         });

@@ -3,8 +3,6 @@ class RequireList extends Phaser.Scene {
         super("requireList");
     }
 
-    
-
     create() {
         console.log("req open");
 
@@ -60,11 +58,11 @@ class RequireList extends Phaser.Scene {
 
         this.notUseParts = ['head','body','arms','legs'];
 
-        this.testText = this.add.bitmapText(0,-270, 'bm', 'Ticket', 32).setOrigin(.5, .5);
+        this.testText = this.add.bitmapText(0,-270, 'vcrBM', 'Ticket', 32).setOrigin(.5, .5);
 
         
 
-        this.page = this.add.image(0, 0, 'requireText').setOrigin(.5, .5).setScale(2);
+        this.page = this.add.image(0, 0, 'requireText').setOrigin(.5, .5).setScale(1.5,1);
         // var ourGame = this.scene.get('buildMain');
 
         let textArray = [];
@@ -85,14 +83,14 @@ class RequireList extends Phaser.Scene {
             if(tlength!=numbRequire){
                 arrayOfRule[tlength] = this.whatTraits();
 
-                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'bm', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
+                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
                 
             }else{
 
                 if(lvl>3){
 
                     console.log("color rule");
-                    textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'bm', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
+                    textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
                     
                 }
             }

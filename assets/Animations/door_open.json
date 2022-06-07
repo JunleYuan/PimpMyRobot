@@ -1,0 +1,195 @@
+{
+	"frames": {
+		"Door_01.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_02.png": {
+			"frame": {
+				"x": 1283,
+				"y": 1,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_03.png": {
+			"frame": {
+				"x": 1,
+				"y": 723,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_04.png": {
+			"frame": {
+				"x": 1283,
+				"y": 723,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_05.png": {
+			"frame": {
+				"x": 1,
+				"y": 1445,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_06.png": {
+			"frame": {
+				"x": 1283,
+				"y": 1445,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_07.png": {
+			"frame": {
+				"x": 2565,
+				"y": 1,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_08.png": {
+			"frame": {
+				"x": 2565,
+				"y": 723,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		},
+		"Door_09.png": {
+			"frame": {
+				"x": 2565,
+				"y": 1445,
+				"w": 1280,
+				"h": 720
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1280,
+				"h": 720
+			},
+			"sourceSize": {
+				"w": 1280,
+				"h": 720
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "Door_Open.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 3846,
+			"h": 2166
+		},
+		"scale": "1"
+	}
+}
