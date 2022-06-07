@@ -13,7 +13,7 @@ let config = {
         
         
     },
-    scene: [Loading, Menu, Tutorial, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage]
+    scene: [Loading, Menu, Tutorial, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage,Total]
 
     
 }
@@ -67,6 +67,10 @@ var money = 0;
 var rent = 40;
 
 var timer = 60*2;
+
+var total_money = 0;
+
+var total_star = 0;
 
 //ticket opened or closed
 TpageOpen = false;

@@ -8,12 +8,14 @@ class Rent extends Phaser.Scene {
     create() {
 
         this.background = this.add.image(0, 0, 'ResultScreen').setOrigin(0, 0).setScale(0.5);
-        this.ResultText = this.add.image(0, 0, 'ResultText').setOrigin(0, 0).setScale(0.5);
+        this.ResultText = this.add.image(0, -100, 'ResultText').setOrigin(0, 0).setScale(0.5).setAlpha(0);
 
         this.tweens.add({
             targets: this.ResultText,
+            y: 0,
+            alpha: 1,
             ease: 'Sine.inOut',
-            duraton: 1000
+            duraton: 500
         });
 
         storeParts = [];
@@ -22,24 +24,32 @@ class Rent extends Phaser.Scene {
 
         let btext = this.add.bitmapText( 1280/2, 520, 'vcrBM', 'You made $'+ money , 50).setOrigin(.5, .5).setAlpha(0);
 
+
+        total_money = total_money + money;
+
         this.time.delayedCall(1000, () => {
 
             if(money > 350){
-
+                total_star = total_star + 5;
                 this.sound.play('star5');
             }
             else if(money > 300){
+
+                total_star = total_star + 4;
                 this.sound.play('star4');
             }else if(money > 200){
 
+                total_star = total_star + 3;
                 this.sound.play('star3');
 
             }else if(money > 100){
 
+                total_star = total_star + 2;
                 this.sound.play('star2');
                 
             }else{
 
+                total_star = total_star + 1;
                 this.sound.play('star1');
                 
             }
