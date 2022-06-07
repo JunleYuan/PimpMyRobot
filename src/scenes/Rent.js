@@ -20,13 +20,28 @@ class Rent extends Phaser.Scene {
         subParts = [];
         whichScene = 4;
 
-        let btext = this.add.bitmapText( 1280/2, 520, 'vcrBM', 'You made $'+ money , 50).setOrigin(.5, .5).setMaxWidth(400).setAlpha(0);
+        let btext = this.add.bitmapText( 1280/2, 520, 'vcrBM', 'You made $'+ money , 50).setOrigin(.5, .5).setAlpha(0);
 
         this.time.delayedCall(1000, () => {
 
             if(money > 350){
 
                 this.sound.play('star5');
+            }
+            else if(money > 300){
+                this.sound.play('star4');
+            }else if(money > 200){
+
+                this.sound.play('star3');
+
+            }else if(money > 100){
+
+                this.sound.play('star2');
+                
+            }else{
+
+                this.sound.play('star1');
+                
             }
 
 
@@ -40,7 +55,7 @@ class Rent extends Phaser.Scene {
             duration: 1000
         });
 
-        let star1 = this.add.image(1280/2, 370, 'star').setOrigin(.5, .5).setScale(.1).setAlpha(0);
+        let star1 = this.add.image(1280/2, 370, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
         this.tweens.add({
             targets: star1,
@@ -52,7 +67,7 @@ class Rent extends Phaser.Scene {
 
         if(money > 100){
 
-            let star2 = this.add.image(1280/2-50, 380, 'star').setOrigin(.5, .5).setScale(.1).setAlpha(0);
+            let star2 = this.add.image(1280/2-50, 380, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
             this.tweens.add({
                 targets: star2,
@@ -66,7 +81,7 @@ class Rent extends Phaser.Scene {
 
         if(money > 200){
 
-            let star3 = this.add.image(1280/2+50, 380, 'star').setOrigin(.5, .5).setScale(.1).setAlpha(0);
+            let star3 = this.add.image(1280/2+50, 380, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
             this.tweens.add({
                 targets: star3,
@@ -80,7 +95,7 @@ class Rent extends Phaser.Scene {
 
         if(money > 300){
 
-            let star4 = this.add.image(1280/2-100, 390, 'star').setOrigin(.5, .5).setScale(.1).setAlpha(0);
+            let star4 = this.add.image(1280/2-100, 390, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
             this.tweens.add({
                 targets: star4,
@@ -94,7 +109,7 @@ class Rent extends Phaser.Scene {
 
         if(money > 350){
 
-            let star5 = this.add.image(1280/2+100, 390, 'star').setOrigin(.5, .5).setScale(.1).setAlpha(0);
+            let star5 = this.add.image(1280/2+100, 390, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
             let star5tw = this.tweens.add({
                 targets: star5,

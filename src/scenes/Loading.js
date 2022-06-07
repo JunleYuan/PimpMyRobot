@@ -54,8 +54,6 @@ class Loading extends Phaser.Scene {
     loadIMG(){
         this.load.image('backgroundWS', './assets/MainWorkshop.png');
         this.load.image('backgroundSR', './assets/Shelves.png');
-        this.load.image('inventory', './assets/inv.png');
-        this.load.image('crafting', './assets/craft.png');
         this.load.image('require', './assets/UI/New_Orders.png');
         this.load.image('requireText', './assets/UI/Ticket.png');
       
@@ -77,10 +75,9 @@ class Loading extends Phaser.Scene {
         this.load.image('TealColor', './assets/New_Buttons/New_Teal.png');
 
         //Load UI Elements
-        this.load.image('BRDR', './assets/BorderForParts.png');
+        
         this.load.image('Time_And_Money_UI', './assets/UI/Timer-And-Money.png');
         this.load.image('Inventory_Bar', './assets/UI/Parts-Bar.png');
-        this.load.image('PAINT', './assets/PAINT.png');
         this.load.image('star', './assets/star.png');
 
         //Load Animations
@@ -101,7 +98,6 @@ class Loading extends Phaser.Scene {
         this.load.image('ResultScreen', './assets/ResultsScreen.png');
         this.load.image('ResultText', './assets/Results.png');
         this.load.image('mainMenu', './assets/menuButton.png');
-        this.load.image('background', './assets/menuBackground.png');
         this.load.image('play','./assets/playButton.png');
         this.load.image('tutorial','./assets/ControlButton.png');
         this.load.image('settings','./assets/settingsButton.png');
@@ -154,6 +150,11 @@ class Loading extends Phaser.Scene {
         this.load.audio('backgroundMusic', './assets/Mimi.mp3');
         this.load.audio('introMusic', './assets/My_Song_3.mp3');
         this.load.audio('star5', './assets/star5.mp3');
+        this.load.audio('star4', './assets/star4.mp3');
+        this.load.audio('star3', './assets/star3.mp3');
+        this.load.audio('star2', './assets/star2.mp3');
+        this.load.audio('star1', './assets/star1.mp3');
+
         this.load.audio('spray', './assets/spray.wav');
         this.load.audio('door', './assets/door.wav');
         

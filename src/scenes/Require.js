@@ -61,7 +61,6 @@ class RequireList extends Phaser.Scene {
 
         this.testText = this.add.bitmapText(0,-270, 'vcrBM', 'Ticket', 32).setOrigin(.5, .5);
 
-        
 
         this.page = this.add.image(0, 0, 'requireText').setOrigin(.5, .5).setScale(1.5,1);
         // var ourGame = this.scene.get('buildMain');
@@ -107,7 +106,7 @@ class RequireList extends Phaser.Scene {
 
         this.container = this.add.container(this.game.renderer.width/2, this.game.renderer.height/2, this.base);
 
-        this.container.setSize(this.page.width*2, this.page.height*2);
+        this.container.setSize(430, 669);
 
         this.container.setInteractive();
         this.input.setDraggable(this.container);
