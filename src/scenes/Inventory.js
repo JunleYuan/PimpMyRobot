@@ -206,7 +206,7 @@ class Inventory extends Phaser.Scene {
                 this.time.delayedCall(1500, () => {
                     sellready = true;
 
-                })
+                });
                 this.time.delayedCall(900, () => {
                     this.sellbutt.setTexture('sellButt3');
                     
