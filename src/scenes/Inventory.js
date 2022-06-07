@@ -493,7 +493,7 @@ class Inventory extends Phaser.Scene {
         });
         // //add all parts needed
 
-        if(lvl < 4){
+        if(lvl < 3){
             numbSet = 2;
             this.Parts_1();
 

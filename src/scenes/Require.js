@@ -19,41 +19,42 @@ class RequireList extends Phaser.Scene {
             this.CurTrait.splice(this.CurTrait.indexOf(3), 1);
 
         }
-        
 
-        switch(lvl){
-            case 1:
+        numbRequire = lvl;
+
+        // switch(lvl){
+        //     case 1:
                 
-                numbRequire = 1;
+        //         numbRequire = 1;
 
-                break;
-            case 2:
+        //         break;
+        //     case 2:
                 
-                numbRequire = 2;
+        //         numbRequire = 2;
 
-                break;
-            case 3:
+        //         break;
+        //     case 3:
 
                
-                numbRequire = 3;
+        //         numbRequire = 3;
 
-                break;
-            case 4:
+        //         break;
+        //     case 4:
 
-                numbRequire = 4;
+        //         numbRequire = 4;
 
-                break;
-            case 5:
+        //         break;
+        //     case 5:
 
-                numbRequire = 5;
+        //         numbRequire = 5;
 
-                break;
-            case 6:
+        //         break;
+        //     case 6:
 
-                numbRequire = 6;
+        //         numbRequire = 6;
 
-                break;
-        }
+        //         break;
+        // }
 
 
         this.notUseParts = ['head','body','arms','legs'];
@@ -87,7 +88,7 @@ class RequireList extends Phaser.Scene {
                 
             }else{
 
-                if(lvl>3){
+                if(lvl>2){
 
                     console.log("color rule");
                     textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
