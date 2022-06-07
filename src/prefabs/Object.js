@@ -28,6 +28,7 @@ class Object extends Phaser.GameObjects.Sprite {
 
         this.on('dragstart', function (pointer, dragX, dragY) {
 
+            scene.sound.play('roboSound');
             this.setDepth(2);
 
 

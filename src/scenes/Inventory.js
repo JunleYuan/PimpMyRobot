@@ -192,6 +192,9 @@ class Inventory extends Phaser.Scene {
         this.sellbutt.on('pointerdown', () => {
 
             if(subParts.length == 4){
+
+                this.sound.play('soldSound');
+
                 this.sellbutt.setTexture('sellButt2');
                 this.spray.visible = true;
                 this.spray.play('Sell Window');
@@ -201,8 +204,12 @@ class Inventory extends Phaser.Scene {
 
                 // }
                 this.time.delayedCall(1500, () => {
-                    this.sellbutt.setTexture('sellButt3');
                     sellready = true;
+
+                })
+                this.time.delayedCall(900, () => {
+                    this.sellbutt.setTexture('sellButt3');
+                    
                     for(var i = 0; i < subParts.length; i++){
                         subParts[i].setTexture(subParts[i].textureArray[0]);
                     }

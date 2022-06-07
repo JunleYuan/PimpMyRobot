@@ -58,6 +58,7 @@ class UIScene extends Phaser.Scene {
                 this.scene.sleep("requireList");
                 TpageOpen = false;
             }else{
+                this.sound.play('orderSound');
                 console.log("open");
                 this.scene.wake("requireList");
                 

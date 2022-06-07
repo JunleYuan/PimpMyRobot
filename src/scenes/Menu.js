@@ -40,6 +40,9 @@ class Menu extends Phaser.Scene {
         this.play.on('pointerdown', () => {
           
             this.game.sound.stopAll();
+            this.sound.play('buttSound');
+
+
             this.scene.start("UIScene");
             this.scene.start("buildMain");
             this.scene.start("inventory");
@@ -54,6 +57,8 @@ class Menu extends Phaser.Scene {
         //tutorial/controls button
         this.tutorial = this.add.image(game.config.width/2 + 175, game.config.height/2 + 200, 'tutorial').setOrigin(0.5, 0.5).setScale(0.5).setInteractive();
         this.tutorial.on('pointerdown', () => {
+          
+          this.sound.play('buttSound');
             this.scene.launch('tutorial'); 
           });
         this.tutorial.on('pointerout', () => {

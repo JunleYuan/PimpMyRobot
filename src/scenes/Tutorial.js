@@ -4,8 +4,6 @@ class Tutorial extends Phaser.Scene {
     }
 
     preload() {
-
-        this.load.image('background', './assets/menuBackground.png');
         this.load.image('mainMenu', './assets/menuButton.png');
         this.load.bitmapFont('vcrBM', './assets/vcr_osd_mono_0.png', './assets/vcr_osd_mono.fnt');
     }
@@ -28,6 +26,7 @@ class Tutorial extends Phaser.Scene {
         //back to main menu button
         this.menu = this.add.image(game.config.width/2, game.config.height - 120, 'mainMenu').setOrigin(0.5, 0.5).setInteractive();
         this.menu.on('pointerdown', () => {
+          this.sound.play('buttSound');
             this.scene.stop('tutorial'); 
           });
           this.menu.on('pointerout', () => {

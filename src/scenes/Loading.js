@@ -161,6 +161,11 @@ class Loading extends Phaser.Scene {
 
         this.load.audio('spray', './assets/spray.wav');
         this.load.audio('door', './assets/door.wav');
+        this.load.audio('buttSound', './assets/buttonboop.wav');
+        this.load.audio('roboSound', './assets/robotclink.wav');
+        this.load.audio('orderSound', './assets/ordersound.wav');
+        this.load.audio('soldSound', './assets/sold.wav');
+
         
 
     }
