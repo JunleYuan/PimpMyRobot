@@ -277,6 +277,9 @@ class Inventory extends Phaser.Scene {
         this.blueButton.on('pointerdown', () => {
             console.log("clicked on blue button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Blue_spray');
                 this.time.delayedCall(900, () => {
@@ -302,6 +305,9 @@ class Inventory extends Phaser.Scene {
         this.goldButton.on('pointerdown', () => {
             console.log("clicked on gold button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Gold_spray');
                 this.time.delayedCall(900, () => {
@@ -327,6 +333,9 @@ class Inventory extends Phaser.Scene {
         this.greenButton.on('pointerdown', () => {
             console.log("clicked on green button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Green_spray');
                 this.time.delayedCall(900, () => {
@@ -352,6 +361,9 @@ class Inventory extends Phaser.Scene {
         this.blackButton.on('pointerdown', () => {
             console.log("clicked on black button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Black_spray');
                 this.time.delayedCall(900, () => {
@@ -377,6 +389,9 @@ class Inventory extends Phaser.Scene {
         this.orangeButton.on('pointerdown', () => {
             console.log("clicked on orange button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Orange_spray');
                 this.time.delayedCall(900, () => {
@@ -402,6 +417,9 @@ class Inventory extends Phaser.Scene {
         this.pinkButton.on('pointerdown', () => {
             console.log("clicked on Pink button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Pink_spray');
                 this.time.delayedCall(900, () => {
@@ -426,6 +444,9 @@ class Inventory extends Phaser.Scene {
         this.purpleButton.on('pointerdown', () => {
             console.log("clicked on purple button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Purple_spray');
                 this.time.delayedCall(900, () => {
@@ -450,6 +471,9 @@ class Inventory extends Phaser.Scene {
         this.silverButton.on('pointerdown', () => {
             console.log("clicked on silver button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Silver_spray');
                 this.time.delayedCall(900, () => {
@@ -473,6 +497,9 @@ class Inventory extends Phaser.Scene {
         this.tealButton.on('pointerdown', () => {
             console.log("clicked on Teal button");
             if(subParts.length == 4){
+
+                this.sound.play('spray');
+
                 this.spray.visible = true;
                 this.spray.play('Teal_spray');
                 this.time.delayedCall(900, () => {
