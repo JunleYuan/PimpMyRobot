@@ -63,6 +63,8 @@ class Loading extends Phaser.Scene {
         this.load.image('backButt', './assets/UI/New_Back_Button.png');
         this.load.image('backButt', './assets/UI/New_Back_Button.png');
         this.load.image('sellButt', './assets/UI/SELLBUTTON.png');
+        this.load.image('sellButt2', './assets/UI/SELLBUTTONCLICK.png');
+        this.load.image('sellButt3', './assets/UI/SELLBUTTONOFF.png');
         this.load.image('colButt', './assets/Color Changer/Color-Change.png');
 
         //Load Color Buttons
