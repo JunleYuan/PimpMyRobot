@@ -347,7 +347,7 @@ class RequireList extends Phaser.Scene {
     ranText( rule ){
         
         
-        switch(rule[1]){
+        switch(rule[0]){
 
             case 1:
                 switch(Math.floor(Math.random() * 2)){
