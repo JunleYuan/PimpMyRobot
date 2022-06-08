@@ -27,9 +27,11 @@ class Rent extends Phaser.Scene {
 
         total_money = total_money + money;
 
+        let buffer = 1;
+
         this.time.delayedCall(1000, () => {
 
-            let buffer = 1;
+            
 
             if(lvl == 1){
                 buffer = .5;
