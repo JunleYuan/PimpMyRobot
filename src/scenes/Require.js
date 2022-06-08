@@ -191,7 +191,7 @@ class RequireList extends Phaser.Scene {
 
             case 3:
 
-                return 'We want the color to be Camo'
+                return 'We want the color to be Green'
 
 
             case 4:

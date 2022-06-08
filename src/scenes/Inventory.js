@@ -207,7 +207,7 @@ class Inventory extends Phaser.Scene {
 
             if(subParts.length == 4){
 
-                this.sound.play('soldSound');
+                
 
                 this.sellbutt.setTexture('sellButt2');
                 this.spray.visible = true;
@@ -1117,7 +1117,12 @@ class Inventory extends Phaser.Scene {
         }
 
         if(roundMoney>0){
+            this.sound.play('soldSound');
             money = roundMoney + money;
+
+        }else{
+
+            this.sound.play('nope');
 
         }
 
