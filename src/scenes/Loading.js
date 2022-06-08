@@ -212,6 +212,7 @@ class Loading extends Phaser.Scene {
         this.load.audio('roboSound', './assets/robotclink.wav');
         this.load.audio('orderSound', './assets/ordersound.wav');
         this.load.audio('soldSound', './assets/sold.wav');
+        this.load.audio('nope', './assets/nope.wav');
 
         
 
