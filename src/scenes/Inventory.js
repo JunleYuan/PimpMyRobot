@@ -1042,7 +1042,7 @@ class Inventory extends Phaser.Scene {
             roundMoney = roundMoney + this.checkRule(arrayOfRule[i]);
         }
 
-        if(curColor == colorRule && lvl >3){
+        if(curColor == colorRule && lvl >1){
             roundMoney = roundMoney + 20;
 
         }
@@ -1055,33 +1055,205 @@ class Inventory extends Phaser.Scene {
     }
 
     checkRule(rule){
-        switch(rule[1]){
+    //     switch(rule[1]){
 
-            //give money if don't have the trait
-            case 0:
-                return 0
+    //         //give money if don't have the trait
+    //         case 0:
 
-            case 1:
+    //             for(let i = 0; i<subParts.length;i++){
+    //                 //console.log(subParts[i].roboTraits);
+    //                 if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+    //                     console.log("case 0 fail");
+    //                     return 0
+    //                 }
+                    
+    //             }
+    //             console.log("case 0 pass");
+    //             return 10
 
-                return 0
+            
+    //         //give money if the trait is there
+    //         case 1:
 
-            case 2:
+    //             for(let i = 0; i<subParts.length;i++){
+                    
+    //                 if(subParts[i].roboTraits[0]==rule[0]){
+    //                     console.log("case 1 pass");
+    //                     return 10
+    //                 }
+                    
+    //             }
+    //             console.log("case 1 fail");
+    //             return 0
+
+    //         //if certain parts is curtain trait give money
+    //         case 2:
+    //             //console.log("rule: "+ rule[2]+ "case 2 index " + arrayOfPart.indexOf(rule[2]));
+
+    //             for(let i = 0; i<subParts.length;i++){
+    //                 if(subParts[i].which_part == arrayOfPart.indexOf(rule[2])){
+    //                     if(subParts[i].roboTraits[0]==rule[0]){
+
+    //                         console.log("case 2 pass");
+    //                         return 10
+    //                     }
+
+    //                 }
+
+    //             }
                 
-                return 0
+    //             console.log("case 2 fail");
+    //             return 0
 
             
+    //         //if condition is meet it's ok to have the trait
+    //         case 3:
+
+    //             console.log("rule0: "+ rule[0]+ " rule2: "+ rule[2]+ " rule3: "+ rule[3]);
+
+    //             console.log("sub part: "+subParts[arrayOfPart.indexOf(rule[3])].roboTraits[0]);
+
+    //             for(let i = 0; i<subParts.length;i++){
+    //                 if(subParts[i].which_part == arrayOfPart.indexOf(rule[3])){
+    //                     if(subParts[i].roboTraits[0]==rule[2]){
+
+    //                         for(let j = 0; j<subParts.length;j++){
+    //                             if(subParts[j].roboTraits.filter(x => x==rule[0]).length > 0){
+    //                                 console.log("case 3 pass");
+    //                                 return 20
+    //                             }
+    //                         }
+
+    //                     }
+
+    //                 }
+
+    //             }
+    //             console.log("case 3 fail");
+    //             return 0
             
+    //         //give money if there is 2 of a certain kind
+    //         case 4:
+    //             let countNumTrait = 0
+    //             for(let i = 0; i<subParts.length;i++){
+                    
+    //                 if(subParts[i].roboTraits.filter(x => x==rule[0]).length > 0){
+    //                     countNumTrait++;
+    //                 }
+                    
+    //             }
+    //             if(countNumTrait>1){
+    //                 console.log("case 4 pass");
+    //                 return 10
+    //             }
+    //             console.log("case 4 fail");
+    //             return 0 
+
+
+    //     }
+        switch(rule[0]){
+            case 1:
+                // [case,trait,trait,part]
+                for(let i = 0; i<subParts.length;i++){
+                    
+                    if(subParts[i].roboTraits[0] !=rule[2] && subParts[i].which_part == arrayOfPart.indexOf(rule[3])){
+
+                        console.log("case 1 fail");
+                        return 0;
+                    }
+                    if( subParts[i].roboTraits[0] !=rule[1] && subParts[i].which_part != arrayOfPart.indexOf(rule[3])){
+                        console.log("case 1 fail");
+                        return 0;
+
+                    }
+                    
+                }
+                console.log("case 1 pass");
+                return 10
+            
+            case 2:
+                // [case,trait,trait,part]
+                for(let i = 0; i<subParts.length;i++){
+                    
+                    if(subParts[i].roboTraits[0] !=rule[2] && subParts[i].which_part == arrayOfPart.indexOf(rule[3])){
+
+                        console.log("case 2 fail");
+                        return 0;
+                    }
+                    if( subParts[i].roboTraits[0] !=rule[1] && subParts[i].which_part != arrayOfPart.indexOf(rule[3])){
+                        console.log("case 2 fail");
+                        return 0;
+
+                    }
+                    
+                }
+                console.log("case 2 pass");
+
+                return 10
+
             case 3:
 
+                // [case,trait,trait,part]
+                for(let i = 0; i<subParts.length;i++){
+                    
+                    if(subParts[i].roboTraits[0] !=rule[2] && subParts[i].which_part == arrayOfPart.indexOf(rule[3])){
+
+                        console.log("case 3 fail");
+                        return 0;
+                    }
+                    if(subParts[i].roboTraits[0] !=rule[2] && subParts[i].which_part == arrayOfPart.indexOf(rule[4])){
+
+                        console.log("case 3 fail");
+                        return 0;
+                    }
+                    if( subParts[i].roboTraits[0] !=rule[1] && subParts[i].which_part != arrayOfPart.indexOf(rule[3])){
+                        console.log("case 3 fail");
+                        return 0;
+
+                    }
+                    
+                }
+                console.log("case 3 pass");
+
+                return 10
+
+                case 4:
+
+                    // [case,trait,trait,part]
+                    for(let i = 0; i<subParts.length;i++){
+                        
+                        if(subParts[i].roboTraits[0] !=rule[1] && subParts[i].which_part == arrayOfPart.indexOf(rule[4])){
+    
+                            console.log("case 4 fail");
+                            return 0;
+                        }
+                        if(subParts[i].roboTraits[0] !=rule[1] && subParts[i].which_part == arrayOfPart.indexOf(rule[5])){
+    
+                            console.log("case 4 fail");
+                            return 0;
+                        }
+                        if(subParts[i].roboTraits[0] !=rule[2] && subParts[i].which_part == arrayOfPart.indexOf(rule[6])){
+    
+                            console.log("case 4 fail");
+                            return 0;
+                        }
+                        if(subParts[i].roboTraits[0] !=rule[3] && subParts[i].which_part == arrayOfPart.indexOf(rule[7])){
+    
+                            console.log("case 4 fail");
+                            return 0;
+                        }
+                        
+                        
+                    }
+                    console.log("case 4 pass");
+    
+                    return 10
+
+            
+
                 
-                return 0
-            
-            
-            case 4:
-               
-                return 0;
 
-
+                
         }
 
     }

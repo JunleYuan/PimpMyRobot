@@ -24,8 +24,6 @@ class RequireList extends Phaser.Scene {
 
         numbRequire = 1;
 
-        
-
 
         this.notUseParts = ['head','body','arms','legs'];
 
@@ -53,14 +51,14 @@ class RequireList extends Phaser.Scene {
             if(tlength!=numbRequire){
                 arrayOfRule[tlength] = this.whatTraits();
 
-                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
+                textArray[tlength] = this.add.bitmapText(-190,-150+tlength*80, 'vcrBM', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
                 
             }else{
 
-                if(lvl>2){
+                if(lvl>1){
 
                     console.log("color rule");
-                    textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
+                    textArray[tlength] = this.add.bitmapText(-190,-150+tlength*100, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
                     
                 }
             }
@@ -222,13 +220,10 @@ class RequireList extends Phaser.Scene {
             let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
             this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-            let ranpart2 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
-            this.notUseParts.splice(this.notUseParts.indexOf(ranpart2), 1);
-
             let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
             let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
 
-            return [2 ,temptrait,temptrait2,ranpart,ranpart2]
+            return [2 ,temptrait,temptrait2,ranpart]
         }else if(lvl == 3){
 
             let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
@@ -245,11 +240,9 @@ class RequireList extends Phaser.Scene {
             let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
             let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
 
-            let ranTraits3 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
-            let temptrait3 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits3),this.CurTrait.indexOf(ranTraits3)+1);
 
 
-            return [3 ,temptrait,temptrait2,temptrait3,ranpart,ranpart2]
+            return [3 ,temptrait,temptrait2,ranpart,ranpart2]
 
 
         }else{
@@ -262,9 +255,6 @@ class RequireList extends Phaser.Scene {
 
             let ranTraits3 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
             let temptrait3 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits3),this.CurTrait.indexOf(ranTraits3)+1);
-
-            let ranTraits4 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
-            let temptrait4 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits4),this.CurTrait.indexOf(ranTraits4)+1);
 
 
             let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
@@ -281,7 +271,7 @@ class RequireList extends Phaser.Scene {
 
 
 
-            return [4 ,temptrait,temptrait2,temptrait3,temptrait4,ranpart,ranpart2,ranpart3,ranpart4]
+            return [4 ,temptrait,temptrait2,temptrait3,ranpart,ranpart2,ranpart3,ranpart4]
         }
 
         
@@ -350,34 +340,22 @@ class RequireList extends Phaser.Scene {
         switch(rule[0]){
 
             case 1:
-                switch(Math.floor(Math.random() * 2)){
+                
 
-                    case 0:
-
-                        return 'We want our robots to be ' + rule[0]
-
-
-                    case 1:
-
-                        return  rule[0] + ' would be nice'
-
-
-
-                }
-            break;
+                return 'I want a '+ rule[1] + ' robot with '+ rule[2] + ' '+rule[3]
 
             case 2:
 
-                return 'I want the '+ rule[2] + ' to be ' +  rule[0]
+                return 'I want a ' + rule[1] + ' robot with ' + rule[2] + ' '+rule[3]
 
 
             case 3:
 
-                return 'if '+ rule[3] + ' is '+  rule[2]+ ' ignore what I prevously said about '+  rule[0] +' parts and add it ';
+                return 'I want a ' + rule[1] + ' robot but I also want it to have ' + rule[2] + ' '+ rule[3] + ' and ' + rule[2] + ' '+ rule[4]
 
             case 4:
 
-                return 'we want at least 2 part that is ' + rule[0]
+                return 'I want the robot\'s '+ rule[4] + ' and ' + rule[5] + ' to be ' + rule[1] + ', with ' + rule[2]+ ' ' + rule[6] +' and ' + rule[3]+ ' ' + rule[7]
 
 
         }
