@@ -366,24 +366,6 @@ class RequireList extends Phaser.Scene {
                 }
             break;
 
-            case 0:
-
-                switch(Math.floor(Math.random() * 2)){
-
-                    case 0:
-
-                        return 'We hate ' + rule[0]
-
-
-                    case 1:
-
-                        return 'We do not like '+ rule[0]
-
-
-
-                }
-            break;
-
             case 2:
 
                 return 'I want the '+ rule[2] + ' to be ' +  rule[0]
