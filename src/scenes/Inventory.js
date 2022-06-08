@@ -6,9 +6,10 @@ class Inventory extends Phaser.Scene {
     
 
     create() {
-
-
-        //start of animation of different colors
+        //Create Animations.
+        //Animation Frames for Each colored Spray.
+        //Animations share similar structure to eachother.
+        //Blue Spray Animation
         this.anims.create({ 
             key: 'Blue_spray', 
             frames: this.anims.generateFrameNames('bluespray_atlas', {      
@@ -22,6 +23,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Black Spray Animation
         this.anims.create({ 
             key: 'Black_spray', 
             frames: this.anims.generateFrameNames('blackspray_atlas', {      
@@ -35,6 +37,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Gold Spray Animation
         this.anims.create({ 
             key: 'Gold_spray', 
             frames: this.anims.generateFrameNames('goldspray_atlas', {      
@@ -49,6 +52,7 @@ class Inventory extends Phaser.Scene {
         });
 
 
+        //Green Spray Animation
         this.anims.create({ 
             key: 'Green_spray', 
             frames: this.anims.generateFrameNames('greenspray_atlas', {      
@@ -62,6 +66,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Orange Spray Animation
         this.anims.create({ 
             key: 'Orange_spray', 
             frames: this.anims.generateFrameNames('orangespray_atlas', {      
@@ -75,6 +80,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Pink Spray Animation
         this.anims.create({ 
             key: 'Pink_spray', 
             frames: this.anims.generateFrameNames('pinkspray_atlas', {      
@@ -88,6 +94,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Purple Spray Animation
         this.anims.create({ 
             key: 'Purple_spray', 
             frames: this.anims.generateFrameNames('purplespray_atlas', {      
@@ -101,6 +108,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Silver Spray Animation
         this.anims.create({ 
             key: 'Silver_spray', 
             frames: this.anims.generateFrameNames('silverspray_atlas', {      
@@ -114,6 +122,7 @@ class Inventory extends Phaser.Scene {
             yoyo: 1
         });
 
+        //Teal Spray Animation
         this.anims.create({ 
             key: 'Teal_spray', 
             frames: this.anims.generateFrameNames('tealspray_atlas', {      
@@ -128,6 +137,8 @@ class Inventory extends Phaser.Scene {
         });
 
 
+        //Sell Animations
+        //Plays animation when the player sells the robots.
         this.anims.create({ 
             key: 'Sell Window', 
             frames: this.anims.generateFrameNames('sell_atlas', {      
@@ -252,38 +263,56 @@ class Inventory extends Phaser.Scene {
         this.blueButton = this.add.image(910, 240, 'BlueColor').setOrigin(1, 1).setScale(0.5);
         this.blueButton.setInteractive();
         this.blueButton.visible = false;
+        this.bluetext = this.add.bitmapText(950, 405, 'gem_white', 'BLUE', 24, 1);
+        this.bluetext.visible = false;
 
         this.blackButton = this.add.image(910, 280, 'BlackColor').setOrigin(1, 1).setScale(0.5);
         this.blackButton.setInteractive();
         this.blackButton.visible = false;
+        this.blacktext = this.add.bitmapText(950, 405, 'gem_white', 'BLACK', 24, 1);
+        this.blacktext.visible = false;
 
         this.goldButton = this.add.image(910, 320, 'GoldColor').setOrigin(1, 1).setScale(0.5);
         this.goldButton.setInteractive();
         this.goldButton.visible = false;
+        this.goldtext = this.add.bitmapText(950, 405, 'gem_white', 'GOLD', 24, 1);
+        this.goldtext.visible = false;
 
         this.greenButton = this.add.image(970, 240, 'GreenColor').setOrigin(1, 1).setScale(0.5);
         this.greenButton.setInteractive();
         this.greenButton.visible = false;
+        this.greentext = this.add.bitmapText(950, 405, 'gem_white', 'GREEN', 24, 1);
+        this.greentext.visible = false;
 
         this.pinkButton = this.add.image(970, 280, 'PinkColor').setOrigin(1, 1).setScale(0.5);
         this.pinkButton.setInteractive();
         this.pinkButton.visible = false;
+        this.pinktext = this.add.bitmapText(950, 405, 'gem_white', 'PINK', 24, 1);
+        this.pinktext.visible = false;
 
         this.orangeButton = this.add.image(970, 320, 'OrangeColor').setOrigin(1, 1).setScale(0.5);
         this.orangeButton.setInteractive();
         this.orangeButton.visible = false;
+        this.orangetext = this.add.bitmapText(950, 405, 'gem_white', 'ORANGE', 24, 1);
+        this.orangetext.visible = false;
 
         this.purpleButton = this.add.image(1030, 240, 'PurpleColor').setOrigin(1, 1).setScale(0.5);
         this.purpleButton.setInteractive();
         this.purpleButton.visible = false;
+        this.purpletext = this.add.bitmapText(950, 405, 'gem_white', 'PURPLE', 24, 1);
+        this.purpletext.visible = false;
 
         this.silverButton = this.add.image(1030, 280, 'SilverColor').setOrigin(1, 1).setScale(0.5);
         this.silverButton.setInteractive();
         this.silverButton.visible = false;
+        this.silvertext = this.add.bitmapText(950, 405, 'gem_white', 'SILVER', 24, 1);
+        this.silvertext.visible = false;
 
         this.tealButton = this.add.image(1030, 320, 'TealColor').setOrigin(1, 1).setScale(0.5);
         this.tealButton.setInteractive();
         this.tealButton.visible = false;
+        this.tealtext = this.add.bitmapText(940, 405, 'gem_white', 'TURQUOISE', 24, 1);
+        this.tealtext.visible = false;
 
         //Color Function For Blue Button
         this.blueButton.on('pointerdown', () => {
@@ -306,9 +335,12 @@ class Inventory extends Phaser.Scene {
         });
         this.blueButton.on('pointerout', () => {
             this.blueButton.setScale(0.5); 
+            this.bluetext.visible = false;
           });
         this.blueButton.on('pointerover', () => {
             this.blueButton.setScale(0.55); 
+            this.bluetext.visible = true;
+        
         });
 
 
@@ -334,9 +366,11 @@ class Inventory extends Phaser.Scene {
         });
         this.goldButton.on('pointerout', () => {
             this.goldButton.setScale(0.5); 
+            this.goldtext.visible = false;
           });
         this.goldButton.on('pointerover', () => {
             this.goldButton.setScale(0.55); 
+            this.goldtext.visible = true;
         });
         
 
@@ -362,9 +396,11 @@ class Inventory extends Phaser.Scene {
         });
         this.greenButton.on('pointerout', () => {
             this.greenButton.setScale(0.5); 
+            this.greentext.visible = false;
           });
         this.greenButton.on('pointerover', () => {
-            this.greenButton.setScale(0.55); 
+            this.greenButton.setScale(0.55);
+            this.greentext.visible = true; 
         });
 
 
@@ -390,9 +426,11 @@ class Inventory extends Phaser.Scene {
         });
         this.blackButton.on('pointerout', () => {
             this.blackButton.setScale(0.5); 
+            this.blacktext.visible = false;
           });
         this.blackButton.on('pointerover', () => {
             this.blackButton.setScale(0.55); 
+            this.blacktext.visible = true;
         });
 
 
@@ -418,9 +456,11 @@ class Inventory extends Phaser.Scene {
         });
         this.orangeButton.on('pointerout', () => {
             this.orangeButton.setScale(0.5); 
+            this.orangetext.visible = false;
           });
         this.orangeButton.on('pointerover', () => {
             this.orangeButton.setScale(0.55); 
+            this.orangetext.visible = true;
         });
 
 
@@ -446,9 +486,11 @@ class Inventory extends Phaser.Scene {
         });
         this.pinkButton.on('pointerout', () => {
             this.pinkButton.setScale(0.5); 
+            this.pinktext.visible = false;
           });
         this.pinkButton.on('pointerover', () => {
             this.pinkButton.setScale(0.55); 
+            this.pinktext.visible = true;
         });
 
 
@@ -473,9 +515,11 @@ class Inventory extends Phaser.Scene {
         });
         this.purpleButton.on('pointerout', () => {
             this.purpleButton.setScale(0.5); 
+            this.purpletext.visible = false;
           });
         this.purpleButton.on('pointerover', () => {
             this.purpleButton.setScale(0.55); 
+            this.purpletext.visible = true;
         });
 
 
@@ -500,9 +544,11 @@ class Inventory extends Phaser.Scene {
         });
         this.silverButton.on('pointerout', () => {
             this.silverButton.setScale(0.5); 
+            this.silvertext.visible = false;
           });
         this.silverButton.on('pointerover', () => {
             this.silverButton.setScale(0.55); 
+            this.silvertext.visible = true;
         });
 
         //Color Functions for Teal Button
@@ -526,9 +572,11 @@ class Inventory extends Phaser.Scene {
         });
         this.tealButton.on('pointerout', () => {
             this.tealButton.setScale(0.5); 
+            this.tealtext.visible = false;
           });
         this.tealButton.on('pointerover', () => {
             this.tealButton.setScale(0.55); 
+            this.tealtext.visible = true;
         });
         // //add all parts needed
 

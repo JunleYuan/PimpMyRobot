@@ -69,7 +69,7 @@ var money = 0;
 
 var rent = 40;
 
-var timer = 60;
+var timer = 120;
 
 var total_money = 0;
 

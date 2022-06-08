@@ -1,3 +1,5 @@
+//Day 4 Dialogue of Story.
+//Based off code from Section Activity on Week 9 about dialogue boxes.
 class Day4 extends Phaser.Scene {
     constructor() {
         super("Day4Scene");
