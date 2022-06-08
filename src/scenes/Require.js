@@ -10,6 +10,8 @@ class RequireList extends Phaser.Scene {
 
         //console.log(arrayOfRule);
 
+        this.firstrule = true;
+
 
         this.CurTrait = arrayOfTraits.slice(0,3);
 
@@ -20,41 +22,9 @@ class RequireList extends Phaser.Scene {
 
         }
 
-        numbRequire = lvl;
+        numbRequire = 1;
 
-        // switch(lvl){
-        //     case 1:
-                
-        //         numbRequire = 1;
-
-        //         break;
-        //     case 2:
-                
-        //         numbRequire = 2;
-
-        //         break;
-        //     case 3:
-
-               
-        //         numbRequire = 3;
-
-        //         break;
-        //     case 4:
-
-        //         numbRequire = 4;
-
-        //         break;
-        //     case 5:
-
-        //         numbRequire = 5;
-
-        //         break;
-        //     case 6:
-
-        //         numbRequire = 6;
-
-        //         break;
-        // }
+        
 
 
         this.notUseParts = ['head','body','arms','legs'];
@@ -135,96 +105,187 @@ class RequireList extends Phaser.Scene {
     
     whatTraits(){
 
-        //console.log("whatTraits called");
+        // //console.log("whatTraits called");
 
-        //var to see if trait is already in
-        let alreadyin = false;
-        //temp var to store yes and no if is already in
-        let tempvar = 0;
-
-
-        let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
-
-        //want or do not want traits
-        let yesNo = Math.floor(Math.random() * 2);
-
-        //console.log("ran "+ranTraits);
-
-        //console.log("ran ind"+this.CurTrait.indexOf(ranTraits));
-        
-        let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+        // //var to see if trait is already in
+        // let alreadyin = false;
+        // //temp var to store yes and no if is already in
+        // let tempvar = 0;
 
 
-        //check if already in loop
-        arrayOfRule.forEach(element => {
-            //console.log("cur "+arrayOfTraits[ranTraits]);
-            //console.log("cur "+ranTraits);
+        // let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+
+        // //want or do not want traits
+        // let yesNo = Math.floor(Math.random() * 2);
+
+        //let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+
+        // //check if already in loop
+        // arrayOfRule.forEach(element => {
+        //     //console.log("cur "+arrayOfTraits[ranTraits]);
+        //     //console.log("cur "+ranTraits);
             
-            //console.log("ele "+element[0]);
-            if(element[0] == ranTraits){
+        //     //console.log("ele "+element[0]);
+        //     if(element[0] == ranTraits){
                 
-                alreadyin = true;
-                //console.log("already in");
-                tempvar = element[1];
-            }
-        });
+        //         alreadyin = true;
+        //         //console.log("already in");
+        //         tempvar = element[1];
+        //     }
+        // });
 
-        //if trait is already in
-        if(alreadyin){
+        // //if trait is already in
+        // if(alreadyin){
 
-            //tempvar is the already existing trait's rule
-            //check ranText's switch case to see what temp var match with what rule
-            if(tempvar == 1 || tempvar == 2|| tempvar == 4){
+        //     //tempvar is the already existing trait's rule
+        //     //check ranText's switch case to see what temp var match with what rule
+        //     if(tempvar == 1 || tempvar == 2|| tempvar == 4){
 
 
-                if(Math.random() > .5){
+        //         if(Math.random() > .5){
 
-                    let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+        //             let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
                     
-                    //console.log(this.notUseParts);
+        //             //console.log(this.notUseParts);
 
-                    //console.log("ran part "+ranpart);
+        //             //console.log("ran part "+ranpart);
 
-                    this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+        //             this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                    //console.log(this.CurTrait);
+        //             //console.log(this.CurTrait);
 
-                    this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+        //             this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+        //             //console.log(this.CurTrait);
+
+        //             return [temptrait,2,ranpart]
+
+        //         }else{
 
 
-                    //console.log(this.CurTrait);
+        //             return [temptrait,4]
 
-                    return [temptrait,2,ranpart]
-
-                }else{
-
-
-                    return [temptrait,4]
-
-                }
+        //         }
             
 
-            }else if(tempvar == 0){
+        //     }else if(tempvar == 0){
 
-                let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+        //         let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
 
-                this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+        //         this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+        //         this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
-                let ranTraits2 = arrayOfTraits[Math.floor(Math.random() * arrayOfTraits.length)];
+        //         let ranTraits2 = arrayOfTraits[Math.floor(Math.random() * arrayOfTraits.length)];
 
-                return [temptrait,3,ranTraits2,ranpart]
+        //         return [temptrait,3,ranTraits2,ranpart]
 
-            }
+        //     }
 
             
 
+        // }
+
+        // if(this.firstrule){
+
+        //     this.firstrule = false;
+
+        //     return [temptrait,1]
+
+        // }
+        
+        // //if it's not already in rule, randomly deside of we want the trait or not
+        // return [temptrait,yesNo]
+
+        if(lvl == 1){
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+
+            return [1 ,temptrait,ranTraits2,ranpart]
+
+        }else if(lvl == 2){
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranpart2 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart2), 1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
+
+            return [2 ,temptrait,temptrait2,ranpart,ranpart2]
+        }else if(lvl == 3){
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranpart2 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart2), 1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
+
+            let ranTraits3 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait3 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits3),this.CurTrait.indexOf(ranTraits3)+1);
+
+
+            return [3 ,temptrait,temptrait2,temptrait3,ranpart,ranpart2]
+
+
+        }else{
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
+
+            let ranTraits3 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait3 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits3),this.CurTrait.indexOf(ranTraits3)+1);
+
+            let ranTraits4 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait4 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits4),this.CurTrait.indexOf(ranTraits4)+1);
+
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranpart2 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart2), 1);
+
+            let ranpart3 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart3), 1);
+
+            let ranpart4 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart4), 1);
+
+
+
+            return [4 ,temptrait,temptrait2,temptrait3,temptrait4,ranpart,ranpart2,ranpart3,ranpart4]
         }
 
         
-        //if it's not already in rule, randomly deside of we want the trait or not
-        return [temptrait,yesNo]
+
         
     }
 
