@@ -29,10 +29,11 @@ class Rent extends Phaser.Scene {
 
         let buffer = 1;
 
+
+        
         this.time.delayedCall(1000, () => {
 
-            
-
+            //play sound depending on money
             if(lvl == 1){
                 buffer = .5;
             }
@@ -73,6 +74,7 @@ class Rent extends Phaser.Scene {
             duration: 1000
         });
 
+        //play animation of stars depending on money
         let star1 = this.add.image(1280/2, 370, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
         this.tweens.add({
@@ -148,22 +150,22 @@ class Rent extends Phaser.Scene {
             if(lvl == 1){
                 money = 0;
                 lvl = lvl +1;
-                this.scene.start("Day2Scene")
+                this.scene.start("Day2Scene");
             }
             else if(lvl == 2){
                 money = 0;
                 lvl = lvl +1;
-                this.scene.start("Day3Scene")
+                this.scene.start("Day3Scene");
             }
             else if(lvl == 3){
                 money = 0;
                 lvl = lvl +1;
-                this.scene.start("Day4Scene")
+                this.scene.start("Day4Scene");
             }
             else if(lvl == 4){
                 money = 0;
                 lvl = 1;
-                this.scene.start("FinalScene")
+                this.scene.start("FinalScene");
             }
             
           });
@@ -173,20 +175,6 @@ class Rent extends Phaser.Scene {
           this.moveOnButt.on('pointerover', () => {
             this.moveOnButt.setScale(0.35); 
           });
-
-        /*
-          this.clock = this.time.delayedCall(10000, () => {
-
-            money = 0;
-            lvl = lvl +1;
-
-            this.scene.start("UIScene");
-            this.scene.start("buildMain");
-            this.scene.start("inventory");
-
-        })
-        */
-        
 
 
     }
