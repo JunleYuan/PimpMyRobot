@@ -63,13 +63,13 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 2;
+var lvl = 1;
 
 var money = 0;
 
 var rent = 40;
 
-var timer = 2*2;
+var timer = 60*2;
 
 var total_money = 0;
 

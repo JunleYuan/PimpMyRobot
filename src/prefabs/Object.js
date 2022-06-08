@@ -47,7 +47,7 @@ class Object extends Phaser.GameObjects.Sprite {
 
             if(this.isInInventory){
                 
-                this.x = 55;
+                this.x = 70;
                 switch(this.which_part){
 
                     case 0:
