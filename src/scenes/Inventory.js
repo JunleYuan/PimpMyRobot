@@ -7,6 +7,8 @@ class Inventory extends Phaser.Scene {
 
     create() {
 
+
+        //start of animation of different colors
         this.anims.create({ 
             key: 'Blue_spray', 
             frames: this.anims.generateFrameNames('bluespray_atlas', {      
@@ -138,7 +140,10 @@ class Inventory extends Phaser.Scene {
             frameRate: 20,
             yoyo: 1
         });
+        //end of animation of different colors
 
+
+        //the spray animation
         this.spray = this.add.sprite(640, 360).setDepth(4);
         this.spray.visible = false;
 
@@ -148,23 +153,22 @@ class Inventory extends Phaser.Scene {
         });
 
         console.log("Inventory open");
+
+
+        //the inventory img
         this.see_inv = this.add.image(0, 40, 'Inventory_Bar').setOrigin(0, 0).setScale(0.45,0.45).setDepth(1);
+
+
+
         //return button
         this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(0.65);
         this.backbutt.setInteractive();
-
-        
-
-
-          this.backbutt.on('pointerout', () => {
+        this.backbutt.on('pointerout', () => {
             this.backbutt.setScale(0.65); 
-          });
-          this.backbutt.on('pointerover', () => {
+        });
+        this.backbutt.on('pointerover', () => {
             this.backbutt.setScale(0.75); 
-          });
-
-        
-        
+        });
         //this.backbutt.visible = false;
 
         this.backbutt.on('pointerdown', () => {
@@ -181,13 +185,10 @@ class Inventory extends Phaser.Scene {
         //sell button
 
         sellready = true;
-
         this.sellbutt = this.add.image(1280, 720, 'sellButt3').setOrigin(1, 1).setScale(1).setDepth(4);
         this.sellbutt.setInteractive();
 
         this.sellbutt.visible = false;
-
-
 
         this.sellbutt.on('pointerdown', () => {
 
@@ -247,8 +248,6 @@ class Inventory extends Phaser.Scene {
         //color button
         this.colorbutt = this.add.image(1280,720, 'colButt').setOrigin(1, 1).setScale(0.5);
         this.colorbutt.visible = false;
-
-       
 
         this.blueButton = this.add.image(910, 240, 'BlueColor').setOrigin(1, 1).setScale(0.5);
         this.blueButton.setInteractive();
@@ -544,40 +543,6 @@ class Inventory extends Phaser.Scene {
 
         }
 
-        // switch(lvl){
-        //     case 1:
-        //         numbSet = 2;
-        //         this.Parts_1();
-
-        //         break;
-        //     case 2:
-        //         numbSet = 2;
-        //         this.Parts_1();
-
-        //         break;
-        //     case 3:
-
-        //         numbSet = 2;
-        //         this.Parts_1();
-
-        //         break;
-        //     case 4:
-
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
-
-        //         break;
-        //     case 5:
-
-        //         numbSet = 3;
-        //         this.Parts_1();
-        //         this.Parts_2();
-        //         break;
-        
-        // }
-
-
         //set random location and parts to boxes
         this.resetValue();
         
@@ -652,7 +617,7 @@ class Inventory extends Phaser.Scene {
         });
         
 
-        //  A drop zone
+        //  A drop zone for inventory
         var zone = this.add.zone(0, 362, 275, 470).setRectangleDropZone(295, 460);
 
         //  Just a visual display of the drop zone
@@ -1013,6 +978,8 @@ class Inventory extends Phaser.Scene {
         return Math.random() * (max - min) + min;
     }
 
+
+    //reset location when finish with order
     resetValue(){
         for(var i = 0; i < this.allPartsArray.length;i++){
 
@@ -1043,7 +1010,7 @@ class Inventory extends Phaser.Scene {
 
     
     
-
+    //give player points after completing order
     givePoints(){
 
 
@@ -1077,6 +1044,7 @@ class Inventory extends Phaser.Scene {
 
     }
 
+    //make sure the order is correct 
     checkRule(rule){
         
         switch(rule[0]){
