@@ -1,3 +1,5 @@
+//Background For The Storage Closet.
+//Seperate Scene as UI overlay is on top of all of the things.
 class Storage extends Phaser.Scene {
     constructor() {
         super("storageBG");

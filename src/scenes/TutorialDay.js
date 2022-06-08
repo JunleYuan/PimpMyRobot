@@ -1,3 +1,4 @@
+//Tutorial Dialogue when player presses tutorial button
 class TutorialDemo extends Phaser.Scene {
     constructor() {
         super("TutorialExplanation");
