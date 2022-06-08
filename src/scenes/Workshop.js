@@ -45,9 +45,9 @@ class Workshop extends Phaser.Scene {
         //boxes
        
         
-        this.box5 = this.add.image(190, 130, 'door').setOrigin(0, 0).setScale(0.5);
+        this.box5 = this.add.image(188, 130, 'door').setOrigin(0, 0).setScale(1);
         this.box5.setInteractive();
-        this.box5.setDisplaySize(200, 400);
+        this.box5.setDisplaySize(215, 430);
         //this.box5.setBackgroundColor('#DD002F');
         this.box5.on('pointerdown', () => {
             
@@ -62,6 +62,17 @@ class Workshop extends Phaser.Scene {
                 this.scene.launch("storageBG");
                 //this.scene.wake("inventory");
             }
+        });
+        this.box5.on('pointerover', () => {
+            
+            this.box5.setTexture('inv_door');
+            
+        });
+
+        this.box5.on('pointerout', () => {
+            
+            this.box5.setTexture('door');
+            
         });
        
 
