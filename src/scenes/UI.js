@@ -100,7 +100,7 @@ class UIScene extends Phaser.Scene {
                 
                 this.timer();
             }else{
-                timer = 60*2;
+                timer = 2*2;
 
                 this.game.sound.stopAll();
 

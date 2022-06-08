@@ -13,17 +13,20 @@ let config = {
         
         
     },
-    scene: [Loading, Menu, Tutorial, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage,Total]
+    scene: [Loading, Menu, Tutorial, Credits, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage,Total,Title, Day1, Day2, Day3,Day4,Final, TutorialDemo,Catalog]
 
     
 }
     
-
 let game = new Phaser.Game(config);
+
+const centerX = game.config.width / 2;
+const centerY = game.config.height / 2;
+let cursors = null;
 
 // reserve keyboard variables
 let keyF, keyR, keyLEFT, keyRIGHT, pointLEFT;
-
+let keyX;
 //number of rules
 var numbRequire = 1;
 
@@ -66,7 +69,7 @@ var money = 0;
 
 var rent = 40;
 
-var timer = 60*2;
+var timer = 2*2;
 
 var total_money = 0;
 

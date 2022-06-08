@@ -1,0 +1,84 @@
+[
+	[
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Hey how are ya? The hotel’s breakfast was very awesome! They like have this amazing chef who makes an omlette based on your preferences! Oh man I gotta send you pics later today around your break.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "How’s the robot building going? I think everything should be pretty straight forward right? Getting tickets, making robots based on their preferences? Pretty easy!",
+			"newSpeaker" : "true"
+			
+		},
+		{
+			"speaker" : "sad_andi",
+			"dialog" : "But ... Um here’s the thing. I kinda got to apologize. You remember that I told you how this job would be simple for the week and it shouldn’t be difficult?",
+			"newSpeaker" : "true"
+			
+		},
+		{
+			"speaker" : "sad_andi",
+			"dialog" : "Well… , um… I kinda lied. I advertised new color combinations for our existing models up for production week after you were gone. But I think I messed up the date and its here a week early...Just got an email."
+		},
+		{	
+			"speaker" : "laugh_andi",
+			"dialog" : "Soooo…. you will now have to take new orders that have different colors. ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "sad_andi",
+			"dialog" : "...",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "sad_andi",
+			"dialog" : "Yeah I know I know I screwed up! I Thought I checked my schedule and everything but the overworked environment really shut off my brain! I’m so sorry!"
+		},
+		{	
+			"speaker" : "angry_andi",
+			"dialog" : "What? Don’t look at me like that, the paint was on sale! It was the premium products! Anyone would buy that deal!",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "sad_andi",
+			"dialog" : "...Or is it only me?",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "happy_andi",
+			"dialog" : "Look, I’m sure you’ll manage. Just make the robots and now paint them in a color the customers would want.",
+			"newSpeaker":"true"
+		}
+	],
+	[
+		{
+			"speaker" : "color_tutorial",
+			"dialog" : "Before your shift you can install the paint in the P.E.N.S machine. The display to the machine should have a color pallete-like display and would look something like this.",
+			"newSpeaker" :"true"
+		},
+		{
+			"speaker" : "pen_tutorial",
+			"dialog" : "Now, these touch panels have clickable buttons that will deploy the adorable P.E.N.S and they will spray your robots with paint! ",
+			"newSpeaker" :"true"
+			
+		},
+		
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Pretty handy right? Saves you from the hassle of spraying your hands with paint. You know that feeling when you wash your hands for hours ot get the stain off? Not pleasant.",
+			"newSpeaker": "true"
+		},
+		{
+			"speaker" : "angry_andi",
+			"dialog" : "One last thing. COLOR THE ROBOT BEFORE YOU SELL IT IN. The device is advanced and WILL check if a robot is complete, but still lacks a color checker.",
+			"newSpeaker" : "true"
+			
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Anyways, I'm sure you will be fine. I’ll be off! Surfing Lessons are calling me!",
+			"newSpeaker" : "true"
+		}
+	]
+]

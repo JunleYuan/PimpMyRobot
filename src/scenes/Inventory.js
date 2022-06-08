@@ -816,15 +816,33 @@ class Inventory extends Phaser.Scene {
             else{
                 this.colorbutt.visible = true;
             
-                this.blueButton.visible = true;
-                this.blackButton.visible = true;
-                this.greenButton.visible = true;
-                this.goldButton.visible = true;
-                this.orangeButton.visible = true;
-                this.pinkButton.visible = true;
-                this.purpleButton.visible = true;
-                this.silverButton.visible = true;
-                this.tealButton.visible = true;
+                if(lvl > 1){
+                    this.blueButton.visible = true;
+                    this.blackButton.visible = true;
+                    this.greenButton.visible = true;
+                    this.goldButton.visible = true;
+                    this.orangeButton.visible = true;
+                    this.pinkButton.visible = true;
+                    this.purpleButton.visible = true;
+                    this.silverButton.visible = true;
+                    this.tealButton.visible = true;
+                }
+                
+                else{
+                    
+                    this.blueButton.visible = false;
+                    this.blackButton.visible = false;
+                    this.greenButton.visible = false;
+                    this.goldButton.visible = false;
+                    this.orangeButton.visible = false;
+                    this.pinkButton.visible = false;
+                    this.purpleButton.visible = false;
+                    this.silverButton.visible = false;
+                    this.tealButton.visible = false;
+                }
+              
+                this.sellbutt.visible = true;
+                this.backbutt.visible = false;
                 this.sellbutt.visible = true;
                 this.backbutt.visible = false;
 

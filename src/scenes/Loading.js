@@ -54,6 +54,45 @@ class Loading extends Phaser.Scene {
     }
 
     loadIMG(){
+        //Load Dialogue JSON
+
+        // load JSON (dialog)
+        this.load.json('day1', './assets/json/day1.json');
+        this.load.json('day2', './assets/json/day2.json');
+        this.load.json('day3', './assets/json/day3.json');
+        this.load.json('day4', './assets/json/day4.json');
+        this.load.json('FinalDay', './assets/json/Final Day.json');
+        this.load.json('Tutorial', './assets/json/Tutorial.json');
+
+        // Load Dialogue Assets
+        this.load.image('Andi_Angry', './assets/Dialog/Angry.png');
+        this.load.image('Andi_Sad', './assets/Dialog/Sad.png');
+        this.load.image('Andi_Happy', './assets/Dialog/Smile.png');
+        this.load.image('Andi_Laugh', './assets/Dialog/Laugh.png');
+        this.load.image('Dialog_Box', './assets/Dialog/Speech-Bubble.png');
+        this.load.image('Phone_Border', './assets/Dialog/Border.png');
+        this.load.image('Hawaii', './assets/Dialog/Honolulu.png');
+
+        //Load Tutorial Boxes
+        this.load.image('Assembly_Tutorial', './assets/Tutorial/Assembly.jpeg');
+        this.load.image('Color_Tutorial', './assets/Tutorial/Color_Tutorial.jpg');
+        this.load.image('Door_Tutorial', './assets/Tutorial/Door_Tutorial.jpeg');
+        this.load.image('Drag_Tutorial', './assets/Tutorial/Drag_Part.jpeg');
+        this.load.image('Inv_Tutorial', './assets/Tutorial/Inv_Tutorial.jpeg');
+        this.load.image('Order_Tutorial', './assets/Tutorial/Order_Tutorial.jpeg');
+        this.load.image('PEN_Tutorial', './assets/Tutorial/PEN_Tutorial.jpeg');
+        this.load.image('Sell_Tutorial', './assets/Tutorial/Sell_Tutorial.jpeg');
+        this.load.image('Storage_Tutorial', './assets/Tutorial/Storage_Tutorial.jpeg');
+        this.load.image('WS_Tutorial', './assets/Tutorial/WSTutorial.jpg');
+        
+        //Load Catalog Scene Boxes
+        this.load.image('Catalog_Day1', './assets/Catalog/Catalog_Day1.jpeg');
+        this.load.image('Catalog_Day2', './assets/Catalog/Catalog_Day2.jpg');
+        this.load.image('Catalog_Day3', './assets/Catalog/Catalog_Day3.jpg');
+        this.load.image('Catalog_Day4', './assets/Catalog/Catalog_Day4.jpg');
+        this.load.image('StartDay_Button', './assets/Catalog/StartDay_Button.png');
+
+        //Load Backgrounds
         this.load.image('backgroundWS', './assets/MainWorkshop.png');
         this.load.image('backgroundSR', './assets/Shelves.png');
         this.load.image('require', './assets/UI/New_Orders.png');
@@ -66,6 +105,7 @@ class Loading extends Phaser.Scene {
         this.load.image('sellButt2', './assets/UI/SELLBUTTONCLICK.png');
         this.load.image('sellButt3', './assets/UI/SELLBUTTONOFF.png');
         this.load.image('colButt', './assets/Color Changer/Color-Change.png');
+        this.load.image('moveOnButt', './assets/UI/MoveOnButton.png');
 
         //Load Color Buttons
         this.load.image('BlackColor', './assets/New_Buttons/New_Black.png');
@@ -99,12 +139,15 @@ class Loading extends Phaser.Scene {
         this.load.atlas('tealspray_atlas', 'assets/Animations/teal_spray.png', 'assets/Animations/teal_spray.json');
         this.load.atlas('sell_atlas', 'assets/Animations/robot_sell.png', 'assets/Animations/robot_sell.json');
 
+        this.load.image('RobotBorder', './assets/UI/Robot_Border.png')
         this.load.image('ResultScreen', './assets/ResultsScreen.png');
         this.load.image('ResultText', './assets/Results.png');
-        this.load.image('mainMenu', './assets/menuButton.png');
+        this.load.image('mainMenu', './assets/UI/MenuButton.png');
         this.load.image('play','./assets/playButton.png');
         this.load.image('tutorial','./assets/ControlButton.png');
         this.load.image('settings','./assets/settingsButton.png');
+        this.load.image('creditButton','./assets/UI/Credits_Button.png');
+        this.load.image('tutorialButton','./assets/UI/Tutorial_Button.png');
 
         //Load Robot Parts
         for(let i = 0; i < 10;i++){
@@ -144,8 +187,8 @@ class Loading extends Phaser.Scene {
         
 
         
-
-
+        this.load.bitmapFont('gem_white', 'assets/gg.png', 'assets/gg.xml');
+        this.load.bitmapFont('gem_font', 'assets/gem.png', 'assets/gem.xml');
         this.load.bitmapFont('bm', 'assets/bm_0.png', 'assets/bm.xml');
         this.load.bitmapFont('vcrBM', './assets/vcr_osd_mono_0.png', './assets/vcr_osd_mono.fnt');
     }
@@ -153,6 +196,8 @@ class Loading extends Phaser.Scene {
     loadSound(){
         this.load.audio('backgroundMusic', './assets/Mimi.mp3');
         this.load.audio('introMusic', './assets/My_Song_3.mp3');
+        this.load.audio('vacationMusic', './assets/honolulu.wav');
+        this.load.audio('WaitingMusic', './assets/beeps-and-boops.mp3');
         this.load.audio('star5', './assets/star5.mp3');
         this.load.audio('star4', './assets/star4.mp3');
         this.load.audio('star3', './assets/star3.mp3');

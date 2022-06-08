@@ -1,0 +1,48 @@
+[
+	[
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Hey Morning again. Sorry for all the paint deleveries yesterday, it must’ve been a little difficult to get used to at first but I’m sure you’ve got it, right?",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Are customers writing tickets ok? Sometimes they write really poor orders that are hard to pin point what exactly they would want to order and they would pay me less. Hope it won't happen to you.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Oh yeah,before I go. I forgot to mention something, today a sweet new category is going to be added to the production catalog!",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "The Bladed Alagomination Sharpster Sharpy! Customers would also probably want to order this as well.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "sad_andi",
+			"dialog" : "Yeah I advertised it for next week......but previous me thought next week was “This” week...I’m sorry.",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "sad_andi",
+			"dialog" : "..."
+		},
+		{	
+			"speaker" : "laugh_andi",
+			"dialog" : "Um, watch out for your fingers, the new robot parts may be a little spikey ;). ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "happy_andi",
+			"dialog" : "Don't worry, think about how've you taken care of the orders the past 2 days, just now with another color. You'll do great. ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "laugh_andi",
+			"dialog" : "Alright I better get going! Good Luck! ",
+			"newSpeaker" : "true"
+		}
+	]
+]

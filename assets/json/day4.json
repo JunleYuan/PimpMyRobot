@@ -1,0 +1,35 @@
+[
+	[
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Woah Day 4 already? Man its the final day for you today. Time surely flies when you are on vacation huh? Or is it work for your case.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "sad_andi",
+			"dialog" : "I think you already expect me to be a bearar of bad news but unfortunately the bad luck continues...",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "sad_andi",
+			"dialog" : "It appears that there was a bug in the website were it allowed for customers to include a lot more preferences than it should've."
+		},
+		{
+			"speaker" : "angry_andi",
+			"dialog" : "Man, why does it always keep causing these bugs!? I knew I shouldn't have trusted 3rd Parties...",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "sad_andi",
+			"dialog" : "Today's gonna be tough, but I'm sure you can do it! Just remember that the core concept of the tickets remain the same and you are dealing with the same thing.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Alright! Good Luck!",
+			"newSpeaker" : "true"
+		}
+		
+		
+	]
+]

@@ -1,0 +1,21 @@
+[
+	[
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Ah...The vacation really was refreshing! Thankfully we have Fridays off so you are all done!",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Thanks very much! It must have been difficult to adapt to new changes on the fly. I really appericiate it!",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Let's see how you did over the course of the week!",
+			"newSpeaker" : "true"
+		}
+		
+		
+	]
+]

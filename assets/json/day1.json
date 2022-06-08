@@ -1,0 +1,87 @@
+[
+	[
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Heeeeelllooooo Honolulu!!!",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Oh wait, maybe a little to early for that. What's up, Andi here! Good Morning to ya, and once again, thanks for taking over the workshop for me while I am gone!",
+			"newSpeaker" : "true"
+			
+		},
+		{
+			"speaker" : "workshop_tutorial",
+			"dialog" : "Anyways, welcome to the workshop! Pretty cool place right? I know it may be a little cramped but we engineers like the enclosed space ya know?",
+			"newSpeaker" : "true"		
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Come on! Let me show you around and explain how you will be handling your job. Well, not me in-person but using my security cam footage. You get the point though.",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "happy_andi",
+			"dialog" : "The main job that we are going to handle is creating robots according to customer tickets.",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "order_tutorial",
+			"dialog" : "The first thing that you will do is to take a look at orders. See that large tablet on your right? Click on the tablet to print the ticket and see what the customers would like.",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "order_tutorial",
+			"dialog" : "You can click on the order tablet again to put the ticket away."
+			
+		},
+		{	
+			"speaker" : "door_tutorial",
+			"dialog" : "Now that you'll know what part combinations your customers want, its time for you to get the parts! Open up the door to the parts cabinet to enter ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "storage_tutorial",
+			"dialog" : "When you enter the room, you will see various robot parts on the shelves. You would be able to move around the objects using your hands (Mouse) ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "inv_tutorial",
+			"dialog" : "The Inventory Belt that is given to you would allow you to store one type of robot for each body part. You can drag the parts from the shelves into here to move them. ",
+			"newSpeaker" : "true"
+		}
+	],
+	[
+		{
+			"speaker" : "drag_tutorial",
+			"dialog" : "Finally, we can move onto assembly. Drag a robot part into the laser-pointer sensors in the assembly tube and it will automatically snap the part to the appropraite place when you drop it in. Technology is awesome right?",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "sell_tutorial",
+			"dialog" : "Once you are done you can click the big sell button! You should see a large green button that says 'SELL'. Pretty clear what that does.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "The Robot will only be considered able to sell if the robot is complete. The button should light up bright green when you are able to sell it. ",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "The job may seem a bit daunting at first, but I'm sure you will get used to it as time passes and you understand the process of the job.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Also I made sure that the robot building task would not be too hard for the week. You should only be handling easy tasks like today for 4 days until Friday.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Alright, I think that's about it! Good luck with everything and ask me anything at night if it is confusing!",
+			"newSpeaker" : "true"
+		}
+	]
+]

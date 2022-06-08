@@ -131,8 +131,43 @@ class Rent extends Phaser.Scene {
             });
 
         }
+       
+        this.moveOnButt = this.add.image(game.config.width/2, game.config.height/2 + 200, 'moveOnButt').setOrigin(0.5, 0.5).setScale(0.25).setInteractive();
+        this.moveOnButt.on('pointerdown', () => {
+          
+            this.game.sound.stopAll();
+            this.sound.play('buttSound');
+            if(lvl == 1){
+                money = 0;
+                lvl = lvl +1;
+                this.scene.start("Day2Scene")
+            }
+            else if(lvl == 2){
+                money = 0;
+                lvl = lvl +1;
+                this.scene.start("Day3Scene")
+            }
+            else if(lvl == 3){
+                money = 0;
+                lvl = lvl +1;
+                this.scene.start("Day4Scene")
+            }
+            else if(lvl == 4){
+                money = 0;
+                lvl = lvl +1;
+                this.scene.start("FinalScene")
+            }
+            
+          });
+          this.moveOnButt.on('pointerout', () => {
+            this.moveOnButt.setScale(0.25); 
+          });
+          this.moveOnButt.on('pointerover', () => {
+            this.moveOnButt.setScale(0.35); 
+          });
 
-        this.clock = this.time.delayedCall(10000, () => {
+        /*
+          this.clock = this.time.delayedCall(10000, () => {
 
             money = 0;
             lvl = lvl +1;
@@ -142,6 +177,7 @@ class Rent extends Phaser.Scene {
             this.scene.start("inventory");
 
         })
+        */
         
 
 

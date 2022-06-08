@@ -5,6 +5,8 @@ class Menu extends Phaser.Scene {
 
     create() {
           //Title Screen Animation
+          
+
           this.soundconfig = {
             mute: false,
             volume: .1,
@@ -42,10 +44,12 @@ class Menu extends Phaser.Scene {
             this.game.sound.stopAll();
             this.sound.play('buttSound');
 
-
+            this.scene.start("Day1Scene");
+            /*
             this.scene.start("UIScene");
             this.scene.start("buildMain");
             this.scene.start("inventory");
+            */
           });
           this.play.on('pointerout', () => {
             this.play.setScale(0.5); 
@@ -55,33 +59,42 @@ class Menu extends Phaser.Scene {
           });
 
         //tutorial/controls button
-        this.tutorial = this.add.image(game.config.width/2 + 175, game.config.height/2 + 200, 'tutorial').setOrigin(0.5, 0.5).setScale(0.5).setInteractive();
-        this.tutorial.on('pointerdown', () => {
-          
+        this.control = this.add.image(game.config.width/2 + 175, game.config.height/2 + 200, 'tutorial').setOrigin(0.5, 0.5).setScale(0.5).setInteractive();
+        this.control.on('pointerdown', () => { 
           this.sound.play('buttSound');
             this.scene.launch('tutorial'); 
+        });
+        this.control.on('pointerout', () => {
+            this.control.setScale(0.5); 
+        });
+        this.control.on('pointerover', () => {
+            this.control.setScale(0.6); 
+        });
+
+      this.credit = this.add.image(game.config.width/2 + 475, game.config.height/2 + 200, 'creditButton').setOrigin(0.5, 0.5).setScale(0.3).setInteractive();
+      this.credit.on('pointerdown', () => { 
+          this.sound.play('buttSound');
+          this.scene.start("credits");
+        });
+        this.credit.on('pointerout', () => {
+            this.credit.setScale(0.3); 
+        });
+        this.credit.on('pointerover', () => {
+            this.credit.setScale(0.35); 
+        });
+
+        this.tutorial = this.add.image(game.config.width/2 - 475, game.config.height/2 + 200, 'tutorialButton').setOrigin(0.5, 0.5).setScale(0.3).setInteractive();
+        this.tutorial.on('pointerdown', () => { 
+          this.game.sound.stopAll();
+          this.sound.play('buttSound');
+          this.scene.start("TutorialExplanation");
           });
-        this.tutorial.on('pointerout', () => {
-            this.tutorial.setScale(0.5); 
+          this.tutorial.on('pointerout', () => {
+              this.tutorial.setScale(0.3); 
           });
           this.tutorial.on('pointerover', () => {
-            this.tutorial.setScale(0.6); 
+              this.tutorial.setScale(0.35); 
           });
-
-
-        /*
-        //settings button
-        this.settings = this.add.image(game.config.width/2, game.config.height/2 + 256, 'settings').setOrigin(0.5, 0.5).setInteractive();
-        this.settings.on('pointerdown', () => {
-            this.scene.start('settings'); 
-          });
-        this.settings.on('pointerout', () => {
-            this.settings.setScale(1); 
-          });
-          this.settings.on('pointerover', () => {
-            this.settings.setScale(1.1); 
-          });
-          */
     }
     
     update() {

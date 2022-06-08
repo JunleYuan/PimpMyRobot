@@ -87,7 +87,7 @@ class RequireList extends Phaser.Scene {
                 
             }else{
 
-                if(lvl>2){
+                if(lvl>1){
 
                     console.log("color rule");
                     textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);

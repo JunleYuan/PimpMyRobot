@@ -3,11 +3,6 @@ class Tutorial extends Phaser.Scene {
         super("tutorial");
     }
 
-    preload() {
-        this.load.image('mainMenu', './assets/menuButton.png');
-        this.load.bitmapFont('vcrBM', './assets/vcr_osd_mono_0.png', './assets/vcr_osd_mono.fnt');
-    }
-
     create() {
         //background image
         this.background = this.add.image(0, 0, 'ResultScreen').setOrigin(0, 0).setScale(0.5);
@@ -24,16 +19,16 @@ class Tutorial extends Phaser.Scene {
         this.tutorText.maxWidth = 640;
 
         //back to main menu button
-        this.menu = this.add.image(game.config.width/2, game.config.height - 120, 'mainMenu').setOrigin(0.5, 0.5).setInteractive();
+        this.menu = this.add.image(game.config.width/2, game.config.height - 120, 'mainMenu').setOrigin(0.5, 0.5).setScale(0.25).setInteractive();
         this.menu.on('pointerdown', () => {
           this.sound.play('buttSound');
             this.scene.stop('tutorial'); 
           });
           this.menu.on('pointerout', () => {
-            this.menu.setScale(1); 
+            this.menu.setScale(0.25); 
           });
           this.menu.on('pointerover', () => {
-            this.menu.setScale(1.1); 
+            this.menu.setScale(0.35); 
           });
 
       

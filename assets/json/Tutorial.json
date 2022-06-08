@@ -1,0 +1,76 @@
+[
+	[
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Oh hi! Welcome to Pimp My Robot! My name is Andi and I normally run the workshop you will be taking care of this week but as you can see, I'm a little elsewhere at the moment.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "I will be going over the controls for the game. You can also find this tutorial on the Day 1 Dialogue so if you would prefer to learn it there I would advise you to skip the dialogue with 'X' ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "happy_andi",
+			"dialog" : "The main job that we are going to handle is creating robots according to customer tickets.",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "order_tutorial",
+			"dialog" : "The first thing that you will do is to take a look at orders. Click on the tablet to print the ticket and see what the customers would like.",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "order_tutorial",
+			"dialog" : "You can click on the order tablet again to put the ticket away."
+			
+		},
+		{	
+			"speaker" : "door_tutorial",
+			"dialog" : "Now that you'll know what part combinations your customers want, its time for you to get the parts! Open up the door to the parts cabinet to enter ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "storage_tutorial",
+			"dialog" : "When you enter the room, you will see various robot parts on the shelves. You would be able to move around the objects using your hands (Mouse) ",
+			"newSpeaker" : "true"
+		},
+		{	
+			"speaker" : "inv_tutorial",
+			"dialog" : "The Inventory Belt that is given to you would allow you to store one type of robot for each body part. You can drag the parts from the shelves into here to move them. ",
+			"newSpeaker" : "true"
+		}
+	],
+	[
+		{
+			"speaker" : "drag_tutorial",
+			"dialog" : "Finally, we can move onto assembly. Drag a robot part into the laser-pointer sensors in the assembly tube and it will automatically snap the part to the appropraite place when you drop it in. Technology is awesome right?",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "sell_tutorial",
+			"dialog" : "Once you are done you can click the big sell button! You should see a large green button that says 'SELL'. Pretty clear what that does.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "The Robot will only be considered able to sell if the robot is complete. The button should light up bright green when you are able to sell it. ",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "color_tutorial",
+			"dialog" : "In certain days the color machine will be added, where you can click on the appropriate colored buttons to spray the robot with paint.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "happy_andi",
+			"dialog" : "Keep in mind that robots cannot be sold if they aren't complete but can still be sold if they are colored improperly or not colored at all.",
+			"newSpeaker" : "true"
+		},
+		{
+			"speaker" : "laugh_andi",
+			"dialog" : "Alright, I think that's about it! Good Luck and Have some fun in Pimp My Robot!",
+			"newSpeaker" : "true"
+		}
+	]
+]
