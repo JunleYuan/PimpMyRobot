@@ -2,6 +2,10 @@ class Day3 extends Phaser.Scene {
     constructor() {
         super("Day3Scene");
 
+        
+    }
+
+    create() {
         // dialog constants
         this.DBOX_X = 600;			    // dialog box x-position
         this.DBOX_Y = 50;			    // dialog box y-position
@@ -43,9 +47,6 @@ class Day3 extends Phaser.Scene {
 
         this.OFFSCREEN_X = -800;        // x,y values to place characters offscreen
         this.OFFSCREEN_Y = 1000;
-    }
-
-    create() {
         this.soundconfig = {
             mute: false,
             volume: .1,
