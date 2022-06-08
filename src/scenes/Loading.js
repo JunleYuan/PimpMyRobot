@@ -95,6 +95,8 @@ class Loading extends Phaser.Scene {
         //Load Backgrounds
         this.load.image('backgroundWS', './assets/MainWorkshop.png');
         this.load.image('backgroundSR', './assets/Shelves.png');
+        this.load.image('door', './assets/UI/Door_Closed.png');
+        this.load.image('inv_door', './assets/UI/Door_Invisible.png');
         this.load.image('require', './assets/UI/New_Orders.png');
         this.load.image('requireText', './assets/UI/Ticket.png');
       

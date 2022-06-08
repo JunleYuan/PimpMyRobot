@@ -13,7 +13,7 @@ let config = {
         
         
     },
-    scene: [Loading, Menu, Tutorial, Credits, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage,Total,Title, Day1, Day2, Day3,Day4,Final, TutorialDemo,Catalog]
+    scene: [Loading, Menu, Tutorial, Credits, Settings, Workshop, UIScene, Rent, RequireList, Inventory, Storage,Total, Day1, Day2, Day3,Day4,Final, TutorialDemo,Catalog]
 
     
 }
@@ -63,13 +63,13 @@ var storeParts = [];
 var subParts = [];
 
 //which level we are on
-var lvl = 3;
+var lvl = 1;
 
 var money = 0;
 
 var rent = 40;
 
-var timer = 2;
+var timer = 120;
 
 var total_money = 0;
 

@@ -34,14 +34,18 @@ class Workshop extends Phaser.Scene {
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
         this.backgroundWS = this.add.image(0, 0, 'backgroundWS').setOrigin(0, 0).setScale(0.5);
+        
+        
+        
 
         //  Make our game world bound
         this.cameras.main.setBounds(0, 0, this.backgroundWS.width*4, this.backgroundWS.height*4);
 
 
         //boxes
+       
         
-        this.box5 = this.add.text(200, 140,' ').setOrigin(0, 0).setScale(1);
+        this.box5 = this.add.image(190, 130, 'door').setOrigin(0, 0).setScale(0.5);
         this.box5.setInteractive();
         this.box5.setDisplaySize(200, 400);
         //this.box5.setBackgroundColor('#DD002F');
@@ -59,7 +63,7 @@ class Workshop extends Phaser.Scene {
                 //this.scene.wake("inventory");
             }
         });
-
+       
 
     }
 
