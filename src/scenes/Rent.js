@@ -27,22 +27,30 @@ class Rent extends Phaser.Scene {
 
         total_money = total_money + money;
 
+        let buffer = 1;
+
         this.time.delayedCall(1000, () => {
 
-            if(money > 350){
+            
+
+            if(lvl == 1){
+                buffer = .5;
+            }
+
+            if(money > 120 * buffer){
                 total_star = total_star + 5;
                 this.sound.play('star5');
             }
-            else if(money > 300){
+            else if(money > 100 * buffer){
 
                 total_star = total_star + 4;
                 this.sound.play('star4');
-            }else if(money > 200){
+            }else if(money > 80 * buffer){
 
                 total_star = total_star + 3;
                 this.sound.play('star3');
 
-            }else if(money > 100){
+            }else if(money > 40 * buffer){
 
                 total_star = total_star + 2;
                 this.sound.play('star2');
@@ -75,7 +83,7 @@ class Rent extends Phaser.Scene {
             duration: 1000
         });
 
-        if(money > 100){
+        if(money > 40 * buffer){
 
             let star2 = this.add.image(1280/2-50, 380, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
@@ -89,7 +97,7 @@ class Rent extends Phaser.Scene {
 
         }
 
-        if(money > 200){
+        if(money > 80 * buffer){
 
             let star3 = this.add.image(1280/2+50, 380, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
@@ -103,7 +111,7 @@ class Rent extends Phaser.Scene {
 
         }
 
-        if(money > 300){
+        if(money > 100 * buffer){
 
             let star4 = this.add.image(1280/2-100, 390, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
@@ -117,11 +125,11 @@ class Rent extends Phaser.Scene {
 
         }
 
-        if(money > 350){
+        if(money > 120 * buffer){
 
             let star5 = this.add.image(1280/2+100, 390, 'star').setOrigin(.5, .5).setScale(.08).setAlpha(0);
 
-            let star5tw = this.tweens.add({
+            this.tweens.add({
                 targets: star5,
                 alpha: 1,
                 delay: 3000,
@@ -154,7 +162,7 @@ class Rent extends Phaser.Scene {
             }
             else if(lvl == 4){
                 money = 0;
-                lvl = lvl +1;
+                lvl = 1;
                 this.scene.start("FinalScene")
             }
             
