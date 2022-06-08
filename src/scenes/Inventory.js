@@ -148,7 +148,7 @@ class Inventory extends Phaser.Scene {
         });
 
         console.log("Inventory open");
-        this.see_inv = this.add.image(-15, 40, 'Inventory_Bar').setOrigin(0, 0).setScale(0.45,0.45).setDepth(1);
+        this.see_inv = this.add.image(0, 40, 'Inventory_Bar').setOrigin(0, 0).setScale(0.45,0.45).setDepth(1);
         //return button
         this.backbutt = this.add.image(0, 0, 'backButt').setOrigin(0, 0).setScale(0.65);
         this.backbutt.setInteractive();
@@ -827,7 +827,7 @@ class Inventory extends Phaser.Scene {
                     this.silverButton.visible = true;
                     this.tealButton.visible = true;
                 }
-                
+
                 else{
                     
                     this.blueButton.visible = false;
