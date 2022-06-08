@@ -10,6 +10,8 @@ class RequireList extends Phaser.Scene {
 
         //console.log(arrayOfRule);
 
+        this.firstrule = true;
+
 
         this.CurTrait = arrayOfTraits.slice(0,3);
 
@@ -20,41 +22,7 @@ class RequireList extends Phaser.Scene {
 
         }
 
-        numbRequire = lvl;
-
-        // switch(lvl){
-        //     case 1:
-                
-        //         numbRequire = 1;
-
-        //         break;
-        //     case 2:
-                
-        //         numbRequire = 2;
-
-        //         break;
-        //     case 3:
-
-               
-        //         numbRequire = 3;
-
-        //         break;
-        //     case 4:
-
-        //         numbRequire = 4;
-
-        //         break;
-        //     case 5:
-
-        //         numbRequire = 5;
-
-        //         break;
-        //     case 6:
-
-        //         numbRequire = 6;
-
-        //         break;
-        // }
+        numbRequire = 1;
 
 
         this.notUseParts = ['head','body','arms','legs'];
@@ -83,14 +51,14 @@ class RequireList extends Phaser.Scene {
             if(tlength!=numbRequire){
                 arrayOfRule[tlength] = this.whatTraits();
 
-                textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
+                textArray[tlength] = this.add.bitmapText(-190,-150+tlength*80, 'vcrBM', this.ranText(arrayOfRule[tlength]), 25).setOrigin(0, .5).setMaxWidth(380);
                 
             }else{
 
                 if(lvl>1){
 
                     console.log("color rule");
-                    textArray[tlength] = this.add.bitmapText(-190,-230+tlength*80, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
+                    textArray[tlength] = this.add.bitmapText(-190,-150+tlength*100, 'vcrBM', this.ranColor(), 25).setOrigin(0, .5).setMaxWidth(380);
                     
                 }
             }
@@ -135,96 +103,179 @@ class RequireList extends Phaser.Scene {
     
     whatTraits(){
 
-        //console.log("whatTraits called");
+        // //console.log("whatTraits called");
 
-        //var to see if trait is already in
-        let alreadyin = false;
-        //temp var to store yes and no if is already in
-        let tempvar = 0;
-
-
-        let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
-
-        //want or do not want traits
-        let yesNo = Math.floor(Math.random() * 2);
-
-        //console.log("ran "+ranTraits);
-
-        //console.log("ran ind"+this.CurTrait.indexOf(ranTraits));
-        
-        let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+        // //var to see if trait is already in
+        // let alreadyin = false;
+        // //temp var to store yes and no if is already in
+        // let tempvar = 0;
 
 
-        //check if already in loop
-        arrayOfRule.forEach(element => {
-            //console.log("cur "+arrayOfTraits[ranTraits]);
-            //console.log("cur "+ranTraits);
+        // let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+
+        // //want or do not want traits
+        // let yesNo = Math.floor(Math.random() * 2);
+
+        //let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+
+        // //check if already in loop
+        // arrayOfRule.forEach(element => {
+        //     //console.log("cur "+arrayOfTraits[ranTraits]);
+        //     //console.log("cur "+ranTraits);
             
-            //console.log("ele "+element[0]);
-            if(element[0] == ranTraits){
+        //     //console.log("ele "+element[0]);
+        //     if(element[0] == ranTraits){
                 
-                alreadyin = true;
-                //console.log("already in");
-                tempvar = element[1];
-            }
-        });
+        //         alreadyin = true;
+        //         //console.log("already in");
+        //         tempvar = element[1];
+        //     }
+        // });
 
-        //if trait is already in
-        if(alreadyin){
+        // //if trait is already in
+        // if(alreadyin){
 
-            //tempvar is the already existing trait's rule
-            //check ranText's switch case to see what temp var match with what rule
-            if(tempvar == 1 || tempvar == 2|| tempvar == 4){
+        //     //tempvar is the already existing trait's rule
+        //     //check ranText's switch case to see what temp var match with what rule
+        //     if(tempvar == 1 || tempvar == 2|| tempvar == 4){
 
 
-                if(Math.random() > .5){
+        //         if(Math.random() > .5){
 
-                    let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+        //             let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
                     
-                    //console.log(this.notUseParts);
+        //             //console.log(this.notUseParts);
 
-                    //console.log("ran part "+ranpart);
+        //             //console.log("ran part "+ranpart);
 
-                    this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+        //             this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                    //console.log(this.CurTrait);
+        //             //console.log(this.CurTrait);
 
-                    this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+        //             this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+        //             //console.log(this.CurTrait);
+
+        //             return [temptrait,2,ranpart]
+
+        //         }else{
 
 
-                    //console.log(this.CurTrait);
+        //             return [temptrait,4]
 
-                    return [temptrait,2,ranpart]
-
-                }else{
-
-
-                    return [temptrait,4]
-
-                }
+        //         }
             
 
-            }else if(tempvar == 0){
+        //     }else if(tempvar == 0){
 
-                let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+        //         let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
 
-                this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+        //         this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
 
-                this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+        //         this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
 
-                let ranTraits2 = arrayOfTraits[Math.floor(Math.random() * arrayOfTraits.length)];
+        //         let ranTraits2 = arrayOfTraits[Math.floor(Math.random() * arrayOfTraits.length)];
 
-                return [temptrait,3,ranTraits2,ranpart]
+        //         return [temptrait,3,ranTraits2,ranpart]
 
-            }
+        //     }
 
             
 
+        // }
+
+        // if(this.firstrule){
+
+        //     this.firstrule = false;
+
+        //     return [temptrait,1]
+
+        // }
+        
+        // //if it's not already in rule, randomly deside of we want the trait or not
+        // return [temptrait,yesNo]
+
+        if(lvl == 1){
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+
+            return [1 ,temptrait,ranTraits2,ranpart]
+
+        }else if(lvl == 2){
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
+
+            return [2 ,temptrait,temptrait2,ranpart]
+        }else if(lvl == 3){
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            this.CurTrait.splice(this.CurTrait.indexOf(ranTraits), 1);
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranpart2 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart2), 1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
+
+
+
+            return [3 ,temptrait,temptrait2,ranpart,ranpart2]
+
+
+        }else{
+
+            let ranTraits = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits),this.CurTrait.indexOf(ranTraits)+1);
+
+            let ranTraits2 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait2 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits2),this.CurTrait.indexOf(ranTraits2)+1);
+
+            let ranTraits3 = this.CurTrait[Math.floor(Math.random() * this.CurTrait.length)];
+            let temptrait3 = this.CurTrait.slice(this.CurTrait.indexOf(ranTraits3),this.CurTrait.indexOf(ranTraits3)+1);
+
+
+            let ranpart = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart), 1);
+
+            let ranpart2 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart2), 1);
+
+            let ranpart3 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart3), 1);
+
+            let ranpart4 = this.notUseParts[Math.floor(Math.random() * this.notUseParts.length)];
+            this.notUseParts.splice(this.notUseParts.indexOf(ranpart4), 1);
+
+
+
+            return [4 ,temptrait,temptrait2,temptrait3,ranpart,ranpart2,ranpart3,ranpart4]
         }
 
         
-        //if it's not already in rule, randomly deside of we want the trait or not
-        return [temptrait,yesNo]
+
         
     }
 
@@ -286,55 +337,25 @@ class RequireList extends Phaser.Scene {
     ranText( rule ){
         
         
-        switch(rule[1]){
+        switch(rule[0]){
 
             case 1:
-                switch(Math.floor(Math.random() * 2)){
+                
 
-                    case 0:
-
-                        return 'We want our robots to be ' + rule[0]
-
-
-                    case 1:
-
-                        return  rule[0] + ' would be nice'
-
-
-
-                }
-            break;
-
-            case 0:
-
-                switch(Math.floor(Math.random() * 2)){
-
-                    case 0:
-
-                        return 'We hate ' + rule[0]
-
-
-                    case 1:
-
-                        return 'We do not like '+ rule[0]
-
-
-
-                }
-            break;
+                return 'I want a '+ rule[1] + ' robot with '+ rule[2] + ' '+rule[3]
 
             case 2:
 
-                return 'I want the '+ rule[2] + ' to be ' +  rule[0]
+                return 'I want a ' + rule[1] + ' robot with ' + rule[2] + ' '+rule[3]
 
 
             case 3:
 
-                return 'if '+ rule[3] + ' is '+  rule[2]+ ' ignore what I prevously said about '+  rule[0] +' parts and add it ';
+                return 'I want a ' + rule[1] + ' robot but I also want it to have ' + rule[2] + ' '+ rule[3] + ' and ' + rule[2] + ' '+ rule[4]
 
             case 4:
 
-                return 'we want at least 2 part that is ' + rule[0]
+                return 'I want the robot\'s '+ rule[4] + ' and ' + rule[5] + ' to be ' + rule[1] + ', with ' + rule[2]+ ' ' + rule[6] +' and ' + rule[3]+ ' ' + rule[7]
 
 
         }

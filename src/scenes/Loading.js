@@ -108,15 +108,15 @@ class Loading extends Phaser.Scene {
         this.load.image('moveOnButt', './assets/UI/MoveOnButton.png');
 
         //Load Color Buttons
-        this.load.image('BlackColor', './assets/New_Buttons/New_Black.png');
-        this.load.image('BlueColor', './assets/New_Buttons/New_Blue.png');
-        this.load.image('GoldColor', './assets/New_Buttons/New_Gold.png');
-        this.load.image('GreenColor', './assets/New_Buttons/New_Green.png');
-        this.load.image('OrangeColor', './assets/New_Buttons/New_Orange.png');
-        this.load.image('PinkColor', './assets/New_Buttons/New_Pink.png');
-        this.load.image('PurpleColor', './assets/New_Buttons/New_Purple.png');
-        this.load.image('SilverColor', './assets/New_Buttons/New_Silver.png');
-        this.load.image('TealColor', './assets/New_Buttons/New_Teal.png');
+        this.load.image('BlackColor', './assets/New_Buttons/New_black.png');
+        this.load.image('BlueColor', './assets/New_Buttons/New_blue.png');
+        this.load.image('GoldColor', './assets/New_Buttons/New_gold.png');
+        this.load.image('GreenColor', './assets/New_Buttons/New_green.png');
+        this.load.image('OrangeColor', './assets/New_Buttons/New_orange.png');
+        this.load.image('PinkColor', './assets/New_Buttons/New_pink.png');
+        this.load.image('PurpleColor', './assets/New_Buttons/New_purple.png');
+        this.load.image('SilverColor', './assets/New_Buttons/New_silver.png');
+        this.load.image('TealColor', './assets/New_Buttons/New_teal.png');
 
         //Load UI Elements
         
