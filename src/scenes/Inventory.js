@@ -605,7 +605,7 @@ class Inventory extends Phaser.Scene {
 
                 if(!alreadyIn){
 
-                    gameObject.x = 55;
+                    gameObject.x = 50;
 
                     //gameObject.disableInteractive();
 
@@ -653,21 +653,21 @@ class Inventory extends Phaser.Scene {
         
 
         //  A drop zone
-        var zone = this.add.zone(0, 362, 275, 490).setRectangleDropZone(275, 490);
+        var zone = this.add.zone(0, 362, 275, 470).setRectangleDropZone(295, 460);
 
         //  Just a visual display of the drop zone
         var graphics = this.add.graphics();
         graphics.lineStyle(2, 0xffff00);
         graphics.strokeRect(zone.x - zone.input.hitArea.width / 2, zone.y - zone.input.hitArea.height / 2, zone.input.hitArea.width, zone.input.hitArea.height);
-
+        graphics.visible = false;
         //  A drop zone
-        var subzone = this.add.zone(this.game.renderer.width/2, this.game.renderer.height/2, 250, 500).setRectangleDropZone(250, 500);
+        var subzone = this.add.zone(this.game.renderer.width/2, this.game.renderer.height/2, 450, 500).setRectangleDropZone(450, 500);
 
         //  Just a visual display of the drop zone
         var graphicssub = this.add.graphics();
         graphicssub.lineStyle(2, 0xffff00);
         graphicssub.strokeRect(subzone.x - subzone.input.hitArea.width / 2, subzone.y - subzone.input.hitArea.height / 2, subzone.input.hitArea.width, subzone.input.hitArea.height);
-
+        graphicssub.visible = false;
 
         this.input.on('dragenter', function (pointer, gameObject, dropZone) {
             
@@ -1031,7 +1031,7 @@ class Inventory extends Phaser.Scene {
             }
         
             this.allPartsArray[i].x = 300+(i%4)*225;
-            this.allPartsArray[i].y = buffer + 320 + 160*(parseInt(i/4, 10));
+            this.allPartsArray[i].y = buffer + 320 + 200*(parseInt(i/4, 10));
         
             
             this.allPartsArray[i].isInInventory = false;
