@@ -2,6 +2,10 @@ class TutorialDemo extends Phaser.Scene {
     constructor() {
         super("TutorialExplanation");
 
+        
+    }
+
+    create() {
         // dialog constants
         this.DBOX_X = 600;			    // dialog box x-position
         this.DBOX_Y = 50;			    // dialog box y-position
@@ -53,9 +57,6 @@ class TutorialDemo extends Phaser.Scene {
 
         this.OFFSCREEN_X = -800;        // x,y values to place characters offscreen
         this.OFFSCREEN_Y = 1000;
-    }
-
-    create() {
         this.soundconfig = {
             mute: false,
             volume: .1,
@@ -115,6 +116,7 @@ class TutorialDemo extends Phaser.Scene {
        
         if(keyX.isDown) {
             this.game.sound.stopAll();
+            
             this.scene.start("menu");
         } 
 
@@ -163,6 +165,7 @@ class TutorialDemo extends Phaser.Scene {
             // make text box invisible
             this.dialogbox.visible = false;
             this.game.sound.stopAll();
+            
             this.scene.start("menu");
 
         } else {
